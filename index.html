@@ -1,921 +1,316 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ujjwal Basnet — AI Engineer, Director & Writer</title>
-  <meta name="description" content="Ujjwal Basnet builds multi-agent AI systems, directs AI-generated films, and writes about machine learning.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Archivo:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    /* ═══════════════════════════════════════════════════
-       DESIGN SYSTEM — Warm Neutral / Bento Portfolio
-       Typography: Space Grotesk + Archivo
-       Palette: Cream + Charcoal + Warm Orange
-       ═══════════════════════════════════════════════════ */
     :root {
-      --bg: #FAF8F5;
-      --bg-warm: #F4F1EC;
-      --bg-card: #FFFFFF;
-      --bg-card-alt: #F7F5F0;
-      --bg-dark: #1a1a1a;
-      --border: #E8E4DE;
-      --border-hover: #D5CFC7;
-      --text: #1a1a1a;
-      --text-secondary: #6B6560;
-      --text-tertiary: #9C9690;
-      --accent: #E8612D;
-      --accent-soft: #FFF0EB;
-      --accent-hover: #D4551F;
-      --tag-blue: #2563EB;
-      --tag-blue-bg: #EFF6FF;
-      --tag-green: #16A34A;
-      --tag-green-bg: #F0FDF4;
-      --tag-purple: #7C3AED;
-      --tag-purple-bg: #F5F3FF;
-      --radius: 16px;
-      --radius-sm: 10px;
-      --radius-full: 100px;
-      --font-heading: 'Space Grotesk', sans-serif;
-      --font-body: 'Archivo', sans-serif;
+      --bg: #050505;
+      --bg-card: #0A0A0B;
+      --bg-card-hover: #111113;
+      --text: #FFFFFF;
+      --text-sec: #888888;
+      --accent: #FF5500;
+      --accent-glow: rgba(255, 85, 0, 0.15);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(255, 85, 0, 0.3);
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-body: 'Inter', sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
-      --max-w: 1120px;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
-      --shadow-md: 0 4px 16px rgba(0,0,0,0.06);
-      --shadow-lg: 0 12px 40px rgba(0,0,0,0.08);
-      --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      --max-w: 1200px;
     }
-
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: var(--font-body);
       background: var(--bg);
       color: var(--text);
+      font-family: var(--font-body);
       line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 50% 0%, var(--accent-glow) 0%, transparent 50%),
+        linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 100% 100%, 40px 40px, 40px 40px;
     }
-
+    
+    ::selection { background: var(--accent); color: #fff; }
     a { color: inherit; text-decoration: none; }
-    ::selection { background: var(--accent); color: white; }
-
-    /* ═══ NAVIGATION ═══ */
-    .nav-wrap {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      padding: 16px 24px;
-      transition: background var(--transition), box-shadow var(--transition);
-    }
-
-    .nav-wrap.scrolled {
-      background: rgba(250,248,245,0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      box-shadow: 0 1px 0 var(--border);
-    }
-
+    
+    /* NAV */
     nav {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-brand {
-      font-family: var(--font-heading);
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      color: var(--text);
-    }
-
-    .nav-links { display: flex; align-items: center; gap: 4px; }
-
-    .nav-links a {
-      padding: 8px 14px;
-      font-family: var(--font-body);
-      font-size: 14px;
-      font-weight: 400;
-      color: var(--text-secondary);
-      border-radius: var(--radius-full);
-      transition: all var(--transition);
-    }
-
-    .nav-links a:hover { color: var(--text); background: rgba(0,0,0,0.03); }
-    .nav-links a.active { color: var(--text); font-weight: 500; }
-
-    /* ═══ HERO ═══ */
-    .hero {
-      padding: 160px 24px 80px;
-      max-width: var(--max-w);
-      margin: 0 auto;
-    }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: var(--accent);
-      padding: 6px 14px;
-      background: var(--accent-soft);
-      border-radius: var(--radius-full);
-      margin-bottom: 28px;
-      font-weight: 500;
-    }
-
-    .hero-eyebrow .pulse {
-      width: 7px; height: 7px;
-      background: var(--accent);
-      border-radius: 50%;
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.85); }
-    }
-
-    .hero h1 {
-      font-family: var(--font-heading);
-      font-size: clamp(44px, 7vw, 72px);
-      font-weight: 700;
-      letter-spacing: -0.04em;
-      line-height: 1.0;
-      margin-bottom: 24px;
-      color: var(--text);
-    }
-
-    .hero h1 .highlight {
-      color: var(--accent);
-    }
-
-    .hero-desc {
-      font-size: 18px;
-      color: var(--text-secondary);
-      max-width: 580px;
-      line-height: 1.7;
-      margin-bottom: 36px;
-      font-weight: 300;
-    }
-
-    .hero-desc strong { color: var(--text); font-weight: 500; }
-
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 24px;
-      font-family: var(--font-body);
-      font-size: 14px;
-      font-weight: 500;
-      border-radius: var(--radius-full);
-      transition: all var(--transition);
-      cursor: pointer;
-      border: none;
-    }
-
-    .btn-fill {
-      background: var(--text);
-      color: var(--bg);
-    }
-    .btn-fill:hover { background: #333; }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--text);
-      border: 1.5px solid var(--border);
-    }
-    .btn-outline:hover { border-color: var(--text); }
-
-    .btn svg { width: 16px; height: 16px; }
-
-    /* ═══ SECTIONS ═══ */
-    section { padding: 80px 24px; }
-    .container { max-width: var(--max-w); margin: 0 auto; }
-
-    .section-label {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-
-    .section-title {
-      font-family: var(--font-heading);
-      font-size: clamp(28px, 4vw, 36px);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      margin-bottom: 8px;
-    }
-
-    .section-desc {
-      font-size: 16px;
-      color: var(--text-secondary);
-      max-width: 520px;
-      line-height: 1.6;
-      margin-bottom: 48px;
-      font-weight: 300;
-    }
-
-    /* ═══ BENTO GRID ═══ */
-    .bento {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 16px;
-    }
-
-    .bento-item {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px;
-      transition: all var(--transition);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .bento-item:hover {
-      box-shadow: var(--shadow-md);
-      border-color: var(--border-hover);
-      transform: translateY(-3px);
-    }
-
-    .bento-wide { grid-column: span 8; }
-    .bento-narrow { grid-column: span 4; }
-    .bento-half { grid-column: span 6; }
-    .bento-third { grid-column: span 4; }
-    .bento-full { grid-column: span 12; }
-
-    @media (max-width: 900px) {
-      .bento-wide, .bento-narrow, .bento-half, .bento-third { grid-column: span 12; }
-    }
-
-    .bento-label {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--text-tertiary);
-      margin-bottom: 16px;
-    }
-
-    .bento-item h3 {
-      font-family: var(--font-heading);
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 8px;
-      letter-spacing: -0.02em;
-    }
-
-    .bento-item p {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    /* ═══ TAGS / CHIPS ═══ */
-    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
-
-    .tag {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      padding: 4px 10px;
-      border-radius: var(--radius-full);
-      font-weight: 500;
-    }
-
-    .tag-default { background: var(--bg-warm); color: var(--text-secondary); }
-    .tag-blue { background: var(--tag-blue-bg); color: var(--tag-blue); }
-    .tag-green { background: var(--tag-green-bg); color: var(--tag-green); }
-    .tag-purple { background: var(--tag-purple-bg); color: var(--tag-purple); }
-    .tag-accent { background: var(--accent-soft); color: var(--accent); }
-
-    /* ═══ ARROW LINK ═══ */
-    .arrow-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--accent);
-      margin-top: 16px;
-      transition: gap var(--transition);
-    }
-    .arrow-link:hover { gap: 10px; }
-    .arrow-link svg { width: 14px; height: 14px; }
-
-    /* ═══ BLOG ROWS ═══ */
-    .blog-list { display: flex; flex-direction: column; }
-
-    .blog-row {
-      display: flex;
-      align-items: baseline;
-      gap: 16px;
-      padding: 16px 0;
+      position: fixed; top: 0; left: 0; right: 0;
+      padding: 20px 40px;
+      display: flex; justify-content: space-between; align-items: center;
+      background: rgba(5,5,5,0.8);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
-      transition: all var(--transition);
+      z-index: 100;
     }
-
-    .blog-row:first-child { border-top: 1px solid var(--border); }
-    .blog-row:hover { padding-left: 8px; }
-
-    .blog-num {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--text-tertiary);
-      min-width: 24px;
-    }
-
-    .blog-row h4 {
-      font-family: var(--font-heading);
-      font-size: 15px;
-      font-weight: 500;
-      letter-spacing: -0.01em;
-    }
-
-    .blog-row .meta {
-      font-size: 13px;
-      color: var(--text-tertiary);
-      margin-top: 2px;
-    }
-
-    /* ═══ PROMPT VIEWER ═══ */
-    .prompt-viewer {
-      background: var(--bg-dark);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-
-    .prompt-header {
-      display: flex;
-      gap: 0;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      overflow-x: auto;
-    }
-
-    .prompt-tab {
-      padding: 14px 20px;
-      font-family: var(--font-body);
-      font-size: 13px;
-      color: rgba(255,255,255,0.4);
-      background: none;
-      border: none;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: color var(--transition);
-      position: relative;
-    }
-
-    .prompt-tab:hover { color: rgba(255,255,255,0.7); }
-
-    .prompt-tab.active {
-      color: #fff;
-    }
-
-    .prompt-tab.active::after {
-      content: '';
-      position: absolute;
-      bottom: -1px;
-      left: 16px; right: 16px;
-      height: 2px;
-      background: var(--accent);
-      border-radius: 2px;
-    }
-
-    .prompt-content {
-      padding: 28px;
-      font-family: var(--font-mono);
-      font-size: 13px;
-      line-height: 1.9;
-      color: rgba(255,255,255,0.65);
-      min-height: 220px;
-      position: relative;
-    }
-
-    .prompt-content .cm { color: rgba(255,255,255,0.3); }
-    .prompt-content .kw { color: var(--accent); }
-    .prompt-content .str { color: #34D399; }
-    .prompt-content .var { color: #A78BFA; }
-
-    .copy-btn {
-      position: absolute;
-      top: 16px; right: 16px;
-      padding: 6px 14px;
-      font-size: 11px;
-      font-family: var(--font-mono);
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius-sm);
-      color: rgba(255,255,255,0.5);
-      cursor: pointer;
-      transition: all var(--transition);
-    }
-    .copy-btn:hover { background: rgba(255,255,255,0.12); color: #fff; }
-
-    /* ═══ FILM CARDS ═══ */
-    .film-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: all var(--transition);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .film-card:hover {
-      box-shadow: var(--shadow-lg);
-      transform: translateY(-4px);
-    }
-
-    .film-poster {
-      aspect-ratio: 16/9;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .film-poster-bg {
-      position: absolute;
-      inset: 0;
-    }
-
-    .poster-1 { background: linear-gradient(135deg, #1a1a1a 0%, #3d1f0f 50%, #1a1a1a 100%); }
-    .poster-2 { background: linear-gradient(135deg, #1a1a1a 0%, #0f2d3d 50%, #1a1a1a 100%); }
-    .poster-3 { background: linear-gradient(135deg, #1a1a1a 0%, #2d0f3d 50%, #1a1a1a 100%); }
-
-    .film-poster::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(255,255,255,0.02) 1px, rgba(255,255,255,0.02) 2px);
-    }
-
-    .play-icon {
-      width: 52px; height: 52px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.25);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 2;
-      backdrop-filter: blur(8px);
-      transition: all var(--transition);
-    }
-
-    .film-card:hover .play-icon { background: var(--accent); border-color: var(--accent); transform: scale(1.08); }
-    .play-icon svg { width: 18px; height: 18px; fill: white; margin-left: 2px; }
-
-    .film-body { padding: 20px; }
-    .film-body h3 { font-family: var(--font-heading); font-size: 16px; font-weight: 600; margin-bottom: 6px; letter-spacing: -0.01em; }
-    .film-body p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
-
-    /* ═══ ESSAY CARDS ═══ */
-    .essay-card {
-      display: block;
-      padding: 24px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      transition: all var(--transition);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .essay-card:hover {
-      box-shadow: var(--shadow-md);
-      transform: translateY(-2px);
-      border-color: var(--border-hover);
-    }
-
-    .essay-source {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--text-tertiary);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-bottom: 10px;
-    }
-
-    .essay-card h3 {
-      font-family: var(--font-heading);
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 8px;
-      letter-spacing: -0.01em;
-    }
-
-    .essay-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
-
-    /* ═══ CONNECT / FOOTER ═══ */
-    .connect-section {
-      background: var(--bg-dark);
-      border-radius: var(--radius) var(--radius) 0 0;
-      padding: 80px 24px 48px;
-      margin-top: 40px;
-    }
-
-    .connect-section .section-label { color: var(--accent); }
-    .connect-section .section-title { color: #fff; }
-    .connect-section .section-desc { color: rgba(255,255,255,0.5); }
-
-    .social-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .social-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 20px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: var(--radius-full);
-      font-size: 13px;
-      font-weight: 500;
-      color: rgba(255,255,255,0.7);
-      transition: all var(--transition);
-    }
-
-    .social-pill:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: rgba(255,255,255,0.15);
-      color: #fff;
-      transform: translateY(-2px);
-    }
-
-    .social-pill svg { width: 16px; height: 16px; }
-
-    .footer-note {
-      text-align: center;
-      padding: 32px 24px;
-      background: var(--bg-dark);
-      font-size: 13px;
-      color: rgba(255,255,255,0.25);
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
-
-    /* ═══ DIVIDER ═══ */
-    .divider {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      height: 1px;
-      background: var(--border);
-    }
-
-    /* ═══ FADE IN ═══ */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .fade-up.vis { opacity: 1; transform: none; }
-
-    /* ═══ RESPONSIVE ═══ */
-    @media (max-width: 768px) {
-      .hero { padding: 120px 16px 60px; }
-      section { padding: 60px 16px; }
-      .nav-links a { font-size: 13px; padding: 6px 10px; }
-      .hero-actions { flex-direction: column; }
-      .btn { justify-content: center; }
-      .bento { gap: 12px; }
-      .connect-section { border-radius: 0; }
-    }
-
-    @media (max-width: 480px) {
-      .nav-links { display: none; }
-    }
+    .nav-brand { font-family: var(--font-display); font-weight: 700; font-size: 20px; letter-spacing: -0.04em; }
+    .nav-links { display: flex; gap: 8px; }
+    .nav-links a { padding: 8px 16px; font-size: 13px; color: var(--text-sec); border-radius: 20px; transition: 0.3s; }
+    .nav-links a:hover, .nav-links a.active { color: #fff; background: rgba(255,255,255,0.05); }
+    
+    /* HERO */
+    .hero { padding: 180px 40px 100px; max-width: var(--max-w); margin: 0 auto; }
+    .eyebrow { font-family: var(--font-mono); font-size: 12px; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px; display: inline-block; border: 1px solid var(--border); padding: 6px 12px; border-radius: 4px; }
+    .hero h1 { font-family: var(--font-display); font-size: clamp(48px, 8vw, 84px); font-weight: 700; line-height: 1; letter-spacing: -0.04em; margin-bottom: 32px; }
+    .hero h1 span { color: var(--accent); }
+    .hero-desc { font-size: 18px; color: var(--text-sec); max-width: 600px; margin-bottom: 40px; font-weight: 300; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-outline { padding: 12px 24px; border: 1px solid var(--border); border-radius: 4px; font-size: 14px; font-family: var(--font-mono); transition: 0.3s; background: rgba(255,255,255,0.02); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+    
+    /* SECTIONS */
+    section { padding: 100px 40px; max-width: var(--max-w); margin: 0 auto; }
+    .sec-num { font-family: var(--font-mono); font-size: 14px; color: var(--accent); margin-bottom: 12px; }
+    .sec-title { font-family: var(--font-display); font-size: 36px; margin-bottom: 16px; font-weight: 600; letter-spacing: -0.02em; }
+    .sec-desc { color: var(--text-sec); max-width: 500px; margin-bottom: 60px; }
+    
+    /* INFOGRAPHIC BENTO */
+    .bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; }
+    .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 32px; transition: 0.4s; position: relative; overflow: hidden; }
+    .card:hover { border-color: var(--border-hover); background: var(--bg-card-hover); transform: translateY(-4px); box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+    
+    .col-4 { grid-column: span 4; }
+    .col-6 { grid-column: span 6; }
+    .col-8 { grid-column: span 8; }
+    .col-12 { grid-column: span 12; }
+    
+    @media (max-width: 900px) { .col-4, .col-6, .col-8 { grid-column: span 12; } }
+    
+    .card-label { font-family: var(--font-mono); font-size: 11px; color: var(--text-sec); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .card h3 { font-family: var(--font-display); font-size: 20px; margin-bottom: 12px; }
+    .card p { color: var(--text-sec); font-size: 14px; line-height: 1.7; }
+    
+    /* INFOGRAPHIC ELEMENTS */
+    .stat-huge { font-family: var(--font-display); font-size: 64px; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 8px; }
+    .stat-label { font-family: var(--font-mono); color: var(--text-sec); font-size: 13px; text-transform: uppercase; }
+    
+    .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 24px; }
+    .tag { font-family: var(--font-mono); font-size: 11px; padding: 6px 12px; border: 1px solid var(--border); border-radius: 4px; background: rgba(255,255,255,0.03); color: #ccc; }
+    .tag.highlight { color: var(--accent); border-color: rgba(255,85,0,0.3); background: rgba(255,85,0,0.05); }
+    
+    .blog-row { display: flex; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--border); transition: 0.3s; align-items: baseline; }
+    .blog-row:hover { padding-left: 10px; border-bottom-color: var(--accent); }
+    .blog-row .num { font-family: var(--font-mono); color: var(--accent); font-size: 12px; }
+    .blog-row h4 { font-size: 16px; font-weight: 500; }
+    .blog-row .meta { font-size: 12px; color: var(--text-sec); margin-top: 4px; font-family: var(--font-mono); }
+    
+    /* DIAGRAM CSS */
+    .diagram { display: flex; gap: 10px; align-items: center; margin-top: 20px; flex-wrap: wrap; }
+    .node { padding: 8px 16px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: 4px; font-family: var(--font-mono); font-size: 11px; }
+    .arrow { color: var(--accent); }
+    
   </style>
 </head>
 <body>
 
-  <!-- ═══ NAV ═══ -->
-  <div class="nav-wrap" id="navWrap">
-    <nav>
-      <a href="#" class="nav-brand">Ujjwal Basnet</a>
-      <div class="nav-links">
-        <a href="#engineering" class="active">Engineering</a>
-        <a href="#automation">Automation</a>
-        <a href="#films">Films</a>
-        <a href="#books">Books</a>
-        <a href="#connect">Connect</a>
-      </div>
-    </nav>
-  </div>
+  <nav>
+    <div class="nav-brand">UB.</div>
+    <div class="nav-links">
+      <a href="#engineering">Engineering</a>
+      <a href="#automation">Automation</a>
+      <a href="#films">Films</a>
+      <a href="#books">Resources</a>
+    </div>
+  </nav>
 
-  <!-- ═══ HERO ═══ -->
   <header class="hero">
-    <div class="hero-eyebrow"><div class="pulse"></div>Available for collaborations</div>
-    <h1>AI Engineer, <span class="highlight">LLMs</span>, <br>and AI Director.</h1>
+    <div class="eyebrow">Available for collaborations</div>
+    <h1>AI Engineer, <br><span>LLMs</span>, & Director.</h1>
     <p class="hero-desc">
       Specializing in LLMs and small models, media pipelines, and multi-agent systems. Grinding 6–12 hours daily building production tools and directing AI-generated films.
     </p>
-    <div class="hero-actions" style="margin-top:20px;">
-      <a href="https://github.com/ujjwal-basnet" target="_blank" rel="noopener" class="btn btn-outline" style="padding:10px 16px;">GitHub</a>
-      <a href="https://www.linkedin.com/in/ujjwal-basnet/" target="_blank" rel="noopener" class="btn btn-outline" style="padding:10px 16px;">LinkedIn</a>
-      <a href="https://x.com/ujjwal_ai" target="_blank" rel="noopener" class="btn btn-outline" style="padding:10px 16px;">Twitter</a>
-      <a href="https://www.facebook.com/ujjwal.aiii" target="_blank" rel="noopener" class="btn btn-outline" style="padding:10px 16px;">Facebook</a>
-      <a href="https://ujjwal327667.substack.com/" target="_blank" rel="noopener" class="btn btn-outline" style="padding:10px 16px;">Substack</a>
-      <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="btn btn-outline" style="padding:10px 16px;">Medium</a>
+    <div class="hero-actions">
+      <a href="https://github.com/ujjwal-basnet" target="_blank" class="btn-outline">GitHub</a>
+      <a href="https://www.linkedin.com/in/ujjwal-basnet/" target="_blank" class="btn-outline">LinkedIn</a>
+      <a href="https://x.com/ujjwal_ai" target="_blank" class="btn-outline">Twitter</a>
+      <a href="https://www.facebook.com/ujjwal.aiii" target="_blank" class="btn-outline">Facebook</a>
+      <a href="https://ujjwal327667.substack.com/" target="_blank" class="btn-outline">Substack</a>
+      <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" class="btn-outline">Medium</a>
     </div>
   </header>
 
-  <div class="divider"></div>
-
-  <!-- ═══ AI ENGINEERING ═══ -->
   <section id="engineering">
-    <div class="container fade-up">
-      <div class="section-label">01 — Engineering</div>
-      <h2 class="section-title">AI Engineering</h2>
-      <p class="section-desc">Open-source multi-agent systems, RAG pipelines, and deep learning projects — with technical blogs.</p>
+    <div class="sec-num">01</div>
+    <h2 class="sec-title">AI Engineering</h2>
+    <p class="sec-desc">Open-source multi-agent systems, RAG pipelines, and deep learning projects.</p>
 
-      <div class="bento">
-        <!-- Featured Project (wide) -->
-        <a href="https://github.com/ujjwal-basnet/csv-Ai" target="_blank" rel="noopener" class="bento-item bento-wide">
-          <div class="bento-label">Featured Project</div>
-          <h3>csv-Ai</h3>
-          <p>Multi-agent data science orchestrator. A Coordinator dispatches tasks to specialized agents — Context Engineer, EDA Agent, self-correcting Error Solver — for end-to-end automated analysis.</p>
-          <div class="tags">
-            <span class="tag tag-blue">LangGraph</span>
-            <span class="tag tag-purple">Multi-Agent</span>
-            <span class="tag tag-default">Python</span>
-          </div>
-          <span class="arrow-link">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-        </a>
-
-        <!-- Stats card (narrow) -->
-        <div class="bento-item bento-narrow" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:var(--bg-warm);">
-          <div style="font-family:var(--font-heading);font-size:42px;font-weight:700;letter-spacing:-0.04em;color:var(--accent);">20+</div>
-          <div style="font-size:13px;color:var(--text-secondary);margin-top:4px;">Repos on GitHub</div>
-          <div style="width:40px;height:1px;background:var(--border);margin:16px 0;"></div>
-          <div style="font-family:var(--font-heading);font-size:42px;font-weight:700;letter-spacing:-0.04em;color:var(--text);">7</div>
-          <div style="font-size:13px;color:var(--text-secondary);margin-top:4px;">Technical Blogs</div>
+    <div class="bento">
+      <a href="https://github.com/ujjwal-basnet/csv-Ai" target="_blank" class="card col-8">
+        <div class="card-label">Core Architecture</div>
+        <h3>csv-Ai Multi-Agent Orchestrator</h3>
+        <p>A Coordinator dispatches tasks to specialized agents — Context Engineer, EDA Agent, self-correcting Error Solver — for end-to-end automated analysis.</p>
+        
+        <div class="diagram">
+          <div class="node">User Input</div>
+          <div class="arrow">→</div>
+          <div class="node" style="border-color: var(--accent)">Coordinator Agent</div>
+          <div class="arrow">→</div>
+          <div class="node">EDA Agent</div>
+          <div class="arrow">↻</div>
+          <div class="node">Error Solver</div>
         </div>
+        
+        <div class="tags">
+          <span class="tag highlight">LangGraph</span>
+          <span class="tag">Python</span>
+          <span class="tag">Multi-Agent</span>
+        </div>
+      </a>
 
-        <!-- Other projects (thirds) -->
-        <a href="https://github.com/ujjwal-basnet/battle_tested_agent_codes" target="_blank" rel="noopener" class="bento-item bento-third">
-          <div class="bento-label">Agents</div>
-          <h3>battle_tested_agent_codes</h3>
-          <p>Production LangGraph workflows with custom tool nodes, conditional routing, and persistent state.</p>
-          <div class="tags">
-            <span class="tag tag-blue">LangGraph</span>
-            <span class="tag tag-default">Production</span>
-          </div>
-          <span class="arrow-link">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-        </a>
+      <div class="card col-4" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+        <div class="stat-huge">20+</div>
+        <div class="stat-label">Production Repos</div>
+        <div style="height:40px;"></div>
+        <div class="stat-huge" style="color:#fff;">7</div>
+        <div class="stat-label">Technical Articles</div>
+      </div>
 
-        <a href="https://github.com/ujjwal-basnet/Enterprise_Rag" target="_blank" rel="noopener" class="bento-item bento-third">
-          <div class="bento-label">RAG</div>
-          <h3>Enterprise RAG</h3>
-          <p>Enterprise-grade retrieval pipeline with document chunking, sync hooks, and retrieval evaluation.</p>
-          <div class="tags">
-            <span class="tag tag-green">LangChain</span>
-            <span class="tag tag-default">Vector DB</span>
-          </div>
-          <span class="arrow-link">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-        </a>
+      <a href="https://github.com/ujjwal-basnet/battle_tested_agent_codes" target="_blank" class="card col-4">
+        <div class="card-label">Agents</div>
+        <h3>Battle Tested Codes</h3>
+        <p>Production LangGraph workflows with custom tool nodes, conditional routing, and persistent state checkpoints.</p>
+        <div class="tags"><span class="tag highlight">LangGraph</span></div>
+      </a>
 
-        <a href="https://github.com/ujjwal-basnet/mlops-mini-project" target="_blank" rel="noopener" class="bento-item bento-third">
-          <div class="bento-label">MLOps</div>
-          <h3>MLOps Pipeline</h3>
-          <p>End-to-end MLOps with MLflow experiment tracking, DagsHub, model staging & promotion.</p>
-          <div class="tags">
-            <span class="tag tag-purple">MLflow</span>
-            <span class="tag tag-default">DagsHub</span>
-          </div>
-          <span class="arrow-link">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-        </a>
+      <a href="https://github.com/ujjwal-basnet/Enterprise_Rag" target="_blank" class="card col-4">
+        <div class="card-label">RAG</div>
+        <h3>Enterprise RAG</h3>
+        <p>Enterprise-grade retrieval pipeline with document chunking, sync hooks, and retrieval evaluation.</p>
+        <div class="tags"><span class="tag">Vector DB</span></div>
+      </a>
 
-        <!-- Blog list (full width) -->
-        <div class="bento-item bento-full" style="background:var(--bg-warm);">
-          <div class="bento-label">Technical Writing · Medium</div>
-          <div class="blog-list">
-            <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="blog-row">
-              <span class="blog-num">01</span>
-              <div><h4>DBSCAN: A Beginner's Guide to Clustering Beyond K-means</h4><div class="meta">Pinned · Feb 2024</div></div>
-            </a>
-            <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="blog-row">
-              <span class="blog-num">02</span>
-              <div><h4>Activation Functions: From Sigmoid to Swish</h4><div class="meta">Deep Learning Foundations</div></div>
-            </a>
-            <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="blog-row">
-              <span class="blog-num">03</span>
-              <div><h4>The Normal Equation: Solving Linear Regression Analytically</h4><div class="meta">Math for ML</div></div>
-            </a>
-            <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="blog-row">
-              <span class="blog-num">04</span>
-              <div><h4>Custom PyTorch LSTM Sentence Encoders from Scratch</h4><div class="meta">Deep Learning</div></div>
-            </a>
-            <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="blog-row">
-              <span class="blog-num">05</span>
-              <div><h4>SD-Turbo Latent Tensor Denoising: Step-by-Step Inspection</h4><div class="meta">Diffusion Models</div></div>
-            </a>
-          </div>
-          <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="arrow-link" style="margin-top:20px;">All articles on Medium <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="https://github.com/ujjwal-basnet/mlops-mini-project" target="_blank" class="card col-4">
+        <div class="card-label">MLOps</div>
+        <h3>MLOps Pipeline</h3>
+        <p>End-to-end MLOps with MLflow experiment tracking, DagsHub, model staging & promotion.</p>
+        <div class="tags"><span class="tag">MLflow</span></div>
+      </a>
+
+      <div class="card col-12" style="background: rgba(255,255,255,0.01);">
+        <div class="card-label">Medium Publications</div>
+        <div class="blog-row">
+          <span class="num">01</span>
+          <div><h4>DBSCAN: A Beginner's Guide to Clustering Beyond K-means</h4><div class="meta">Pinned · Feb 2024</div></div>
+        </div>
+        <div class="blog-row">
+          <span class="num">02</span>
+          <div><h4>Activation Functions: From Sigmoid to Swish</h4><div class="meta">Deep Learning Foundations</div></div>
+        </div>
+        <div class="blog-row">
+          <span class="num">03</span>
+          <div><h4>Custom PyTorch LSTM Sentence Encoders from Scratch</h4><div class="meta">Deep Learning</div></div>
+        </div>
+        <div class="blog-row">
+          <span class="num">04</span>
+          <div><h4>SD-Turbo Latent Tensor Denoising: Step-by-Step Inspection</h4><div class="meta">Diffusion Models</div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- ═══ AI AUTOMATION ═══ -->
   <section id="automation">
-    <div class="container fade-up">
-      <div class="section-label">02 — Automation</div>
-      <h2 class="section-title">AI Automation</h2>
-      <p class="section-desc">Production-grade workflows spanning custom data pipelines, agent frameworks, and advanced media generation.</p>
+    <div class="sec-num">02</div>
+    <h2 class="sec-title">Automation & Workflows</h2>
+    <p class="sec-desc">Production-grade workflows spanning custom data pipelines, agent frameworks, and advanced media generation.</p>
 
-      <div class="bento">
-        <div class="bento-item bento-half" style="display:flex;flex-direction:column;justify-content:space-between;">
-          <div>
-            <div class="bento-label">Orchestration</div>
-            <h3>Python & LangGraph</h3>
-            <p>Building reliable AI Agent frameworks capable of complex decision making. Leveraging Python to orchestrate robust workflows with memory, tool calling, and human-in-the-loop checks.</p>
-          </div>
-          <div class="tags" style="margin-top:24px;">
-            <span class="tag tag-accent">Python</span>
-            <span class="tag tag-blue">LangGraph</span>
-            <span class="tag tag-default">AI Agents Framework</span>
-          </div>
+    <div class="bento">
+      <div class="card col-6">
+        <div class="card-label">Orchestration</div>
+        <h3>Python & LangGraph</h3>
+        <p>Building reliable AI Agent frameworks capable of complex decision making. Leveraging Python to orchestrate robust workflows with memory, tool calling, and human-in-the-loop checks.</p>
+        
+        <div class="tags">
+          <span class="tag highlight">Python</span>
+          <span class="tag highlight">LangGraph</span>
+          <span class="tag">AI Agents</span>
         </div>
+      </div>
 
-        <div class="bento-item bento-half" style="background:var(--bg-warm);display:flex;flex-direction:column;justify-content:space-between;">
-          <div>
-            <div class="bento-label">Creative Workflows</div>
-            <h3>Video Automations</h3>
-            <p style="max-width:700px;">Developing state-of-the-art media pipelines using ComfyUI, Omni Flash, and Claude Code to generate hyper-realistic films and automated UGC ads at scale.</p>
-          </div>
-          <div class="tags" style="margin-top:24px;">
-            <span class="tag tag-purple">Video Automation</span>
-            <span class="tag tag-green">ComfyUI</span>
-            <span class="tag tag-default">Media Pipeline</span>
-          </div>
+      <div class="card col-6">
+        <div class="card-label">Creative Workflows</div>
+        <h3>Video Automations</h3>
+        <p>Developing state-of-the-art media pipelines using ComfyUI, Omni Flash, and Claude Code to generate hyper-realistic films and automated UGC ads at scale.</p>
+        
+        <div class="tags">
+          <span class="tag highlight">ComfyUI</span>
+          <span class="tag">Media Pipeline</span>
+          <span class="tag">Omni Flash</span>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- ═══ AI FILMS ═══ -->
   <section id="films">
-    <div class="container fade-up">
-      <div class="section-label">03 — Creative</div>
-      <h2 class="section-title">AI Director</h2>
-      <p class="section-desc">AI-generated films, hyper-realistic ads, and creative workflows with ComfyUI and diffusion pipelines.</p>
-
-      <div class="bento">
-        <a href="https://www.facebook.com/share/v/18yFJ47Rh9/" target="_blank" rel="noopener" class="film-card bento-third">
-          <div class="film-poster">
-            <div class="film-poster-bg poster-1"></div>
-            <div class="play-icon"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-          </div>
-          <div class="film-body">
-            <h3>Balen vs Super Villain</h3>
-            <p>2-part AI action film with CGI characters and custom voice synthesis.</p>
-          </div>
-        </a>
-
-        <div class="film-card bento-third">
-          <div class="film-poster">
-            <div class="film-poster-bg poster-2"></div>
-            <div class="play-icon"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-          </div>
-          <div class="film-body">
-            <h3>JCB Man vs Stone Man</h3>
-            <p>3-part CGI series with consistent character identity across scenes.</p>
-          </div>
+    <div class="sec-num">03</div>
+    <h2 class="sec-title">AI Director</h2>
+    <p class="sec-desc">AI-generated films, hyper-realistic ads, and creative workflows with ComfyUI and diffusion pipelines.</p>
+    
+    <div class="bento">
+      <a href="https://www.facebook.com/share/v/18yFJ47Rh9/" target="_blank" class="card col-4" style="padding:0;">
+        <div style="height:180px; background:linear-gradient(45deg, #222, #111); display:flex; align-items:center; justify-content:center;">
+          <div style="width:48px; height:48px; border-radius:50%; border:1px solid #fff; display:flex; align-items:center; justify-content:center;">▶</div>
         </div>
-
-        <div class="film-card bento-third">
-          <div class="film-poster">
-            <div class="film-poster-bg poster-3"></div>
-            <div class="play-icon"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-          </div>
-          <div class="film-body">
-            <h3>UGC Ads Formula</h3>
-            <p>Omni Flash + Claude Code + TikTok — hyper-realistic testimonial ads.</p>
-          </div>
+        <div style="padding:24px;">
+          <h3>Balen vs Super Villain</h3>
+          <p>2-part AI action film with CGI characters and custom voice synthesis.</p>
+        </div>
+      </a>
+      
+      <div class="card col-4" style="padding:0;">
+        <div style="height:180px; background:linear-gradient(45deg, #1a1a2e, #111); display:flex; align-items:center; justify-content:center;">
+          <div style="width:48px; height:48px; border-radius:50%; border:1px solid #fff; display:flex; align-items:center; justify-content:center;">▶</div>
+        </div>
+        <div style="padding:24px;">
+          <h3>JCB Man vs Stone Man</h3>
+          <p>3-part CGI series with consistent character identity across scenes.</p>
+        </div>
+      </div>
+      
+      <div class="card col-4" style="padding:0;">
+        <div style="height:180px; background:linear-gradient(45deg, #3d1c00, #111); display:flex; align-items:center; justify-content:center;">
+          <div style="width:48px; height:48px; border-radius:50%; border:1px solid #fff; display:flex; align-items:center; justify-content:center;">▶</div>
+        </div>
+        <div style="padding:24px;">
+          <h3>UGC Ads Formula</h3>
+          <p>Omni Flash + Claude Code + TikTok — hyper-realistic testimonial ads.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- ═══ BOOKS ═══ -->
   <section id="books">
-    <div class="container fade-up">
-      <div class="section-label">04 — Resources</div>
-      <h2 class="section-title">Books & Reading</h2>
-      <p class="section-desc">Technical books and resources I have studied and keep code/notes for on my GitHub.</p>
+    <div class="sec-num">04</div>
+    <h2 class="sec-title">Resources & Reading</h2>
+    <p class="sec-desc">Technical books and resources I have studied and keep code/notes for on my GitHub.</p>
 
-      <div class="bento">
-        <a href="https://github.com/ujjwal-basnet/Deep-learning-by-Daniel-Voigt-Godoy-" target="_blank" rel="noopener" class="essay-card bento-third">
-          <div class="essay-source">GitHub Repo</div>
-          <h3>Deep Learning with PyTorch Step-by-Step</h3>
-          <p>Notes and implementation from Daniel Voigt Godoy's deep learning masterpiece.</p>
-        </a>
-
-        <a href="https://github.com/ujjwal-basnet/Building-LLMs-for-Production" target="_blank" rel="noopener" class="essay-card bento-third">
-          <div class="essay-source">GitHub Repo</div>
-          <h3>Building LLMs for Production</h3>
-          <p>Practical resources for taking Large Language Models from experiment to production.</p>
-        </a>
-
-        <a href="https://github.com/ujjwal-basnet/Fine-Tuning-Large-Language-Models-with-PyTorch-and-Hugging-Face" target="_blank" rel="noopener" class="essay-card bento-third">
-          <div class="essay-source">GitHub Repo</div>
-          <h3>Fine-Tuning Large Language Models</h3>
-          <p>Code for fine-tuning LLMs with PyTorch and Hugging Face infrastructure.</p>
-        </a>
-      </div>
+    <div class="bento">
+      <a href="https://github.com/ujjwal-basnet/Deep-learning-by-Daniel-Voigt-Godoy-" target="_blank" class="card col-4">
+        <div class="card-label">GitHub Repo</div>
+        <h3>Deep Learning with PyTorch</h3>
+        <p>Notes and implementation from Daniel Voigt Godoy's step-by-step deep learning masterpiece.</p>
+      </a>
+      <a href="https://github.com/ujjwal-basnet/Building-LLMs-for-Production" target="_blank" class="card col-4">
+        <div class="card-label">GitHub Repo</div>
+        <h3>Building LLMs for Production</h3>
+        <p>Practical resources for taking Large Language Models from experiment to production.</p>
+      </a>
+      <a href="https://github.com/ujjwal-basnet/Fine-Tuning-Large-Language-Models-with-PyTorch-and-Hugging-Face" target="_blank" class="card col-4">
+        <div class="card-label">GitHub Repo</div>
+        <h3>Fine-Tuning LLMs</h3>
+        <p>Code for fine-tuning LLMs with PyTorch and Hugging Face infrastructure.</p>
+      </a>
     </div>
   </section>
 
-  <!-- ═══ CONNECT ═══ -->
-  <section class="connect-section" id="connect">
-    <div class="container" style="text-align:center;">
-      <div class="section-label">Let's talk</div>
-      <h2 class="section-title">Connect</h2>
-      <p class="section-desc" style="margin:0 auto 40px;">Find me on any of these — or just send an email.</p>
-      <div class="social-grid" style="justify-content:center;">
-        <a href="https://github.com/ujjwal-basnet" target="_blank" rel="noopener" class="social-pill">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/ujjwal-basnet/" target="_blank" rel="noopener" class="social-pill">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          LinkedIn
-        </a>
-        <a href="https://x.com/ujjwal_ai" target="_blank" rel="noopener" class="social-pill">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          Twitter
-        </a>
-        <a href="https://www.instagram.com/ujjwal.aii/" target="_blank" rel="noopener" class="social-pill">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-          Instagram
-        </a>
-        <a href="https://www.facebook.com/ujjwal.aiii" target="_blank" rel="noopener" class="social-pill">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          Facebook
-        </a>
-        <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="social-pill">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
-          Medium
-        </a>
-        <a href="https://ujjwal327667.substack.com/" target="_blank" rel="noopener" class="social-pill">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
-          Substack
-        </a>
-        <a href="mailto:ujjwalvictus15@gmail.com" class="social-pill">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          Email
-        </a>
-      </div>
-    </div>
-  </section>
-  <div class="footer-note">© 2025 Ujjwal Basnet · Built with code, not templates.</div>
-
-  <script>
-    // Nav scroll effect
-    const navWrap = document.getElementById('navWrap');
-    window.addEventListener('scroll', () => {
-      navWrap.classList.toggle('scrolled', window.scrollY > 40);
-    });
-
-    // Intersection Observer for fade-in
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
-
-    // Active nav tracking
-    const secs = document.querySelectorAll('section[id]');
-    const links = document.querySelectorAll('.nav-links a[href^="#"]');
-    window.addEventListener('scroll', () => {
-      let cur = '';
-      secs.forEach(s => { if (scrollY >= s.offsetTop - 200) cur = s.id; });
-      links.forEach(l => {
-        l.classList.toggle('active', l.getAttribute('href') === '#' + cur);
-      });
-    });
-
-
-  </script>
+  <footer style="text-align:center; padding:40px; color:var(--text-sec); font-family:var(--font-mono); font-size:12px; border-top:1px solid var(--border);">
+    © 2026 Ujjwal Basnet. Built with code.
+  </footer>
 </body>
 </html>
