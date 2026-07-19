@@ -1,440 +1,1048 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ujjwal Basnet — AI Engineer, Director & Writer</title>
+  <meta name="description" content="Ujjwal Basnet builds multi-agent AI systems, directs AI-generated films, and writes technical deep-dives on machine learning.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* ═══════════════════════════════════════════════════
+       DESIGN SYSTEM — Inspired by Vercel, Linear, Raycast
+       ═══════════════════════════════════════════════════ */
+    :root {
+      --bg: #09090b;
+      --bg-elevated: #111113;
+      --bg-card: #18181b;
+      --bg-card-hover: #1e1e22;
+      --border: rgba(255,255,255,0.06);
+      --border-hover: rgba(255,255,255,0.12);
+      --text-primary: #fafafa;
+      --text-secondary: #a1a1aa;
+      --text-tertiary: #71717a;
+      --accent: #22d3ee;
+      --accent-dim: rgba(34,211,238,0.1);
+      --accent-violet: #a78bfa;
+      --accent-violet-dim: rgba(167,139,250,0.1);
+      --accent-amber: #fbbf24;
+      --accent-amber-dim: rgba(251,191,36,0.1);
+      --accent-emerald: #34d399;
+      --accent-emerald-dim: rgba(52,211,153,0.1);
+      --radius: 12px;
+      --radius-sm: 8px;
+      --radius-full: 9999px;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+      --max-w: 1080px;
+      --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Ujjwal Basnet - Portfolio</title>
-<!-- Material Symbols -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "on-surface-variant": "#b9cacb",
-                        "secondary-fixed-dim": "#ddb7ff",
-                        "surface-bright": "#333b3b",
-                        "on-tertiary-container": "#725e00",
-                        "outline-variant": "#3a494b",
-                        "primary-fixed-dim": "#00dce6",
-                        "error": "#ffb4ab",
-                        "tertiary": "#fff6e4",
-                        "surface-container-lowest": "#081010",
-                        "on-tertiary-fixed-variant": "#554500",
-                        "surface-container-high": "#232b2c",
-                        "on-secondary-fixed": "#2c0051",
-                        "surface-container-highest": "#2e3637",
-                        "on-primary": "#00373a",
-                        "on-secondary-container": "#d6a9ff",
-                        "inverse-primary": "#00696f",
-                        "on-background": "#dce4e4",
-                        "on-primary-fixed-variant": "#004f53",
-                        "on-secondary-fixed-variant": "#6900b3",
-                        "primary-fixed": "#6ff6ff",
-                        "on-surface": "#dce4e4",
-                        "tertiary-container": "#fed83a",
-                        "inverse-on-surface": "#2a3232",
-                        "primary-container": "#00f2fe",
-                        "on-secondary": "#490080",
-                        "tertiary-fixed": "#ffe173",
-                        "on-tertiary-fixed": "#221b00",
-                        "inverse-surface": "#dce4e4",
-                        "on-error": "#690005",
-                        "on-primary-fixed": "#002022",
-                        "surface-tint": "#00dce6",
-                        "secondary-fixed": "#f0dbff",
-                        "secondary": "#ddb7ff",
-                        "error-container": "#93000a",
-                        "surface": "#0d1515",
-                        "on-tertiary": "#3b2f00",
-                        "surface-container-low": "#151d1e",
-                        "surface-dim": "#0d1515",
-                        "primary": "#e0fdff",
-                        "outline": "#849495",
-                        "surface-container": "#192122",
-                        "on-error-container": "#ffdad6",
-                        "secondary-container": "#6f00be",
-                        "tertiary-fixed-dim": "#e8c423",
-                        "on-primary-container": "#006a70",
-                        "background": "#0d1515",
-                        "surface-variant": "#2e3637"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "stack-lg": "32px",
-                        "container-max": "1200px",
-                        "section-padding": "120px",
-                        "stack-md": "16px",
-                        "gutter": "24px",
-                        "stack-sm": "8px"
-                    },
-                    "fontFamily": {
-                        "headline-md": ["Plus Jakarta Sans"],
-                        "display": ["Plus Jakarta Sans"],
-                        "code-sm": ["JetBrains Mono"],
-                        "headline-lg": ["Plus Jakarta Sans"],
-                        "body-md": ["Plus Jakarta Sans"],
-                        "label-caps": ["JetBrains Mono"],
-                        "body-lg": ["Plus Jakarta Sans"],
-                        "headline-lg-mobile": ["Plus Jakarta Sans"]
-                    },
-                    "fontSize": {
-                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
-                        "display": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700" }],
-                        "code-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
-                        "headline-lg": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
-                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
-                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600" }],
-                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
-                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }]
-                    }
-                }
-            }
-        }
-    </script>
-<style>
-        body {
-            background-color: #07080a;
-            color: #dce4e4;
-        }
-        .card-surface {
-            background-color: #0d0e11;
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 12px;
-        }
-        .bento-hover:hover {
-            border-color: rgba(0, 220, 230, 0.5); /* Cyan glow */
-            box-shadow: 0 0 15px rgba(0, 220, 230, 0.1);
-            transition: all 0.3s ease;
-        }
-        .violet-hover:hover {
-            border-color: rgba(221, 183, 255, 0.5); /* Violet glow */
-            box-shadow: 0 0 15px rgba(221, 183, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        /* Custom Scrollbar for Terminal */
-        .terminal-scroll::-webkit-scrollbar {
-            width: 6px;
-        }
-        .terminal-scroll::-webkit-scrollbar-track {
-            background: #081010;
-        }
-        .terminal-scroll::-webkit-scrollbar-thumb {
-            background: #3a494b;
-            border-radius: 4px;
-        }
-    </style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    
+    ::selection { background: var(--accent); color: var(--bg); }
+
+    /* ═══ NAVIGATION ═══ */
+    nav {
+      position: fixed;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      background: rgba(9,9,11,0.7);
+      backdrop-filter: blur(20px) saturate(1.8);
+      -webkit-backdrop-filter: blur(20px) saturate(1.8);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-full);
+      padding: 6px 8px;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    nav a {
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      border-radius: var(--radius-full);
+      transition: all var(--transition);
+      letter-spacing: -0.01em;
+    }
+
+    nav a:hover { color: var(--text-primary); background: rgba(255,255,255,0.06); }
+    nav a.active { color: var(--text-primary); background: rgba(255,255,255,0.08); }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--text-primary);
+      padding: 8px 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-logo span { color: var(--accent); }
+
+    /* ═══ SECTIONS ═══ */
+    section { padding: 100px 24px 60px; }
+    
+    .container { max-width: var(--max-w); margin: 0 auto; }
+
+    /* ═══ HERO ═══ */
+    .hero { 
+      padding-top: 160px; 
+      padding-bottom: 80px;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 400px;
+      background: radial-gradient(ellipse, rgba(34,211,238,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: var(--accent-dim);
+      border: 1px solid rgba(34,211,238,0.15);
+      border-radius: var(--radius-full);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--accent);
+      font-family: var(--font-mono);
+      margin-bottom: 32px;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-badge .dot {
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 6vw, 64px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      margin-bottom: 20px;
+      background: linear-gradient(to bottom, #fafafa 30%, #71717a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      color: var(--text-secondary);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .hero-subtitle strong { color: var(--text-primary); font-weight: 500; }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 20px;
+      font-size: 13px;
+      font-weight: 500;
+      border-radius: var(--radius-full);
+      transition: all var(--transition);
+    }
+
+    .btn-primary {
+      background: var(--text-primary);
+      color: var(--bg);
+    }
+    .btn-primary:hover { background: #d4d4d8; }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+    }
+    .btn-ghost:hover { border-color: var(--border-hover); color: var(--text-primary); }
+
+    /* ═══ SECTION HEADERS ═══ */
+    .section-header {
+      margin-bottom: 48px;
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+    }
+
+    .section-tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+    }
+
+    .tag-cyan { color: var(--accent); background: var(--accent-dim); }
+    .tag-violet { color: var(--accent-violet); background: var(--accent-violet-dim); }
+    .tag-amber { color: var(--accent-amber); background: var(--accent-amber-dim); }
+    .tag-emerald { color: var(--accent-emerald); background: var(--accent-emerald-dim); }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .section-desc {
+      color: var(--text-secondary);
+      font-size: 15px;
+      max-width: 600px;
+      margin-top: 12px;
+      line-height: 1.6;
+    }
+
+    /* ═══ CARD GRID ═══ */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      border-color: var(--border-hover);
+      background: var(--bg-card-hover);
+      transform: translateY(-2px);
+    }
+
+    .card-icon {
+      width: 40px; height: 40px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 16px;
+    }
+
+    .chip {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: var(--radius-full);
+      background: rgba(255,255,255,0.04);
+      color: var(--text-tertiary);
+      border: 1px solid var(--border);
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent);
+      margin-top: 16px;
+      transition: gap var(--transition);
+    }
+
+    .card-link:hover { gap: 8px; }
+
+    .card-link svg { width: 14px; height: 14px; }
+
+    /* ═══ TWO-COLUMN LAYOUT ═══ */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .two-col { grid-template-columns: 1fr; }
+      .card-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ═══ BLOG LIST ═══ */
+    .blog-list { display: flex; flex-direction: column; }
+
+    .blog-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px;
+      border-bottom: 1px solid var(--border);
+      transition: background var(--transition);
+    }
+
+    .blog-item:first-child { border-top: 1px solid var(--border); }
+    
+    .blog-item:hover { background: var(--bg-card); }
+
+    .blog-num {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-tertiary);
+      min-width: 28px;
+      padding-top: 2px;
+    }
+
+    .blog-content h4 {
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
+    }
+
+    .blog-content span {
+      font-size: 13px;
+      color: var(--text-tertiary);
+    }
+
+    /* ═══ PROMPT VIEWER ═══ */
+    .prompt-viewer {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .prompt-tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      overflow-x: auto;
+    }
+
+    .prompt-tab {
+      padding: 12px 20px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-tertiary);
+      cursor: pointer;
+      border: none;
+      background: none;
+      white-space: nowrap;
+      transition: all var(--transition);
+      font-family: var(--font-sans);
+      position: relative;
+    }
+
+    .prompt-tab:hover { color: var(--text-secondary); }
+
+    .prompt-tab.active {
+      color: var(--text-primary);
+    }
+
+    .prompt-tab.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0; right: 0;
+      height: 1px;
+      background: var(--text-primary);
+    }
+
+    .prompt-body {
+      padding: 24px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      min-height: 200px;
+      position: relative;
+    }
+
+    .prompt-body .comment { color: var(--text-tertiary); }
+    .prompt-body .keyword { color: var(--accent); }
+    .prompt-body .string { color: var(--accent-emerald); }
+    .prompt-body .variable { color: var(--accent-violet); }
+
+    .copy-btn {
+      position: absolute;
+      top: 16px; right: 16px;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text-tertiary);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .copy-btn:hover { background: rgba(255,255,255,0.08); color: var(--text-primary); }
+
+    /* ═══ FILM CARDS ═══ */
+    .film-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: all var(--transition);
+    }
+
+    .film-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+    }
+
+    .film-poster {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, rgba(167,139,250,0.15), rgba(34,211,238,0.1));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .film-poster::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.05) 2px,
+        rgba(0,0,0,0.05) 4px
+      );
+    }
+
+    .play-btn {
+      width: 56px; height: 56px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(12px);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,0.2);
+      z-index: 1;
+      transition: all var(--transition);
+    }
+
+    .film-card:hover .play-btn { background: rgba(255,255,255,0.2); transform: scale(1.1); }
+
+    .play-btn svg { width: 20px; height: 20px; fill: white; margin-left: 3px; }
+
+    .film-info { padding: 20px; }
+    .film-info h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+    .film-info p { font-size: 13px; color: var(--text-tertiary); line-height: 1.5; }
+
+    /* ═══ ESSAY LIST ═══ */
+    .essay-card {
+      display: block;
+      padding: 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: all var(--transition);
+    }
+
+    .essay-card:hover {
+      border-color: var(--border-hover);
+      background: var(--bg-card-hover);
+      transform: translateY(-1px);
+    }
+
+    .essay-platform {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+    }
+
+    .essay-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; letter-spacing: -0.01em; }
+    .essay-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
+
+    /* ═══ FOOTER / CONNECT ═══ */
+    .footer {
+      padding: 80px 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-full);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: all var(--transition);
+    }
+
+    .social-link:hover {
+      border-color: var(--border-hover);
+      color: var(--text-primary);
+      background: var(--bg-card-hover);
+      transform: translateY(-1px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 48px;
+      font-size: 13px;
+      color: var(--text-tertiary);
+    }
+
+    /* ═══ SEPARATOR ═══ */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    /* ═══ FADE IN ANIMATION ═══ */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ═══ RESPONSIVE ═══ */
+    @media (max-width: 640px) {
+      nav { top: auto; bottom: 16px; }
+      .hero { padding-top: 100px; }
+      section { padding: 60px 16px 40px; }
+      .section-header { flex-direction: column; gap: 8px; }
+      .hero-links { flex-direction: column; }
+      .hero-links a { justify-content: center; }
+    }
+  </style>
 </head>
-<body class="antialiased min-h-screen flex flex-col relative overflow-x-hidden selection:bg-primary-fixed-dim selection:text-background">
-<!-- Navigation Shell -->
-<header class="fixed top-0 left-0 right-0 z-50 flex justify-center w-full mt-stack-md pointer-events-none">
-<div class="pointer-events-auto bg-surface/80 dark:bg-surface/80 backdrop-blur-xl rounded-full mx-auto max-w-fit px-stack-md py-3 border border-outline-variant/30 flex items-center gap-8">
-<div class="font-headline-md text-headline-md font-bold text-on-surface">UB.</div>
-<nav class="hidden md:flex items-center gap-6">
-<a class="font-body-md text-body-md text-primary-fixed-dim relative after:content-[''] after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-primary-fixed-dim after:rounded-full hover:text-primary-fixed-dim transition-transform duration-200 hover:scale-95" href="#about">About</a>
-<a class="font-body-md text-body-md text-on-surface-variant transition-colors duration-300 hover:text-primary-fixed-dim hover:scale-95" href="#engineering">Engineering</a>
-<a class="font-body-md text-body-md text-on-surface-variant transition-colors duration-300 hover:text-primary-fixed-dim hover:scale-95" href="#automation">Automation</a>
-<a class="font-body-md text-body-md text-on-surface-variant transition-colors duration-300 hover:text-primary-fixed-dim hover:scale-95" href="#films">Films</a>
-<a class="font-body-md text-body-md text-on-surface-variant transition-colors duration-300 hover:text-primary-fixed-dim hover:scale-95" href="#essays">Essays</a>
-<a class="font-body-md text-body-md text-on-surface-variant transition-colors duration-300 hover:text-primary-fixed-dim hover:scale-95" href="#contact">Contact</a>
-</nav>
-</div>
-</header>
-<main class="flex-grow flex flex-col items-center w-full">
-<!-- Hero Section -->
-<section class="w-full max-w-container-max mx-auto px-gutter min-h-screen flex flex-col justify-center pt-32 pb-section-padding" id="about">
-<div class="grid grid-cols-12 gap-6 items-center">
-<div class="col-span-12 md:col-span-9">
-<h1 class="font-display text-display md:text-display text-on-surface mb-stack-md leading-tight">
-                        Ujjwal Basnet
-                    </h1>
-<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface-variant mb-stack-lg">
-                        AI Engineer / AI Film Director / Technical Writer
-                    </h2>
-<div class="flex flex-col md:flex-row gap-4 font-code-sm text-code-sm text-on-surface-variant">
-<div class="flex items-center gap-2 bg-surface-container py-2 px-4 rounded-full border border-outline-variant/30 w-fit">
-<span class="w-2 h-2 rounded-full bg-primary-fixed-dim shadow-[0_0_8px_rgba(0,220,230,0.8)]"></span>
-                            6-12h Daily AI Grind
-                        </div>
-<div class="flex items-center gap-2 bg-surface-container py-2 px-4 rounded-full border border-outline-variant/30 w-fit">
-<span class="material-symbols-outlined text-[16px] text-secondary-fixed-dim">terminal</span>
-                            Inspecting latent tensors, building multi-agent orchestrations, and writing critiques
-                        </div>
-</div>
-</div>
-</div>
-</section>
-<!-- AI Engineering Section -->
-<section class="w-full max-w-container-max mx-auto px-gutter py-section-padding" id="engineering">
-<div class="mb-stack-lg">
-<h3 class="font-label-caps text-label-caps text-primary-fixed-dim uppercase tracking-widest mb-2">01.</h3>
-<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">AI Engineering</h2>
-</div>
-<div class="grid grid-cols-12 gap-6">
-<!-- Left: Bento Grid (Projects) -->
-<div class="col-span-12 md:col-span-7 grid grid-cols-2 gap-4">
-<div class="card-surface p-6 bento-hover flex flex-col justify-between h-48 col-span-2 md:col-span-1">
-<div>
-<span class="material-symbols-outlined text-primary-fixed-dim mb-4 block">database</span>
-<h4 class="font-headline-md text-headline-md text-on-surface mb-2">csv-Ai</h4>
-</div>
-<p class="font-code-sm text-code-sm text-on-surface-variant">Multi-agent data orchestrator</p>
-</div>
-<div class="card-surface p-6 bento-hover flex flex-col justify-between h-48 col-span-2 md:col-span-1">
-<div>
-<span class="material-symbols-outlined text-primary-fixed-dim mb-4 block">account_tree</span>
-<h4 class="font-headline-md text-headline-md text-on-surface mb-2">battle_tested_agent_codes</h4>
-</div>
-<p class="font-code-sm text-code-sm text-on-surface-variant">LangGraph workflows</p>
-</div>
-<div class="card-surface p-6 bento-hover flex flex-col justify-between h-48 col-span-2 md:col-span-1">
-<div>
-<span class="material-symbols-outlined text-primary-fixed-dim mb-4 block">webhook</span>
-<h4 class="font-headline-md text-headline-md text-on-surface mb-2">Enterprise_Rag</h4>
-</div>
-<p class="font-code-sm text-code-sm text-on-surface-variant">Sync dev retro hooks</p>
-</div>
-<div class="card-surface p-6 bento-hover flex flex-col justify-between h-48 col-span-2 md:col-span-1">
-<div>
-<span class="material-symbols-outlined text-primary-fixed-dim mb-4 block">analytics</span>
-<h4 class="font-headline-md text-headline-md text-on-surface mb-2">mlops-mini-project</h4>
-</div>
-<p class="font-code-sm text-code-sm text-on-surface-variant">DagsHub/MLflow integration</p>
-</div>
-</div>
-<!-- Right: Medium Tutorials List -->
-<div class="col-span-12 md:col-span-5 flex flex-col gap-4">
-<div class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-2">Medium Tutorials</div>
-<a class="group card-surface p-4 flex items-center justify-between hover:bg-surface-container transition-colors border-l-4 border-l-transparent hover:border-l-primary-fixed-dim" href="#">
-<span class="font-body-md text-body-md text-on-surface group-hover:text-primary-fixed-dim transition-colors">DBSCAN: Beyond K-means</span>
-<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-fixed-dim">arrow_forward</span>
-</a>
-<a class="group card-surface p-4 flex items-center justify-between hover:bg-surface-container transition-colors border-l-4 border-l-transparent hover:border-l-primary-fixed-dim" href="#">
-<span class="font-body-md text-body-md text-on-surface group-hover:text-primary-fixed-dim transition-colors">Activation Functions</span>
-<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-fixed-dim">arrow_forward</span>
-</a>
-<a class="group card-surface p-4 flex items-center justify-between hover:bg-surface-container transition-colors border-l-4 border-l-transparent hover:border-l-primary-fixed-dim" href="#">
-<span class="font-body-md text-body-md text-on-surface group-hover:text-primary-fixed-dim transition-colors">Normal Equation</span>
-<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-fixed-dim">arrow_forward</span>
-</a>
-<a class="group card-surface p-4 flex items-center justify-between hover:bg-surface-container transition-colors border-l-4 border-l-transparent hover:border-l-primary-fixed-dim" href="#">
-<span class="font-body-md text-body-md text-on-surface group-hover:text-primary-fixed-dim transition-colors">Polynomial Regression</span>
-<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-fixed-dim">arrow_forward</span>
-</a>
-<a class="group card-surface p-4 flex items-center justify-between hover:bg-surface-container transition-colors border-l-4 border-l-transparent hover:border-l-primary-fixed-dim" href="#">
-<span class="font-body-md text-body-md text-on-surface group-hover:text-primary-fixed-dim transition-colors">That Bias Thing in Neural Nets</span>
-<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-fixed-dim">arrow_forward</span>
-</a>
-</div>
-</div>
-</section>
-<!-- AI Automation Section -->
-<section class="w-full max-w-container-max mx-auto px-gutter py-section-padding" id="automation">
-<div class="mb-stack-lg">
-<h3 class="font-label-caps text-label-caps text-primary-fixed-dim uppercase tracking-widest mb-2">02.</h3>
-<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">AI Automation</h2>
-</div>
-<div class="card-surface overflow-hidden">
-<!-- Terminal Header (Tabs) -->
-<div class="bg-surface-container-lowest border-b border-outline-variant/30 flex flex-wrap items-center px-4 py-2 gap-2">
-<button class="px-4 py-2 bg-surface-container rounded-t-md border-t border-l border-r border-outline-variant/50 font-code-sm text-code-sm text-primary-fixed-dim flex items-center gap-2">
-<span class="material-symbols-outlined text-[16px]">description</span>
-                        Morning_NEPSE.sh
-                    </button>
-<button class="px-4 py-2 hover:bg-surface-container/50 rounded-t-md font-code-sm text-code-sm text-on-surface-variant flex items-center gap-2 transition-colors">
-<span class="material-symbols-outlined text-[16px]">attach_money</span>
-                        Expense_Tracker.py
-                    </button>
-<button class="px-4 py-2 hover:bg-surface-container/50 rounded-t-md font-code-sm text-code-sm text-on-surface-variant flex items-center gap-2 transition-colors">
-<span class="material-symbols-outlined text-[16px]">gavel</span>
-                        Compliance.yml
-                    </button>
-<button class="px-4 py-2 hover:bg-surface-container/50 rounded-t-md font-code-sm text-code-sm text-on-surface-variant flex items-center gap-2 transition-colors">
-<span class="material-symbols-outlined text-[16px]">notes</span>
-                        Meeting_Notes.txt
-                    </button>
-<div class="ml-auto flex items-center gap-2">
-<span class="w-3 h-3 rounded-full bg-error/50"></span>
-<span class="w-3 h-3 rounded-full bg-tertiary-container/50"></span>
-<span class="w-3 h-3 rounded-full bg-primary-fixed-dim/50"></span>
-</div>
-</div>
-<!-- Terminal Body -->
-<div class="p-6 bg-[#0a0c0f] min-h-[300px] relative group">
-<button class="absolute top-4 right-4 bg-surface-container hover:bg-surface-bright text-on-surface font-code-sm text-code-sm py-1.5 px-3 rounded-md border border-outline-variant/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2 z-10">
-<span class="material-symbols-outlined text-[16px]">content_copy</span>
-                        Copy Prompt
-                    </button>
-<pre class="font-code-sm text-code-sm text-on-surface-variant whitespace-pre-wrap terminal-scroll h-full overflow-y-auto"><span class="text-secondary-fixed-dim">#!/bin/bash</span>
+<body>
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav>
+    <div class="nav-logo">UB<span>.</span></div>
+    <a href="#engineering" class="active">Engineering</a>
+    <a href="#automation">Automation</a>
+    <a href="#films">Films</a>
+    <a href="#essays">Essays</a>
+    <a href="#connect">Connect</a>
+  </nav>
 
-<span class="text-primary-fixed-dim"># Daily NEPSE (Nepal Stock Exchange) Digest Orchestrator</span>
-<span class="text-outline-variant"># Runs at 06:00 AM daily via cron</span>
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" id="about">
+    <div class="container">
+      <div class="hero-badge"><div class="dot"></div>Available for collaborations</div>
+      <h1>Ujjwal Basnet</h1>
+      <p class="hero-subtitle">
+        I build <strong>multi-agent AI systems</strong>, direct <strong>AI-generated films</strong>,
+        and write technical deep-dives on machine learning. Based in Nepal, grinding 6–12 hours daily — 
+        inspecting latent tensors, orchestrating agent workflows, and writing critiques.
+      </p>
+      <div class="hero-links">
+        <a href="https://github.com/ujjwal-basnet" target="_blank" rel="noopener" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/ujjwal-basnet/" target="_blank" rel="noopener" class="btn-ghost">LinkedIn →</a>
+        <a href="mailto:ujjwalvictus15@gmail.com" class="btn-ghost">Email →</a>
+      </div>
+    </div>
+  </section>
 
-<span class="text-tertiary-container">function</span> fetch_market_data() {
-    <span class="text-primary-fixed-dim">echo</span> "Initiating API call to primary data broker..."
-    curl -s -H "Authorization: Bearer $NEPSE_API_TOKEN" \
-         "https://api.nepse-broker.local/v1/market/summary" &gt; raw_data.json
-}
+  <div class="divider"></div>
 
-<span class="text-tertiary-container">function</span> generate_llm_summary() {
-    <span class="text-primary-fixed-dim">echo</span> "Passing context to LLM for digest generation..."
-    cat raw_data.json | jq '.data' | python3 process_digest.py \
-        --model "claude-3-opus" \
-        --temperature 0.2 \
-        --output digest_final.md
-}
+  <!-- ═══ AI ENGINEERING ═══ -->
+  <section id="engineering">
+    <div class="container fade-in">
+      <div class="section-header">
+        <span class="section-tag tag-cyan">01</span>
+        <div>
+          <h2 class="section-title">AI Engineering</h2>
+          <p class="section-desc">Production multi-agent systems, data science orchestration, and deep learning research — with open-source code and technical writing.</p>
+        </div>
+      </div>
 
-fetch_market_data
-generate_llm_summary
-<span class="text-primary-fixed-dim">echo</span> "Digest dispatched to Telegram channel."
-<span class="animate-pulse">_</span></pre>
-</div>
-</div>
-</section>
-<!-- AI Director Section -->
-<section class="w-full max-w-container-max mx-auto px-gutter py-section-padding" id="films">
-<div class="mb-stack-lg">
-<h3 class="font-label-caps text-label-caps text-secondary-fixed-dim uppercase tracking-widest mb-2">03.</h3>
-<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">AI Director</h2>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<!-- Film Card 1 -->
-<div class="card-surface overflow-hidden group relative violet-hover cursor-pointer">
-<div class="h-48 bg-surface-container relative">
-<div class="w-full h-full bg-cover bg-center opacity-60 group-hover:opacity-100 transition-opacity duration-500" data-alt="A cinematic, high-contrast digital illustration of two abstract, powerful figures clashing in a surreal, neo-noir cityscape. The lighting is dramatic, with deep shadows and striking electric violet and cyan rim lights cutting through the darkness. The mood is intense and action-packed, styled like a highly polished storyboard for a sci-fi epic, utilizing the system's ultra-premium minimalist aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDiR9k6mNHBrK12e7RBp67Z_4LkaFPXMfxtRUq0dwa9wE4ASpCNEv1FWgkPGBhx122KCavVYgtBCxiIhus3VKoTEb9YlQKzMWfZ3USpOKcnXHyf3lAVQR-N8dsosbg0rvUz141v7CPSgfwsIT8Lv0-BNC5WEjNPiVagleY6ae57cCYAwQiF6kj0jhob8MILO1pZDyPvCyBJmpN3jv3DWK0fwjnnCRiLaqpkC71SW0mFl1u4m4Lte0nhKk91GmtXjZcjsTRyRjUqdELZ')"></div>
-<div class="absolute inset-0 bg-gradient-to-t from-[#0d0e11] to-transparent"></div>
-<div class="absolute inset-0 flex items-center justify-center">
-<div class="w-12 h-12 rounded-full bg-surface/80 backdrop-blur-sm border border-outline-variant/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-secondary-fixed-dim group-hover:text-background transition-all duration-300">
-<span class="material-symbols-outlined text-[24px]">play_arrow</span>
-</div>
-</div>
-</div>
-<div class="p-6">
-<h4 class="font-headline-md text-headline-md text-on-surface mb-2">Balen vs Super Villain</h4>
-<p class="font-code-sm text-code-sm text-on-surface-variant mb-4">Part 1 &amp; 2</p>
-<div class="flex gap-2">
-<span class="font-label-caps text-[10px] bg-surface-container-high px-2 py-1 rounded text-secondary-fixed-dim">Midjourney</span>
-<span class="font-label-caps text-[10px] bg-surface-container-high px-2 py-1 rounded text-secondary-fixed-dim">Runway Gen-2</span>
-</div>
-</div>
-</div>
-<!-- Film Card 2 -->
-<div class="card-surface overflow-hidden group relative violet-hover cursor-pointer">
-<div class="h-48 bg-surface-container relative">
-<div class="w-full h-full bg-cover bg-center opacity-60 group-hover:opacity-100 transition-opacity duration-500" data-alt="A gritty, hyper-realistic render of a heavily modified industrial excavator confronting a towering, monolithic stone golem in a desolate, foggy quarry. The color palette is muted, relying on the deep blacks and grays of the UI's background, punctuated by harsh, directional work lights creating long shadows. The aesthetic is raw and technical, showcasing advanced VFX compositing." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAxsHp6nsg3Cv9nE3PJkQf81u6nMPPZ5014yQZB3ouiU2qxaAo0-aBPCVk3C_EYXmUq16RlBTm2eGIACL2V0J7AtsVU-oSzZPAjuocYJ0nauLEZUpH9ewMzP7cCRjgVBb6Mczz2oBcIhUjoy77I15ozqujZ_NkIfSTYWGcEgd-kR6EZLzkwCUSPa07ae0IrWeSXOhTqw02JSDt37s_l46U73VsNcpRuzEIBqR2UX4kYGCsHKmresDJEES1yCcmv5K2Trz4NcFFz7wz8')"></div>
-<div class="absolute inset-0 bg-gradient-to-t from-[#0d0e11] to-transparent"></div>
-<div class="absolute inset-0 flex items-center justify-center">
-<div class="w-12 h-12 rounded-full bg-surface/80 backdrop-blur-sm border border-outline-variant/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-secondary-fixed-dim group-hover:text-background transition-all duration-300">
-<span class="material-symbols-outlined text-[24px]">play_arrow</span>
-</div>
-</div>
-</div>
-<div class="p-6">
-<h4 class="font-headline-md text-headline-md text-on-surface mb-2">JCB Man vs Stone Man</h4>
-<p class="font-code-sm text-code-sm text-on-surface-variant mb-4">3-Part FX Series</p>
-<div class="flex gap-2">
-<span class="font-label-caps text-[10px] bg-surface-container-high px-2 py-1 rounded text-secondary-fixed-dim">VFX Compositing</span>
-<span class="font-label-caps text-[10px] bg-surface-container-high px-2 py-1 rounded text-secondary-fixed-dim">Blender</span>
-</div>
-</div>
-</div>
-<!-- Film Card 3 -->
-<div class="card-surface overflow-hidden group relative violet-hover cursor-pointer">
-<div class="h-48 bg-surface-container relative">
-<div class="w-full h-full bg-cover bg-center opacity-60 group-hover:opacity-100 transition-opacity duration-500" data-alt="A sleek, modern visualization of a digital workflow pipeline. Abstract nodes and glowing data streams flow across a dark, minimalist canvas. The scene is illuminated by soft, ambient neon accents in cyan and violet against a deep obsidian background. It represents high-speed ad generation, exuding an ultra-premium, technical, and organized aesthetic fitting a Swiss-inspired layout." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD8u7en0epENJbFqpxgInnAMDgkPon7pWbrj30I2U0MAFNnkQqe8xp5QbuEZuPk57OS2gfF6PTcBO-7jZcZI91iCo3ERyjsG2uRoNvEdVOHoeKV2E_1rJ70EvpEVK-Q0JFo9rilj78xgjfNwpkfCuk1GiChFvEE5sPM_rDT6roOIBBmWqGTT4xAfUNbZ7trgcH26xhCJ0FevdoiUpI-wJUSn2mcO7-UiSuyO44DEATieOLiJNnnTR1jYu8txlHmY4EqblKsH43Gr4pA')"></div>
-<div class="absolute inset-0 bg-gradient-to-t from-[#0d0e11] to-transparent"></div>
-<div class="absolute inset-0 flex items-center justify-center">
-<div class="w-12 h-12 rounded-full bg-surface/80 backdrop-blur-sm border border-outline-variant/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-secondary-fixed-dim group-hover:text-background transition-all duration-300">
-<span class="material-symbols-outlined text-[24px]">play_arrow</span>
-</div>
-</div>
-</div>
-<div class="p-6">
-<h4 class="font-headline-md text-headline-md text-on-surface mb-2">4-Min Video Ads Formula</h4>
-<p class="font-code-sm text-code-sm text-on-surface-variant mb-4">UGC workflow (Omni Flash + Claude Code + TikTok)</p>
-<div class="flex gap-2">
-<span class="font-label-caps text-[10px] bg-surface-container-high px-2 py-1 rounded text-secondary-fixed-dim">Automation</span>
-<span class="font-label-caps text-[10px] bg-surface-container-high px-2 py-1 rounded text-secondary-fixed-dim">Claude</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Essays & Critiques Section -->
-<section class="w-full max-w-container-max mx-auto px-gutter py-section-padding" id="essays">
-<div class="mb-stack-lg">
-<h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-2">04.</h3>
-<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Essays &amp; Critiques</h2>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<a class="card-surface p-8 group hover:bg-surface-container transition-colors" href="#">
-<div class="flex justify-between items-start mb-4">
-<h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary-fixed-dim transition-colors">RAG is Dead</h4>
-<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-fixed-dim opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0">arrow_forward</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Exploring the shift from traditional Retrieval-Augmented Generation to more active, agentic memory structures.</p>
-</a>
-<a class="card-surface p-8 group hover:bg-surface-container transition-colors" href="#">
-<div class="flex justify-between items-start mb-4">
-<h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary-fixed-dim transition-colors">AI Agents are not the future</h4>
-<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-fixed-dim opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0">arrow_forward</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">A contrarian view on the current obsession with autonomous agents and why orchestration layers matter more.</p>
-</a>
-<a class="card-surface p-8 group hover:bg-surface-container transition-colors" href="#">
-<div class="flex justify-between items-start mb-4">
-<h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary-fixed-dim transition-colors">AI verification is impossible</h4>
-<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-fixed-dim opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0">arrow_forward</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">The fundamental limitations of mathematically proving the safety and alignment of large parameter models.</p>
-</a>
-<a class="card-surface p-8 group hover:bg-surface-container transition-colors" href="#">
-<div class="flex justify-between items-start mb-4">
-<h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary-fixed-dim transition-colors">Robots Existential Risks</h4>
-<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-fixed-dim opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0">arrow_forward</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Beyond software alignment: the physical implications of embodied AI and the real-world security gaps.</p>
-</a>
-</div>
-</section>
-</main>
-<!-- Footer Shell -->
-<footer class="w-full border-t border-outline-variant/20 bg-background dark:bg-background mt-auto" id="contact">
-<div class="w-full max-w-container-max mx-auto px-gutter py-stack-lg flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0">
-<div class="font-headline-md text-headline-md text-on-surface">UB.</div>
-<div class="font-code-sm text-code-sm text-on-surface-variant">
-                © 2024 Ujjwal Basnet. Built for the future.
-            </div>
-<div class="flex gap-4">
-<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">
-<span class="material-symbols-outlined" data-icon="code" data-weight="regular">code</span>
-</a>
-<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">
-<span class="material-symbols-outlined" data-icon="share" data-weight="regular">share</span>
-</a>
-<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">
-<span class="material-symbols-outlined" data-icon="movie" data-weight="regular">movie</span>
-</a>
-<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">
-<span class="material-symbols-outlined" data-icon="article" data-weight="regular">article</span>
-</a>
-<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">
-<span class="material-symbols-outlined" data-icon="mail" data-weight="regular">mail</span>
-</a>
-</div>
-</div>
-</footer>
-</body></html>
+      <div class="two-col">
+        <!-- Projects Column -->
+        <div>
+          <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:16px;padding-left:4px;">Projects & Code</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            
+            <a href="https://github.com/ujjwal-basnet/csv-Ai" target="_blank" rel="noopener" class="card">
+              <div class="card-icon" style="background:var(--accent-dim);">🧠</div>
+              <h3>csv-Ai</h3>
+              <p>Multi-agent data science orchestrator. A Coordinator dispatches tasks to specialized agents — Context Engineer, EDA Agent, self-correcting Error Solver — for end-to-end analysis.</p>
+              <div class="card-meta">
+                <span class="chip">LangGraph</span>
+                <span class="chip">Multi-Agent</span>
+                <span class="chip">Python</span>
+              </div>
+              <span class="card-link">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </a>
+
+            <a href="https://github.com/ujjwal-basnet/battle_tested_agent_codes" target="_blank" rel="noopener" class="card">
+              <div class="card-icon" style="background:var(--accent-violet-dim);">⚡</div>
+              <h3>battle_tested_agent_codes</h3>
+              <p>Production-grade LangGraph workflows with custom tool nodes, conditional routing edges, and persistent state checkpoints. Real agent patterns, not tutorials.</p>
+              <div class="card-meta">
+                <span class="chip">LangGraph</span>
+                <span class="chip">Production</span>
+                <span class="chip">Agents</span>
+              </div>
+              <span class="card-link">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </a>
+
+            <a href="https://github.com/ujjwal-basnet/Enterprise_Rag" target="_blank" rel="noopener" class="card">
+              <div class="card-icon" style="background:var(--accent-emerald-dim);">📚</div>
+              <h3>Enterprise RAG</h3>
+              <p>Enterprise-grade Retrieval-Augmented Generation system with sync hooks, document chunking strategies, and retrieval evaluation pipelines.</p>
+              <div class="card-meta">
+                <span class="chip">RAG</span>
+                <span class="chip">LangChain</span>
+                <span class="chip">Vector DB</span>
+              </div>
+              <span class="card-link">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </a>
+
+            <a href="https://github.com/ujjwal-basnet/mlops-mini-project" target="_blank" rel="noopener" class="card">
+              <div class="card-icon" style="background:var(--accent-amber-dim);">📊</div>
+              <h3>MLOps Pipeline</h3>
+              <p>End-to-end MLOps with DagsHub integration, MLflow experiment tracking, model staging and production promotion workflows.</p>
+              <div class="card-meta">
+                <span class="chip">MLflow</span>
+                <span class="chip">DagsHub</span>
+                <span class="chip">MLOps</span>
+              </div>
+              <span class="card-link">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Blog Column -->
+        <div>
+          <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:16px;padding-left:4px;">Data Science & ML Blogs</div>
+          <div class="blog-list">
+            <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="blog-item">
+              <span class="blog-num">01</span>
+              <div class="blog-content">
+                <h4>DBSCAN: A Beginner's Guide to Clustering Beyond K-means</h4>
+                <span>Medium · Pinned · Feb 2024</span>
+              </div>
+            </a>
+            <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="blog-item">
+              <span class="blog-num">02</span>
+              <div class="blog-content">
+                <h4>Activation Functions: From Sigmoid to Swish</h4>
+                <span>Medium · Deep Learning Foundations</span>
+              </div>
+            </a>
+            <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="blog-item">
+              <span class="blog-num">03</span>
+              <div class="blog-content">
+                <h4>The Normal Equation: Solving Linear Regression Analytically</h4>
+                <span>Medium · Math for ML</span>
+              </div>
+            </a>
+            <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="blog-item">
+              <span class="blog-num">04</span>
+              <div class="blog-content">
+                <h4>Polynomial Regression: When Straight Lines Aren't Enough</h4>
+                <span>Medium · Regression Series</span>
+              </div>
+            </a>
+            <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="blog-item">
+              <span class="blog-num">05</span>
+              <div class="blog-content">
+                <h4>That Bias Thing in Neural Networks</h4>
+                <span>Medium · Neural Network Internals</span>
+              </div>
+            </a>
+            <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="blog-item">
+              <span class="blog-num">06</span>
+              <div class="blog-content">
+                <h4>Custom PyTorch LSTM Sentence Encoders from Scratch</h4>
+                <span>Medium · Deep Learning</span>
+              </div>
+            </a>
+            <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="blog-item">
+              <span class="blog-num">07</span>
+              <div class="blog-content">
+                <h4>SD-Turbo Latent Tensor Denoising: Step-by-Step Inspection</h4>
+                <span>Medium · Diffusion Models</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══ AI AUTOMATION ═══ -->
+  <section id="automation">
+    <div class="container fade-in">
+      <div class="section-header">
+        <span class="section-tag tag-emerald">02</span>
+        <div>
+          <h2 class="section-title">AI Automation</h2>
+          <p class="section-desc">Production prompt systems and workflow automations built for a local Nepali business — handling finance, compliance, and daily operations.</p>
+        </div>
+      </div>
+
+      <div class="prompt-viewer">
+        <div class="prompt-tabs">
+          <button class="prompt-tab active" data-tab="0">NEPSE Morning Digest</button>
+          <button class="prompt-tab" data-tab="1">Expense Tracker</button>
+          <button class="prompt-tab" data-tab="2">Compliance Updates</button>
+          <button class="prompt-tab" data-tab="3">Meeting Notes</button>
+        </div>
+        <div class="prompt-body" id="prompt-content">
+          <button class="copy-btn" onclick="copyPrompt()">Copy</button>
+          <span class="comment">// Automated Telegram digest — runs at 6:30 AM NPT daily</span><br><br>
+          <span class="keyword">system</span>: You are a Nepali financial analyst bot.<br>
+          <span class="keyword">task</span>: Scan overnight <span class="string">NEPSE market data</span>,<br>
+          &nbsp;&nbsp;political headlines from <span class="string">Ratopati</span> and <span class="string">OnlineKhabar</span>,<br>
+          &nbsp;&nbsp;and any <span class="variable">NRB monetary policy</span> changes.<br><br>
+          <span class="keyword">output</span>: Generate a 200-word business briefing<br>
+          &nbsp;&nbsp;formatted for <span class="string">Telegram</span> with:<br>
+          &nbsp;&nbsp;• Top 5 stock movers with % change<br>
+          &nbsp;&nbsp;• Macro sentiment summary<br>
+          &nbsp;&nbsp;• One actionable insight<br><br>
+          <span class="comment">// Delivered via n8n → Telegram Bot API</span>
+        </div>
+      </div>
+
+      <div class="card-grid" style="margin-top:24px;">
+        <div class="card">
+          <h3>📱 6 Workflow Automations</h3>
+          <p>Built for a local Nepali consulting firm: Morning NEPSE digest, supplier payment triggers, IRD VAT compliance trackers, expense log OCR, Viber notification relays, and meeting notes summarizer.</p>
+          <div class="card-meta">
+            <span class="chip">n8n</span>
+            <span class="chip">Telegram</span>
+            <span class="chip">Google Sheets</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>💰 NPR 10,000 System</h3>
+          <p>Client-paid prompt engineering system. Six custom GPT prompts calibrated for Nepali business context — tested daily for months before client approved public sharing.</p>
+          <div class="card-meta">
+            <span class="chip">Prompt Engineering</span>
+            <span class="chip">Business AI</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══ AI FILMS ═══ -->
+  <section id="films">
+    <div class="container fade-in">
+      <div class="section-header">
+        <span class="section-tag tag-violet">03</span>
+        <div>
+          <h2 class="section-title">AI Director</h2>
+          <p class="section-desc">AI-generated short films and hyper-realistic ad workflows. Using ComfyUI, Google Omni Flash, and custom diffusion pipelines.</p>
+        </div>
+      </div>
+
+      <div class="card-grid">
+        <a href="https://www.facebook.com/share/v/18yFJ47Rh9/" target="_blank" rel="noopener" class="film-card">
+          <div class="film-poster" style="background:linear-gradient(135deg, rgba(239,68,68,0.2), rgba(167,139,250,0.15));">
+            <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+          <div class="film-info">
+            <h3>Balen vs Super Villain</h3>
+            <p>2-part AI-generated action film. Full CGI characters, custom voice synthesis, and cinematic editing — all orchestrated through AI pipelines.</p>
+          </div>
+        </a>
+
+        <a href="#" class="film-card">
+          <div class="film-poster" style="background:linear-gradient(135deg, rgba(34,211,238,0.15), rgba(251,191,36,0.1));">
+            <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+          <div class="film-info">
+            <h3>JCB Man vs Stone Man</h3>
+            <p>3-part CGI series pushing the limits of AI video generation. Custom character design with consistent identity across scenes.</p>
+          </div>
+        </a>
+
+        <a href="#" class="film-card">
+          <div class="film-poster" style="background:linear-gradient(135deg, rgba(52,211,153,0.15), rgba(34,211,238,0.1));">
+            <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+          <div class="film-info">
+            <h3>UGC Ads Formula</h3>
+            <p>Cracked the hyper-realistic AI ad workflow: Google Omni Flash + Claude Code + TikTok. Generates customer testimonial videos that convert.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══ ESSAYS ═══ -->
+  <section id="essays">
+    <div class="container fade-in">
+      <div class="section-header">
+        <span class="section-tag tag-amber">04</span>
+        <div>
+          <h2 class="section-title">Essays & Critiques</h2>
+          <p class="section-desc">Contrarian takes on AI hype, technical verification, and the future of software engineering.</p>
+        </div>
+      </div>
+
+      <div class="card-grid">
+        <a href="https://ujjwal327667.substack.com/" target="_blank" rel="noopener" class="essay-card">
+          <div class="essay-platform">Substack · May 2025</div>
+          <h3>AI Agents Are Not the Future</h3>
+          <p>"9 out of 10 people are building AI agents right now" — and most of them are solving problems that don't exist.</p>
+        </a>
+
+        <a href="https://ujjwal327667.substack.com/" target="_blank" rel="noopener" class="essay-card">
+          <div class="essay-platform">Substack · Mar 2025</div>
+          <h3>AI Ate Software</h3>
+          <p>For 20 years, software was the safest bet. Now the moat is gone. A look at what comes next for developers.</p>
+        </a>
+
+        <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="essay-card">
+          <div class="essay-platform">Medium</div>
+          <h3>RAG is Dead</h3>
+          <p>Why retrieval-augmented generation might be a transitional pattern, and what the long-context window revolution means for it.</p>
+        </a>
+
+        <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="essay-card">
+          <div class="essay-platform">Medium</div>
+          <h3>AI Verification Is Impossible: Removing Google SynthID</h3>
+          <p>A practical demonstration showing how AI watermarking schemes like SynthID can be bypassed — and what that means for trust.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══ CONNECT ═══ -->
+  <footer class="footer" id="connect">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title" style="margin-bottom:12px;">Let's Connect</h2>
+      <p class="section-desc" style="margin:0 auto 32px;">Find me on any of these platforms — or just shoot me an email.</p>
+      <div class="footer-grid">
+        <a href="https://github.com/ujjwal-basnet" target="_blank" rel="noopener" class="social-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/ujjwal-basnet/" target="_blank" rel="noopener" class="social-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://x.com/ujjwal_ai" target="_blank" rel="noopener" class="social-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          Twitter/X
+        </a>
+        <a href="https://www.instagram.com/ujjwal.aii/" target="_blank" rel="noopener" class="social-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          Instagram
+        </a>
+        <a href="https://www.facebook.com/ujjwal.aiii" target="_blank" rel="noopener" class="social-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook
+        </a>
+        <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="social-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+          Medium
+        </a>
+        <a href="https://ujjwal327667.substack.com/" target="_blank" rel="noopener" class="social-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
+          Substack
+        </a>
+        <a href="mailto:ujjwalvictus15@gmail.com" class="social-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Email
+        </a>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Ujjwal Basnet · Built with precision, not templates.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ═══ INTERSECTION OBSERVER FOR FADE-INS ═══
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // ═══ ACTIVE NAV LINK ═══
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 200;
+        if (scrollY >= sectionTop) current = section.getAttribute('id');
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+      });
+    });
+
+    // ═══ PROMPT TAB SWITCHING ═══
+    const prompts = [
+      `<button class="copy-btn" onclick="copyPrompt()">Copy</button>
+<span class="comment">// Automated Telegram digest — runs at 6:30 AM NPT daily</span><br><br>
+<span class="keyword">system</span>: You are a Nepali financial analyst bot.<br>
+<span class="keyword">task</span>: Scan overnight <span class="string">NEPSE market data</span>,<br>
+&nbsp;&nbsp;political headlines from <span class="string">Ratopati</span> and <span class="string">OnlineKhabar</span>,<br>
+&nbsp;&nbsp;and any <span class="variable">NRB monetary policy</span> changes.<br><br>
+<span class="keyword">output</span>: Generate a 200-word business briefing<br>
+&nbsp;&nbsp;formatted for <span class="string">Telegram</span> with:<br>
+&nbsp;&nbsp;• Top 5 stock movers with % change<br>
+&nbsp;&nbsp;• Macro sentiment summary<br>
+&nbsp;&nbsp;• One actionable insight<br><br>
+<span class="comment">// Delivered via n8n → Telegram Bot API</span>`,
+
+      `<button class="copy-btn" onclick="copyPrompt()">Copy</button>
+<span class="comment">// OCR-powered expense categorizer — triggers on receipt upload</span><br><br>
+<span class="keyword">system</span>: You are an NPR expense tracker.<br>
+<span class="keyword">input</span>: <span class="string">Receipt image</span> (JPG/PNG from Viber)<br><br>
+<span class="keyword">task</span>: Extract vendor, amount, date, and category.<br>
+&nbsp;&nbsp;Categories: <span class="variable">Office</span> | <span class="variable">Travel</span> | <span class="variable">Supplies</span> | <span class="variable">Food</span> | <span class="variable">Misc</span><br><br>
+<span class="keyword">output</span>: Append row to <span class="string">Google Sheets</span> with:<br>
+&nbsp;&nbsp;[Date, Vendor, Amount (NPR), Category, Confidence %]<br><br>
+<span class="comment">// Monthly auto-summary sent on 1st of each month</span>`,
+
+      `<button class="copy-btn" onclick="copyPrompt()">Copy</button>
+<span class="comment">// IRD VAT & compliance change monitor</span><br><br>
+<span class="keyword">system</span>: You are a Nepali tax compliance bot.<br>
+<span class="keyword">task</span>: Monitor <span class="string">IRD Nepal website</span> and<br>
+&nbsp;&nbsp;<span class="string">Department of Commerce</span> for updates.<br><br>
+<span class="keyword">trigger</span>: Any changes to <span class="variable">VAT rates</span>,<br>
+&nbsp;&nbsp;<span class="variable">filing deadlines</span>, or <span class="variable">penalty structures</span>.<br><br>
+<span class="keyword">output</span>: Push notification via <span class="string">Viber</span> with:<br>
+&nbsp;&nbsp;• What changed (before → after)<br>
+&nbsp;&nbsp;• Effective date<br>
+&nbsp;&nbsp;• Required action items<br><br>
+<span class="comment">// Prevents missed compliance deadlines</span>`,
+
+      `<button class="copy-btn" onclick="copyPrompt()">Copy</button>
+<span class="comment">// Voice-to-structured meeting notes</span><br><br>
+<span class="keyword">system</span>: You are a meeting summarizer.<br>
+<span class="keyword">input</span>: <span class="string">Audio recording</span> (Whisper transcription)<br><br>
+<span class="keyword">task</span>: Extract from the transcript:<br>
+&nbsp;&nbsp;1. <span class="variable">Key decisions</span> made<br>
+&nbsp;&nbsp;2. <span class="variable">Action items</span> with owners<br>
+&nbsp;&nbsp;3. <span class="variable">Follow-ups</span> with deadlines<br>
+&nbsp;&nbsp;4. Any unresolved questions<br><br>
+<span class="keyword">output</span>: Formatted summary pushed to<br>
+&nbsp;&nbsp;<span class="string">Google Docs</span> + pinned in <span class="string">Telegram group</span><br><br>
+<span class="comment">// Nepali + English bilingual support</span>`
+    ];
+
+    document.querySelectorAll('.prompt-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.prompt-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('prompt-content').innerHTML = prompts[tab.dataset.tab];
+      });
+    });
+
+    function copyPrompt() {
+      const text = document.getElementById('prompt-content').innerText.replace('Copy', '').trim();
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 2000);
+      });
+    }
+  </script>
+</body>
+</html>
