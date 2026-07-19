@@ -739,50 +739,34 @@
     <div class="container fade-up">
       <div class="section-label">02 — Automation</div>
       <h2 class="section-title">AI Automation</h2>
-      <p class="section-desc">Production prompt systems built for a Nepali consulting firm — finance, compliance, and operations.</p>
+      <p class="section-desc">Production prompt systems and workflow automations built for a local Nepali business — handling finance, compliance, and daily operations.</p>
 
       <div class="bento">
-        <div class="bento-item bento-wide" style="padding:0;overflow:hidden;">
-          <div class="prompt-viewer">
-            <div class="prompt-header">
-              <button class="prompt-tab active" data-tab="0">NEPSE Digest</button>
-              <button class="prompt-tab" data-tab="1">Expense Tracker</button>
-              <button class="prompt-tab" data-tab="2">Compliance</button>
-              <button class="prompt-tab" data-tab="3">Meeting Notes</button>
-            </div>
-            <div class="prompt-content" id="prompt-content">
-              <button class="copy-btn" onclick="copyPrompt()">Copy</button>
-              <span class="cm">// Automated Telegram digest — 6:30 AM NPT</span><br><br>
-              <span class="kw">system</span>: Nepali financial analyst bot.<br>
-              <span class="kw">task</span>: Scan <span class="str">NEPSE data</span>,<br>
-              &nbsp;&nbsp;headlines from <span class="str">Ratopati</span>, <span class="str">OnlineKhabar</span>,<br>
-              &nbsp;&nbsp;<span class="var">NRB monetary policy</span> changes.<br><br>
-              <span class="kw">output</span>: 200-word briefing for <span class="str">Telegram</span>:<br>
-              &nbsp;&nbsp;• Top 5 movers with % change<br>
-              &nbsp;&nbsp;• Macro sentiment<br>
-              &nbsp;&nbsp;• One actionable insight<br><br>
-              <span class="cm">// n8n → Telegram Bot API</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="bento-item bento-narrow" style="display:flex;flex-direction:column;justify-content:space-between;">
+        <div class="bento-item bento-half" style="display:flex;flex-direction:column;justify-content:space-between;">
           <div>
             <div class="bento-label">Client Work</div>
             <h3>NPR 10,000 System</h3>
             <p>Six custom GPT prompts for a Nepali business owner — calibrated and tested daily for months before public release.</p>
+            <ul style="margin-top:16px;margin-left:20px;font-size:14px;color:var(--text-secondary);line-height:1.7;">
+              <li>NEPSE Morning Digest</li>
+              <li>Expense Tracker</li>
+              <li>Compliance Updates</li>
+              <li>Meeting Notes</li>
+            </ul>
           </div>
-          <div class="tags" style="margin-top:auto;padding-top:20px;">
+          <div class="tags" style="margin-top:24px;">
             <span class="tag tag-accent">Prompt Engineering</span>
             <span class="tag tag-default">Business AI</span>
           </div>
         </div>
 
-        <div class="bento-item bento-full" style="background:var(--bg-warm);">
-          <div class="bento-label">Workflow Stack</div>
-          <h3>6 Production Automations</h3>
-          <p style="max-width:700px;">Morning NEPSE digest → Supplier payment triggers → IRD VAT compliance tracker → Expense log OCR → Viber notification relay → Meeting notes summarizer. All running on n8n with Google Sheets and Telegram integrations.</p>
-          <div class="tags">
+        <div class="bento-item bento-half" style="background:var(--bg-warm);display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div class="bento-label">Workflow Stack</div>
+            <h3>6 Production Automations</h3>
+            <p style="max-width:700px;">Built for a local Nepali consulting firm: Morning NEPSE digest, supplier payment triggers, IRD VAT compliance trackers, expense log OCR, Viber notification relays, and meeting notes summarizer.</p>
+          </div>
+          <div class="tags" style="margin-top:24px;">
             <span class="tag tag-blue">n8n</span>
             <span class="tag tag-green">Telegram</span>
             <span class="tag tag-default">Google Sheets</span>
@@ -842,36 +826,36 @@
 
   <div class="divider"></div>
 
-  <!-- ═══ ESSAYS ═══ -->
+  <!-- ═══ SOCIAL & ESSAYS ═══ -->
   <section id="essays">
     <div class="container fade-up">
-      <div class="section-label">04 — Writing</div>
-      <h2 class="section-title">Essays & Critiques</h2>
-      <p class="section-desc">Contrarian takes on AI, the future of software, and technical verification.</p>
+      <div class="section-label">04 — Content</div>
+      <h2 class="section-title">Social & Essays</h2>
+      <p class="section-desc">Contrarian takes on AI, technical deep-dives, and behind-the-scenes on my workflows.</p>
 
       <div class="bento">
+        <a href="https://www.facebook.com/ujjwal.aiii" target="_blank" rel="noopener" class="essay-card bento-half">
+          <div class="essay-source">Facebook</div>
+          <h3>UGC Ads Formula</h3>
+          <p>Google Omni Flash + Claude Code + TikTok is the best combo for hyper-realistic AI ads. Giving away the formula for free to past clients.</p>
+        </a>
+
         <a href="https://ujjwal327667.substack.com/" target="_blank" rel="noopener" class="essay-card bento-half">
-          <div class="essay-source">Substack · May 2025</div>
+          <div class="essay-source">Substack · May 2024</div>
           <h3>AI Agents Are Not the Future</h3>
           <p>"9 out of 10 people are building AI agents right now" — and most are solving problems that don't exist.</p>
         </a>
 
         <a href="https://ujjwal327667.substack.com/" target="_blank" rel="noopener" class="essay-card bento-half">
-          <div class="essay-source">Substack · Mar 2025</div>
+          <div class="essay-source">Substack · Mar 2024</div>
           <h3>AI Ate Software</h3>
           <p>For 20 years, software was the safest bet. Now the moat is gone. What comes next for developers.</p>
         </a>
 
         <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="essay-card bento-half">
-          <div class="essay-source">Medium</div>
-          <h3>RAG is Dead</h3>
-          <p>Why retrieval-augmented generation might be transitional, and what long-context windows mean for it.</p>
-        </a>
-
-        <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="essay-card bento-half">
-          <div class="essay-source">Medium</div>
-          <h3>Removing Google SynthID</h3>
-          <p>Demonstrating how AI watermarking schemes can be bypassed — and what that means for trust.</p>
+          <div class="essay-source">Medium · Feb 2024</div>
+          <h3>DB SCAN: A Beginner's Guide to Clustering Beyond K-means</h3>
+          <p>Some concepts before starting DB SCAN and understanding clustering.</p>
         </a>
       </div>
     </div>
@@ -945,66 +929,7 @@
       });
     });
 
-    // Prompt tabs
-    const prompts = [
-      `<button class="copy-btn" onclick="copyPrompt()">Copy</button>
-<span class="cm">// Automated Telegram digest — 6:30 AM NPT</span><br><br>
-<span class="kw">system</span>: Nepali financial analyst bot.<br>
-<span class="kw">task</span>: Scan <span class="str">NEPSE data</span>,<br>
-&nbsp;&nbsp;headlines from <span class="str">Ratopati</span>, <span class="str">OnlineKhabar</span>,<br>
-&nbsp;&nbsp;<span class="var">NRB monetary policy</span> changes.<br><br>
-<span class="kw">output</span>: 200-word briefing for <span class="str">Telegram</span>:<br>
-&nbsp;&nbsp;• Top 5 movers with % change<br>
-&nbsp;&nbsp;• Macro sentiment<br>
-&nbsp;&nbsp;• One actionable insight<br><br>
-<span class="cm">// n8n → Telegram Bot API</span>`,
-      `<button class="copy-btn" onclick="copyPrompt()">Copy</button>
-<span class="cm">// OCR expense categorizer — triggers on receipt</span><br><br>
-<span class="kw">input</span>: <span class="str">Receipt image</span> (JPG from Viber)<br>
-<span class="kw">task</span>: Extract vendor, amount, date, category.<br>
-&nbsp;&nbsp;Categories: <span class="var">Office</span> | <span class="var">Travel</span> | <span class="var">Supplies</span> | <span class="var">Food</span><br><br>
-<span class="kw">output</span>: Append to <span class="str">Google Sheets</span>:<br>
-&nbsp;&nbsp;[Date, Vendor, Amount NPR, Category, Confidence]<br><br>
-<span class="cm">// Monthly auto-summary on 1st</span>`,
-      `<button class="copy-btn" onclick="copyPrompt()">Copy</button>
-<span class="cm">// IRD VAT compliance monitor</span><br><br>
-<span class="kw">task</span>: Monitor <span class="str">IRD Nepal</span> for:<br>
-&nbsp;&nbsp;<span class="var">VAT rate</span> changes,<br>
-&nbsp;&nbsp;<span class="var">Filing deadline</span> updates,<br>
-&nbsp;&nbsp;<span class="var">Penalty structure</span> modifications.<br><br>
-<span class="kw">output</span>: Push via <span class="str">Viber</span>:<br>
-&nbsp;&nbsp;• What changed (before → after)<br>
-&nbsp;&nbsp;• Effective date<br>
-&nbsp;&nbsp;• Required actions<br><br>
-<span class="cm">// Prevents missed compliance deadlines</span>`,
-      `<button class="copy-btn" onclick="copyPrompt()">Copy</button>
-<span class="cm">// Voice → structured meeting notes</span><br><br>
-<span class="kw">input</span>: <span class="str">Audio</span> (Whisper transcription)<br>
-<span class="kw">extract</span>:<br>
-&nbsp;&nbsp;1. <span class="var">Key decisions</span><br>
-&nbsp;&nbsp;2. <span class="var">Action items</span> + owners<br>
-&nbsp;&nbsp;3. <span class="var">Follow-ups</span> + deadlines<br>
-&nbsp;&nbsp;4. Unresolved questions<br><br>
-<span class="kw">output</span>: <span class="str">Google Docs</span> + pinned in <span class="str">Telegram</span><br><br>
-<span class="cm">// Nepali + English bilingual</span>`
-    ];
 
-    document.querySelectorAll('.prompt-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        document.querySelectorAll('.prompt-tab').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        document.getElementById('prompt-content').innerHTML = prompts[tab.dataset.tab];
-      });
-    });
-
-    function copyPrompt() {
-      const txt = document.getElementById('prompt-content').innerText.replace('Copy','').trim();
-      navigator.clipboard.writeText(txt).then(() => {
-        const b = document.querySelector('.copy-btn');
-        b.textContent = 'Copied!';
-        setTimeout(() => b.textContent = 'Copy', 1500);
-      });
-    }
   </script>
 </body>
 </html>
