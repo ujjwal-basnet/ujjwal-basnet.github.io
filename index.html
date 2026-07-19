@@ -4,436 +4,424 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ujjwal Basnet — AI Engineer, Director & Writer</title>
-  <meta name="description" content="Ujjwal Basnet builds multi-agent AI systems, directs AI-generated films, and writes technical deep-dives on machine learning.">
+  <meta name="description" content="Ujjwal Basnet builds multi-agent AI systems, directs AI-generated films, and writes about machine learning.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Archivo:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     /* ═══════════════════════════════════════════════════
-       DESIGN SYSTEM — Inspired by Vercel, Linear, Raycast
+       DESIGN SYSTEM — Warm Neutral / Bento Portfolio
+       Typography: Space Grotesk + Archivo
+       Palette: Cream + Charcoal + Warm Orange
        ═══════════════════════════════════════════════════ */
     :root {
-      --bg: #09090b;
-      --bg-elevated: #111113;
-      --bg-card: #18181b;
-      --bg-card-hover: #1e1e22;
-      --border: rgba(255,255,255,0.06);
-      --border-hover: rgba(255,255,255,0.12);
-      --text-primary: #fafafa;
-      --text-secondary: #a1a1aa;
-      --text-tertiary: #71717a;
-      --accent: #22d3ee;
-      --accent-dim: rgba(34,211,238,0.1);
-      --accent-violet: #a78bfa;
-      --accent-violet-dim: rgba(167,139,250,0.1);
-      --accent-amber: #fbbf24;
-      --accent-amber-dim: rgba(251,191,36,0.1);
-      --accent-emerald: #34d399;
-      --accent-emerald-dim: rgba(52,211,153,0.1);
-      --radius: 12px;
-      --radius-sm: 8px;
-      --radius-full: 9999px;
-      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-      --max-w: 1080px;
-      --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      --bg: #FAF8F5;
+      --bg-warm: #F4F1EC;
+      --bg-card: #FFFFFF;
+      --bg-card-alt: #F7F5F0;
+      --bg-dark: #1a1a1a;
+      --border: #E8E4DE;
+      --border-hover: #D5CFC7;
+      --text: #1a1a1a;
+      --text-secondary: #6B6560;
+      --text-tertiary: #9C9690;
+      --accent: #E8612D;
+      --accent-soft: #FFF0EB;
+      --accent-hover: #D4551F;
+      --tag-blue: #2563EB;
+      --tag-blue-bg: #EFF6FF;
+      --tag-green: #16A34A;
+      --tag-green-bg: #F0FDF4;
+      --tag-purple: #7C3AED;
+      --tag-purple-bg: #F5F3FF;
+      --radius: 16px;
+      --radius-sm: 10px;
+      --radius-full: 100px;
+      --font-heading: 'Space Grotesk', sans-serif;
+      --font-body: 'Archivo', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --max-w: 1120px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.06);
+      --shadow-lg: 0 12px 40px rgba(0,0,0,0.08);
+      --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 
     body {
-      font-family: var(--font-sans);
+      font-family: var(--font-body);
       background: var(--bg);
-      color: var(--text-primary);
+      color: var(--text);
       line-height: 1.6;
-      overflow-x: hidden;
     }
 
     a { color: inherit; text-decoration: none; }
-    
-    ::selection { background: var(--accent); color: var(--bg); }
+    ::selection { background: var(--accent); color: white; }
 
     /* ═══ NAVIGATION ═══ */
-    nav {
+    .nav-wrap {
       position: fixed;
-      top: 16px;
-      left: 50%;
-      transform: translateX(-50%);
+      top: 0;
+      left: 0;
+      right: 0;
       z-index: 100;
-      background: rgba(9,9,11,0.7);
-      backdrop-filter: blur(20px) saturate(1.8);
-      -webkit-backdrop-filter: blur(20px) saturate(1.8);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-full);
-      padding: 6px 8px;
-      display: flex;
-      align-items: center;
-      gap: 2px;
+      padding: 16px 24px;
+      transition: background var(--transition), box-shadow var(--transition);
     }
 
-    nav a {
-      padding: 8px 16px;
-      font-size: 13px;
-      font-weight: 500;
+    .nav-wrap.scrolled {
+      background: rgba(250,248,245,0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 var(--border);
+    }
+
+    nav {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--text);
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 4px; }
+
+    .nav-links a {
+      padding: 8px 14px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 400;
       color: var(--text-secondary);
       border-radius: var(--radius-full);
       transition: all var(--transition);
-      letter-spacing: -0.01em;
     }
 
-    nav a:hover { color: var(--text-primary); background: rgba(255,255,255,0.06); }
-    nav a.active { color: var(--text-primary); background: rgba(255,255,255,0.08); }
-
-    .nav-logo {
-      font-weight: 700;
-      font-size: 14px;
-      color: var(--text-primary);
-      padding: 8px 16px;
-      letter-spacing: -0.02em;
-    }
-
-    .nav-logo span { color: var(--accent); }
-
-    /* ═══ SECTIONS ═══ */
-    section { padding: 100px 24px 60px; }
-    
-    .container { max-width: var(--max-w); margin: 0 auto; }
+    .nav-links a:hover { color: var(--text); background: rgba(0,0,0,0.03); }
+    .nav-links a.active { color: var(--text); font-weight: 500; }
 
     /* ═══ HERO ═══ */
-    .hero { 
-      padding-top: 160px; 
-      padding-bottom: 80px;
-      position: relative;
+    .hero {
+      padding: 160px 24px 80px;
+      max-width: var(--max-w);
+      margin: 0 auto;
     }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 50%;
-      transform: translateX(-50%);
-      width: 600px; height: 400px;
-      background: radial-gradient(ellipse, rgba(34,211,238,0.06) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-badge {
+    .hero-eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 6px 14px;
-      background: var(--accent-dim);
-      border: 1px solid rgba(34,211,238,0.15);
-      border-radius: var(--radius-full);
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--accent);
       font-family: var(--font-mono);
-      margin-bottom: 32px;
-      letter-spacing: 0.02em;
+      font-size: 12px;
+      color: var(--accent);
+      padding: 6px 14px;
+      background: var(--accent-soft);
+      border-radius: var(--radius-full);
+      margin-bottom: 28px;
+      font-weight: 500;
     }
 
-    .hero-badge .dot {
-      width: 6px; height: 6px;
+    .hero-eyebrow .pulse {
+      width: 7px; height: 7px;
       background: var(--accent);
       border-radius: 50%;
       animation: pulse 2s ease-in-out infinite;
     }
 
     @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
     }
 
     .hero h1 {
-      font-size: clamp(40px, 6vw, 64px);
-      font-weight: 800;
+      font-family: var(--font-heading);
+      font-size: clamp(44px, 7vw, 72px);
+      font-weight: 700;
       letter-spacing: -0.04em;
-      line-height: 1.05;
-      margin-bottom: 20px;
-      background: linear-gradient(to bottom, #fafafa 30%, #71717a);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      line-height: 1.0;
+      margin-bottom: 24px;
+      color: var(--text);
     }
 
-    .hero-subtitle {
+    .hero h1 .highlight {
+      color: var(--accent);
+    }
+
+    .hero-desc {
       font-size: 18px;
       color: var(--text-secondary);
-      max-width: 560px;
+      max-width: 580px;
       line-height: 1.7;
-      margin-bottom: 32px;
+      margin-bottom: 36px;
+      font-weight: 300;
     }
 
-    .hero-subtitle strong { color: var(--text-primary); font-weight: 500; }
+    .hero-desc strong { color: var(--text); font-weight: 500; }
 
-    .hero-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
 
-    .hero-links a {
+    .btn {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 10px 20px;
-      font-size: 13px;
+      gap: 8px;
+      padding: 12px 24px;
+      font-family: var(--font-body);
+      font-size: 14px;
       font-weight: 500;
       border-radius: var(--radius-full);
       transition: all var(--transition);
+      cursor: pointer;
+      border: none;
     }
 
-    .btn-primary {
-      background: var(--text-primary);
+    .btn-fill {
+      background: var(--text);
       color: var(--bg);
     }
-    .btn-primary:hover { background: #d4d4d8; }
+    .btn-fill:hover { background: #333; }
 
-    .btn-ghost {
+    .btn-outline {
       background: transparent;
-      color: var(--text-secondary);
-      border: 1px solid var(--border);
+      color: var(--text);
+      border: 1.5px solid var(--border);
     }
-    .btn-ghost:hover { border-color: var(--border-hover); color: var(--text-primary); }
+    .btn-outline:hover { border-color: var(--text); }
 
-    /* ═══ SECTION HEADERS ═══ */
-    .section-header {
-      margin-bottom: 48px;
-      display: flex;
-      align-items: baseline;
-      gap: 16px;
-    }
+    .btn svg { width: 16px; height: 16px; }
 
-    .section-tag {
+    /* ═══ SECTIONS ═══ */
+    section { padding: 80px 24px; }
+    .container { max-width: var(--max-w); margin: 0 auto; }
+
+    .section-label {
       font-family: var(--font-mono);
       font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
+      font-weight: 500;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: var(--radius-full);
+      color: var(--accent);
+      margin-bottom: 8px;
     }
 
-    .tag-cyan { color: var(--accent); background: var(--accent-dim); }
-    .tag-violet { color: var(--accent-violet); background: var(--accent-violet-dim); }
-    .tag-amber { color: var(--accent-amber); background: var(--accent-amber-dim); }
-    .tag-emerald { color: var(--accent-emerald); background: var(--accent-emerald-dim); }
-
     .section-title {
-      font-size: 28px;
+      font-family: var(--font-heading);
+      font-size: clamp(28px, 4vw, 36px);
       font-weight: 700;
       letter-spacing: -0.03em;
+      margin-bottom: 8px;
     }
 
     .section-desc {
+      font-size: 16px;
       color: var(--text-secondary);
-      font-size: 15px;
-      max-width: 600px;
-      margin-top: 12px;
+      max-width: 520px;
       line-height: 1.6;
+      margin-bottom: 48px;
+      font-weight: 300;
     }
 
-    /* ═══ CARD GRID ═══ */
-    .card-grid {
+    /* ═══ BENTO GRID ═══ */
+    .bento {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-template-columns: repeat(12, 1fr);
       gap: 16px;
     }
 
-    .card {
+    .bento-item {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 24px;
+      padding: 28px;
       transition: all var(--transition);
-      position: relative;
-      overflow: hidden;
+      box-shadow: var(--shadow-sm);
     }
 
-    .card:hover {
+    .bento-item:hover {
+      box-shadow: var(--shadow-md);
       border-color: var(--border-hover);
-      background: var(--bg-card-hover);
-      transform: translateY(-2px);
+      transform: translateY(-3px);
     }
 
-    .card-icon {
-      width: 40px; height: 40px;
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
+    .bento-wide { grid-column: span 8; }
+    .bento-narrow { grid-column: span 4; }
+    .bento-half { grid-column: span 6; }
+    .bento-third { grid-column: span 4; }
+    .bento-full { grid-column: span 12; }
+
+    @media (max-width: 900px) {
+      .bento-wide, .bento-narrow, .bento-half, .bento-third { grid-column: span 12; }
+    }
+
+    .bento-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-tertiary);
       margin-bottom: 16px;
     }
 
-    .card h3 {
-      font-size: 16px;
+    .bento-item h3 {
+      font-family: var(--font-heading);
+      font-size: 18px;
       font-weight: 600;
       margin-bottom: 8px;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.02em;
     }
 
-    .card p {
+    .bento-item p {
       font-size: 14px;
       color: var(--text-secondary);
       line-height: 1.6;
     }
 
-    .card-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 16px;
-    }
+    /* ═══ TAGS / CHIPS ═══ */
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
 
-    .chip {
+    .tag {
       font-family: var(--font-mono);
       font-size: 11px;
-      padding: 3px 8px;
+      padding: 4px 10px;
       border-radius: var(--radius-full);
-      background: rgba(255,255,255,0.04);
-      color: var(--text-tertiary);
-      border: 1px solid var(--border);
+      font-weight: 500;
     }
 
-    .card-link {
+    .tag-default { background: var(--bg-warm); color: var(--text-secondary); }
+    .tag-blue { background: var(--tag-blue-bg); color: var(--tag-blue); }
+    .tag-green { background: var(--tag-green-bg); color: var(--tag-green); }
+    .tag-purple { background: var(--tag-purple-bg); color: var(--tag-purple); }
+    .tag-accent { background: var(--accent-soft); color: var(--accent); }
+
+    /* ═══ ARROW LINK ═══ */
+    .arrow-link {
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      gap: 6px;
       font-size: 13px;
       font-weight: 500;
       color: var(--accent);
       margin-top: 16px;
       transition: gap var(--transition);
     }
+    .arrow-link:hover { gap: 10px; }
+    .arrow-link svg { width: 14px; height: 14px; }
 
-    .card-link:hover { gap: 8px; }
-
-    .card-link svg { width: 14px; height: 14px; }
-
-    /* ═══ TWO-COLUMN LAYOUT ═══ */
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    @media (max-width: 768px) {
-      .two-col { grid-template-columns: 1fr; }
-      .card-grid { grid-template-columns: 1fr; }
-    }
-
-    /* ═══ BLOG LIST ═══ */
+    /* ═══ BLOG ROWS ═══ */
     .blog-list { display: flex; flex-direction: column; }
 
-    .blog-item {
+    .blog-row {
       display: flex;
-      align-items: flex-start;
+      align-items: baseline;
       gap: 16px;
-      padding: 20px;
+      padding: 16px 0;
       border-bottom: 1px solid var(--border);
-      transition: background var(--transition);
+      transition: all var(--transition);
     }
 
-    .blog-item:first-child { border-top: 1px solid var(--border); }
-    
-    .blog-item:hover { background: var(--bg-card); }
+    .blog-row:first-child { border-top: 1px solid var(--border); }
+    .blog-row:hover { padding-left: 8px; }
 
     .blog-num {
       font-family: var(--font-mono);
-      font-size: 12px;
+      font-size: 11px;
       color: var(--text-tertiary);
-      min-width: 28px;
-      padding-top: 2px;
+      min-width: 24px;
     }
 
-    .blog-content h4 {
+    .blog-row h4 {
+      font-family: var(--font-heading);
       font-size: 15px;
       font-weight: 500;
-      margin-bottom: 4px;
       letter-spacing: -0.01em;
     }
 
-    .blog-content span {
+    .blog-row .meta {
       font-size: 13px;
       color: var(--text-tertiary);
+      margin-top: 2px;
     }
 
     /* ═══ PROMPT VIEWER ═══ */
     .prompt-viewer {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
+      background: var(--bg-dark);
       border-radius: var(--radius);
       overflow: hidden;
     }
 
-    .prompt-tabs {
+    .prompt-header {
       display: flex;
-      border-bottom: 1px solid var(--border);
+      gap: 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
       overflow-x: auto;
     }
 
     .prompt-tab {
-      padding: 12px 20px;
+      padding: 14px 20px;
+      font-family: var(--font-body);
       font-size: 13px;
-      font-weight: 500;
-      color: var(--text-tertiary);
-      cursor: pointer;
-      border: none;
+      color: rgba(255,255,255,0.4);
       background: none;
+      border: none;
+      cursor: pointer;
       white-space: nowrap;
-      transition: all var(--transition);
-      font-family: var(--font-sans);
+      transition: color var(--transition);
       position: relative;
     }
 
-    .prompt-tab:hover { color: var(--text-secondary); }
+    .prompt-tab:hover { color: rgba(255,255,255,0.7); }
 
     .prompt-tab.active {
-      color: var(--text-primary);
+      color: #fff;
     }
 
     .prompt-tab.active::after {
       content: '';
       position: absolute;
       bottom: -1px;
-      left: 0; right: 0;
-      height: 1px;
-      background: var(--text-primary);
+      left: 16px; right: 16px;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 2px;
     }
 
-    .prompt-body {
-      padding: 24px;
+    .prompt-content {
+      padding: 28px;
       font-family: var(--font-mono);
       font-size: 13px;
-      line-height: 1.8;
-      color: var(--text-secondary);
-      min-height: 200px;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.65);
+      min-height: 220px;
       position: relative;
     }
 
-    .prompt-body .comment { color: var(--text-tertiary); }
-    .prompt-body .keyword { color: var(--accent); }
-    .prompt-body .string { color: var(--accent-emerald); }
-    .prompt-body .variable { color: var(--accent-violet); }
+    .prompt-content .cm { color: rgba(255,255,255,0.3); }
+    .prompt-content .kw { color: var(--accent); }
+    .prompt-content .str { color: #34D399; }
+    .prompt-content .var { color: #A78BFA; }
 
     .copy-btn {
       position: absolute;
       top: 16px; right: 16px;
-      padding: 6px 12px;
-      font-size: 12px;
+      padding: 6px 14px;
+      font-size: 11px;
       font-family: var(--font-mono);
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
       border-radius: var(--radius-sm);
-      color: var(--text-tertiary);
+      color: rgba(255,255,255,0.5);
       cursor: pointer;
       transition: all var(--transition);
     }
-
-    .copy-btn:hover { background: rgba(255,255,255,0.08); color: var(--text-primary); }
+    .copy-btn:hover { background: rgba(255,255,255,0.12); color: #fff; }
 
     /* ═══ FILM CARDS ═══ */
     .film-card {
@@ -442,59 +430,60 @@
       border-radius: var(--radius);
       overflow: hidden;
       transition: all var(--transition);
+      box-shadow: var(--shadow-sm);
     }
 
     .film-card:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
     }
 
     .film-poster {
-      width: 100%;
       aspect-ratio: 16/9;
-      background: linear-gradient(135deg, rgba(167,139,250,0.15), rgba(34,211,238,0.1));
+      position: relative;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
-      overflow: hidden;
     }
 
-    .film-poster::before {
+    .film-poster-bg {
+      position: absolute;
+      inset: 0;
+    }
+
+    .poster-1 { background: linear-gradient(135deg, #1a1a1a 0%, #3d1f0f 50%, #1a1a1a 100%); }
+    .poster-2 { background: linear-gradient(135deg, #1a1a1a 0%, #0f2d3d 50%, #1a1a1a 100%); }
+    .poster-3 { background: linear-gradient(135deg, #1a1a1a 0%, #2d0f3d 50%, #1a1a1a 100%); }
+
+    .film-poster::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(0,0,0,0.05) 2px,
-        rgba(0,0,0,0.05) 4px
-      );
+      background: repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(255,255,255,0.02) 1px, rgba(255,255,255,0.02) 2px);
     }
 
-    .play-btn {
-      width: 56px; height: 56px;
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(12px);
+    .play-icon {
+      width: 52px; height: 52px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid rgba(255,255,255,0.2);
-      z-index: 1;
+      z-index: 2;
+      backdrop-filter: blur(8px);
       transition: all var(--transition);
     }
 
-    .film-card:hover .play-btn { background: rgba(255,255,255,0.2); transform: scale(1.1); }
+    .film-card:hover .play-icon { background: var(--accent); border-color: var(--accent); transform: scale(1.08); }
+    .play-icon svg { width: 18px; height: 18px; fill: white; margin-left: 2px; }
 
-    .play-btn svg { width: 20px; height: 20px; fill: white; margin-left: 3px; }
+    .film-body { padding: 20px; }
+    .film-body h3 { font-family: var(--font-heading); font-size: 16px; font-weight: 600; margin-bottom: 6px; letter-spacing: -0.01em; }
+    .film-body p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
 
-    .film-info { padding: 20px; }
-    .film-info h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
-    .film-info p { font-size: 13px; color: var(--text-tertiary); line-height: 1.5; }
-
-    /* ═══ ESSAY LIST ═══ */
+    /* ═══ ESSAY CARDS ═══ */
     .essay-card {
       display: block;
       padding: 24px;
@@ -502,253 +491,242 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       transition: all var(--transition);
+      box-shadow: var(--shadow-sm);
     }
 
     .essay-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
       border-color: var(--border-hover);
-      background: var(--bg-card-hover);
-      transform: translateY(-1px);
     }
 
-    .essay-platform {
+    .essay-source {
       font-family: var(--font-mono);
       font-size: 11px;
       color: var(--text-tertiary);
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
       margin-bottom: 10px;
     }
 
-    .essay-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; letter-spacing: -0.01em; }
+    .essay-card h3 {
+      font-family: var(--font-heading);
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
     .essay-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
 
-    /* ═══ FOOTER / CONNECT ═══ */
-    .footer {
-      padding: 80px 24px;
-      border-top: 1px solid var(--border);
+    /* ═══ CONNECT / FOOTER ═══ */
+    .connect-section {
+      background: var(--bg-dark);
+      border-radius: var(--radius) var(--radius) 0 0;
+      padding: 80px 24px 48px;
+      margin-top: 40px;
     }
 
-    .footer-grid {
+    .connect-section .section-label { color: var(--accent); }
+    .connect-section .section-title { color: #fff; }
+    .connect-section .section-desc { color: rgba(255,255,255,0.5); }
+
+    .social-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      justify-content: center;
+      gap: 10px;
     }
 
-    .social-link {
+    .social-pill {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       padding: 10px 20px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
       border-radius: var(--radius-full);
       font-size: 13px;
       font-weight: 500;
-      color: var(--text-secondary);
+      color: rgba(255,255,255,0.7);
       transition: all var(--transition);
     }
 
-    .social-link:hover {
-      border-color: var(--border-hover);
-      color: var(--text-primary);
-      background: var(--bg-card-hover);
-      transform: translateY(-1px);
+    .social-pill:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.15);
+      color: #fff;
+      transform: translateY(-2px);
     }
 
-    .footer-bottom {
+    .social-pill svg { width: 16px; height: 16px; }
+
+    .footer-note {
       text-align: center;
-      margin-top: 48px;
+      padding: 32px 24px;
+      background: var(--bg-dark);
       font-size: 13px;
-      color: var(--text-tertiary);
+      color: rgba(255,255,255,0.25);
+      border-top: 1px solid rgba(255,255,255,0.05);
     }
 
-    /* ═══ SEPARATOR ═══ */
+    /* ═══ DIVIDER ═══ */
     .divider {
-      height: 1px;
-      background: var(--border);
       max-width: var(--max-w);
       margin: 0 auto;
+      height: 1px;
+      background: var(--border);
     }
 
-    /* ═══ FADE IN ANIMATION ═══ */
-    .fade-in {
+    /* ═══ FADE IN ═══ */
+    .fade-up {
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
     }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .fade-up.vis { opacity: 1; transform: none; }
 
     /* ═══ RESPONSIVE ═══ */
-    @media (max-width: 640px) {
-      nav { top: auto; bottom: 16px; }
-      .hero { padding-top: 100px; }
-      section { padding: 60px 16px 40px; }
-      .section-header { flex-direction: column; gap: 8px; }
-      .hero-links { flex-direction: column; }
-      .hero-links a { justify-content: center; }
+    @media (max-width: 768px) {
+      .hero { padding: 120px 16px 60px; }
+      section { padding: 60px 16px; }
+      .nav-links a { font-size: 13px; padding: 6px 10px; }
+      .hero-actions { flex-direction: column; }
+      .btn { justify-content: center; }
+      .bento { gap: 12px; }
+      .connect-section { border-radius: 0; }
+    }
+
+    @media (max-width: 480px) {
+      .nav-links { display: none; }
     }
   </style>
 </head>
 <body>
-  <!-- ═══ NAVIGATION ═══ -->
-  <nav>
-    <div class="nav-logo">UB<span>.</span></div>
-    <a href="#engineering" class="active">Engineering</a>
-    <a href="#automation">Automation</a>
-    <a href="#films">Films</a>
-    <a href="#essays">Essays</a>
-    <a href="#connect">Connect</a>
-  </nav>
+
+  <!-- ═══ NAV ═══ -->
+  <div class="nav-wrap" id="navWrap">
+    <nav>
+      <a href="#" class="nav-brand">Ujjwal Basnet</a>
+      <div class="nav-links">
+        <a href="#engineering" class="active">Engineering</a>
+        <a href="#automation">Automation</a>
+        <a href="#films">Films</a>
+        <a href="#essays">Essays</a>
+        <a href="#connect">Connect</a>
+      </div>
+    </nav>
+  </div>
 
   <!-- ═══ HERO ═══ -->
-  <section class="hero" id="about">
-    <div class="container">
-      <div class="hero-badge"><div class="dot"></div>Available for collaborations</div>
-      <h1>Ujjwal Basnet</h1>
-      <p class="hero-subtitle">
-        I build <strong>multi-agent AI systems</strong>, direct <strong>AI-generated films</strong>,
-        and write technical deep-dives on machine learning. Based in Nepal, grinding 6–12 hours daily — 
-        inspecting latent tensors, orchestrating agent workflows, and writing critiques.
-      </p>
-      <div class="hero-links">
-        <a href="https://github.com/ujjwal-basnet" target="_blank" rel="noopener" class="btn-primary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/ujjwal-basnet/" target="_blank" rel="noopener" class="btn-ghost">LinkedIn →</a>
-        <a href="mailto:ujjwalvictus15@gmail.com" class="btn-ghost">Email →</a>
-      </div>
+  <header class="hero">
+    <div class="hero-eyebrow"><div class="pulse"></div>Available for collaborations</div>
+    <h1>I build AI systems<br>that actually <span class="highlight">ship.</span></h1>
+    <p class="hero-desc">
+      Multi-agent orchestration, production prompt systems, and AI-generated films.
+      <strong>Not demos — real products</strong> built for Nepali businesses and the open-source community.
+    </p>
+    <div class="hero-actions">
+      <a href="https://github.com/ujjwal-basnet" target="_blank" rel="noopener" class="btn btn-fill">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/ujjwal-basnet/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn →</a>
+      <a href="https://x.com/ujjwal_ai" target="_blank" rel="noopener" class="btn btn-outline">Twitter →</a>
     </div>
-  </section>
+  </header>
 
   <div class="divider"></div>
 
   <!-- ═══ AI ENGINEERING ═══ -->
   <section id="engineering">
-    <div class="container fade-in">
-      <div class="section-header">
-        <span class="section-tag tag-cyan">01</span>
-        <div>
-          <h2 class="section-title">AI Engineering</h2>
-          <p class="section-desc">Production multi-agent systems, data science orchestration, and deep learning research — with open-source code and technical writing.</p>
-        </div>
-      </div>
+    <div class="container fade-up">
+      <div class="section-label">01 — Engineering</div>
+      <h2 class="section-title">AI Engineering</h2>
+      <p class="section-desc">Open-source multi-agent systems, RAG pipelines, and deep learning projects — with technical blogs.</p>
 
-      <div class="two-col">
-        <!-- Projects Column -->
-        <div>
-          <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:16px;padding-left:4px;">Projects & Code</div>
-          <div style="display:flex;flex-direction:column;gap:12px;">
-            
-            <a href="https://github.com/ujjwal-basnet/csv-Ai" target="_blank" rel="noopener" class="card">
-              <div class="card-icon" style="background:var(--accent-dim);">🧠</div>
-              <h3>csv-Ai</h3>
-              <p>Multi-agent data science orchestrator. A Coordinator dispatches tasks to specialized agents — Context Engineer, EDA Agent, self-correcting Error Solver — for end-to-end analysis.</p>
-              <div class="card-meta">
-                <span class="chip">LangGraph</span>
-                <span class="chip">Multi-Agent</span>
-                <span class="chip">Python</span>
-              </div>
-              <span class="card-link">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-            </a>
-
-            <a href="https://github.com/ujjwal-basnet/battle_tested_agent_codes" target="_blank" rel="noopener" class="card">
-              <div class="card-icon" style="background:var(--accent-violet-dim);">⚡</div>
-              <h3>battle_tested_agent_codes</h3>
-              <p>Production-grade LangGraph workflows with custom tool nodes, conditional routing edges, and persistent state checkpoints. Real agent patterns, not tutorials.</p>
-              <div class="card-meta">
-                <span class="chip">LangGraph</span>
-                <span class="chip">Production</span>
-                <span class="chip">Agents</span>
-              </div>
-              <span class="card-link">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-            </a>
-
-            <a href="https://github.com/ujjwal-basnet/Enterprise_Rag" target="_blank" rel="noopener" class="card">
-              <div class="card-icon" style="background:var(--accent-emerald-dim);">📚</div>
-              <h3>Enterprise RAG</h3>
-              <p>Enterprise-grade Retrieval-Augmented Generation system with sync hooks, document chunking strategies, and retrieval evaluation pipelines.</p>
-              <div class="card-meta">
-                <span class="chip">RAG</span>
-                <span class="chip">LangChain</span>
-                <span class="chip">Vector DB</span>
-              </div>
-              <span class="card-link">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-            </a>
-
-            <a href="https://github.com/ujjwal-basnet/mlops-mini-project" target="_blank" rel="noopener" class="card">
-              <div class="card-icon" style="background:var(--accent-amber-dim);">📊</div>
-              <h3>MLOps Pipeline</h3>
-              <p>End-to-end MLOps with DagsHub integration, MLflow experiment tracking, model staging and production promotion workflows.</p>
-              <div class="card-meta">
-                <span class="chip">MLflow</span>
-                <span class="chip">DagsHub</span>
-                <span class="chip">MLOps</span>
-              </div>
-              <span class="card-link">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-            </a>
+      <div class="bento">
+        <!-- Featured Project (wide) -->
+        <a href="https://github.com/ujjwal-basnet/csv-Ai" target="_blank" rel="noopener" class="bento-item bento-wide">
+          <div class="bento-label">Featured Project</div>
+          <h3>csv-Ai</h3>
+          <p>Multi-agent data science orchestrator. A Coordinator dispatches tasks to specialized agents — Context Engineer, EDA Agent, self-correcting Error Solver — for end-to-end automated analysis.</p>
+          <div class="tags">
+            <span class="tag tag-blue">LangGraph</span>
+            <span class="tag tag-purple">Multi-Agent</span>
+            <span class="tag tag-default">Python</span>
           </div>
+          <span class="arrow-link">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <!-- Stats card (narrow) -->
+        <div class="bento-item bento-narrow" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:var(--bg-warm);">
+          <div style="font-family:var(--font-heading);font-size:42px;font-weight:700;letter-spacing:-0.04em;color:var(--accent);">20+</div>
+          <div style="font-size:13px;color:var(--text-secondary);margin-top:4px;">Repos on GitHub</div>
+          <div style="width:40px;height:1px;background:var(--border);margin:16px 0;"></div>
+          <div style="font-family:var(--font-heading);font-size:42px;font-weight:700;letter-spacing:-0.04em;color:var(--text);">7</div>
+          <div style="font-size:13px;color:var(--text-secondary);margin-top:4px;">Technical Blogs</div>
         </div>
 
-        <!-- Blog Column -->
-        <div>
-          <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:16px;padding-left:4px;">Data Science & ML Blogs</div>
+        <!-- Other projects (thirds) -->
+        <a href="https://github.com/ujjwal-basnet/battle_tested_agent_codes" target="_blank" rel="noopener" class="bento-item bento-third">
+          <div class="bento-label">Agents</div>
+          <h3>battle_tested_agent_codes</h3>
+          <p>Production LangGraph workflows with custom tool nodes, conditional routing, and persistent state.</p>
+          <div class="tags">
+            <span class="tag tag-blue">LangGraph</span>
+            <span class="tag tag-default">Production</span>
+          </div>
+          <span class="arrow-link">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="https://github.com/ujjwal-basnet/Enterprise_Rag" target="_blank" rel="noopener" class="bento-item bento-third">
+          <div class="bento-label">RAG</div>
+          <h3>Enterprise RAG</h3>
+          <p>Enterprise-grade retrieval pipeline with document chunking, sync hooks, and retrieval evaluation.</p>
+          <div class="tags">
+            <span class="tag tag-green">LangChain</span>
+            <span class="tag tag-default">Vector DB</span>
+          </div>
+          <span class="arrow-link">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="https://github.com/ujjwal-basnet/mlops-mini-project" target="_blank" rel="noopener" class="bento-item bento-third">
+          <div class="bento-label">MLOps</div>
+          <h3>MLOps Pipeline</h3>
+          <p>End-to-end MLOps with MLflow experiment tracking, DagsHub, model staging & promotion.</p>
+          <div class="tags">
+            <span class="tag tag-purple">MLflow</span>
+            <span class="tag tag-default">DagsHub</span>
+          </div>
+          <span class="arrow-link">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <!-- Blog list (full width) -->
+        <div class="bento-item bento-full" style="background:var(--bg-warm);">
+          <div class="bento-label">Technical Writing · Medium</div>
           <div class="blog-list">
-            <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="blog-item">
+            <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="blog-row">
               <span class="blog-num">01</span>
-              <div class="blog-content">
-                <h4>DBSCAN: A Beginner's Guide to Clustering Beyond K-means</h4>
-                <span>Medium · Pinned · Feb 2024</span>
-              </div>
+              <div><h4>DBSCAN: A Beginner's Guide to Clustering Beyond K-means</h4><div class="meta">Pinned · Feb 2024</div></div>
             </a>
-            <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="blog-item">
+            <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="blog-row">
               <span class="blog-num">02</span>
-              <div class="blog-content">
-                <h4>Activation Functions: From Sigmoid to Swish</h4>
-                <span>Medium · Deep Learning Foundations</span>
-              </div>
+              <div><h4>Activation Functions: From Sigmoid to Swish</h4><div class="meta">Deep Learning Foundations</div></div>
             </a>
-            <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="blog-item">
+            <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="blog-row">
               <span class="blog-num">03</span>
-              <div class="blog-content">
-                <h4>The Normal Equation: Solving Linear Regression Analytically</h4>
-                <span>Medium · Math for ML</span>
-              </div>
+              <div><h4>The Normal Equation: Solving Linear Regression Analytically</h4><div class="meta">Math for ML</div></div>
             </a>
-            <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="blog-item">
+            <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="blog-row">
               <span class="blog-num">04</span>
-              <div class="blog-content">
-                <h4>Polynomial Regression: When Straight Lines Aren't Enough</h4>
-                <span>Medium · Regression Series</span>
-              </div>
+              <div><h4>Custom PyTorch LSTM Sentence Encoders from Scratch</h4><div class="meta">Deep Learning</div></div>
             </a>
-            <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="blog-item">
+            <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="blog-row">
               <span class="blog-num">05</span>
-              <div class="blog-content">
-                <h4>That Bias Thing in Neural Networks</h4>
-                <span>Medium · Neural Network Internals</span>
-              </div>
-            </a>
-            <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="blog-item">
-              <span class="blog-num">06</span>
-              <div class="blog-content">
-                <h4>Custom PyTorch LSTM Sentence Encoders from Scratch</h4>
-                <span>Medium · Deep Learning</span>
-              </div>
-            </a>
-            <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="blog-item">
-              <span class="blog-num">07</span>
-              <div class="blog-content">
-                <h4>SD-Turbo Latent Tensor Denoising: Step-by-Step Inspection</h4>
-                <span>Medium · Diffusion Models</span>
-              </div>
+              <div><h4>SD-Turbo Latent Tensor Denoising: Step-by-Step Inspection</h4><div class="meta">Diffusion Models</div></div>
             </a>
           </div>
+          <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="arrow-link" style="margin-top:20px;">All articles on Medium <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
       </div>
     </div>
@@ -758,54 +736,58 @@
 
   <!-- ═══ AI AUTOMATION ═══ -->
   <section id="automation">
-    <div class="container fade-in">
-      <div class="section-header">
-        <span class="section-tag tag-emerald">02</span>
-        <div>
-          <h2 class="section-title">AI Automation</h2>
-          <p class="section-desc">Production prompt systems and workflow automations built for a local Nepali business — handling finance, compliance, and daily operations.</p>
-        </div>
-      </div>
+    <div class="container fade-up">
+      <div class="section-label">02 — Automation</div>
+      <h2 class="section-title">AI Automation</h2>
+      <p class="section-desc">Production prompt systems built for a Nepali consulting firm — finance, compliance, and operations.</p>
 
-      <div class="prompt-viewer">
-        <div class="prompt-tabs">
-          <button class="prompt-tab active" data-tab="0">NEPSE Morning Digest</button>
-          <button class="prompt-tab" data-tab="1">Expense Tracker</button>
-          <button class="prompt-tab" data-tab="2">Compliance Updates</button>
-          <button class="prompt-tab" data-tab="3">Meeting Notes</button>
-        </div>
-        <div class="prompt-body" id="prompt-content">
-          <button class="copy-btn" onclick="copyPrompt()">Copy</button>
-          <span class="comment">// Automated Telegram digest — runs at 6:30 AM NPT daily</span><br><br>
-          <span class="keyword">system</span>: You are a Nepali financial analyst bot.<br>
-          <span class="keyword">task</span>: Scan overnight <span class="string">NEPSE market data</span>,<br>
-          &nbsp;&nbsp;political headlines from <span class="string">Ratopati</span> and <span class="string">OnlineKhabar</span>,<br>
-          &nbsp;&nbsp;and any <span class="variable">NRB monetary policy</span> changes.<br><br>
-          <span class="keyword">output</span>: Generate a 200-word business briefing<br>
-          &nbsp;&nbsp;formatted for <span class="string">Telegram</span> with:<br>
-          &nbsp;&nbsp;• Top 5 stock movers with % change<br>
-          &nbsp;&nbsp;• Macro sentiment summary<br>
-          &nbsp;&nbsp;• One actionable insight<br><br>
-          <span class="comment">// Delivered via n8n → Telegram Bot API</span>
-        </div>
-      </div>
-
-      <div class="card-grid" style="margin-top:24px;">
-        <div class="card">
-          <h3>📱 6 Workflow Automations</h3>
-          <p>Built for a local Nepali consulting firm: Morning NEPSE digest, supplier payment triggers, IRD VAT compliance trackers, expense log OCR, Viber notification relays, and meeting notes summarizer.</p>
-          <div class="card-meta">
-            <span class="chip">n8n</span>
-            <span class="chip">Telegram</span>
-            <span class="chip">Google Sheets</span>
+      <div class="bento">
+        <div class="bento-item bento-wide" style="padding:0;overflow:hidden;">
+          <div class="prompt-viewer">
+            <div class="prompt-header">
+              <button class="prompt-tab active" data-tab="0">NEPSE Digest</button>
+              <button class="prompt-tab" data-tab="1">Expense Tracker</button>
+              <button class="prompt-tab" data-tab="2">Compliance</button>
+              <button class="prompt-tab" data-tab="3">Meeting Notes</button>
+            </div>
+            <div class="prompt-content" id="prompt-content">
+              <button class="copy-btn" onclick="copyPrompt()">Copy</button>
+              <span class="cm">// Automated Telegram digest — 6:30 AM NPT</span><br><br>
+              <span class="kw">system</span>: Nepali financial analyst bot.<br>
+              <span class="kw">task</span>: Scan <span class="str">NEPSE data</span>,<br>
+              &nbsp;&nbsp;headlines from <span class="str">Ratopati</span>, <span class="str">OnlineKhabar</span>,<br>
+              &nbsp;&nbsp;<span class="var">NRB monetary policy</span> changes.<br><br>
+              <span class="kw">output</span>: 200-word briefing for <span class="str">Telegram</span>:<br>
+              &nbsp;&nbsp;• Top 5 movers with % change<br>
+              &nbsp;&nbsp;• Macro sentiment<br>
+              &nbsp;&nbsp;• One actionable insight<br><br>
+              <span class="cm">// n8n → Telegram Bot API</span>
+            </div>
           </div>
         </div>
-        <div class="card">
-          <h3>💰 NPR 10,000 System</h3>
-          <p>Client-paid prompt engineering system. Six custom GPT prompts calibrated for Nepali business context — tested daily for months before client approved public sharing.</p>
-          <div class="card-meta">
-            <span class="chip">Prompt Engineering</span>
-            <span class="chip">Business AI</span>
+
+        <div class="bento-item bento-narrow" style="display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div class="bento-label">Client Work</div>
+            <h3>NPR 10,000 System</h3>
+            <p>Six custom GPT prompts for a Nepali business owner — calibrated and tested daily for months before public release.</p>
+          </div>
+          <div class="tags" style="margin-top:auto;padding-top:20px;">
+            <span class="tag tag-accent">Prompt Engineering</span>
+            <span class="tag tag-default">Business AI</span>
+          </div>
+        </div>
+
+        <div class="bento-item bento-full" style="background:var(--bg-warm);">
+          <div class="bento-label">Workflow Stack</div>
+          <h3>6 Production Automations</h3>
+          <p style="max-width:700px;">Morning NEPSE digest → Supplier payment triggers → IRD VAT compliance tracker → Expense log OCR → Viber notification relay → Meeting notes summarizer. All running on n8n with Google Sheets and Telegram integrations.</p>
+          <div class="tags">
+            <span class="tag tag-blue">n8n</span>
+            <span class="tag tag-green">Telegram</span>
+            <span class="tag tag-default">Google Sheets</span>
+            <span class="tag tag-default">Viber</span>
+            <span class="tag tag-purple">Whisper</span>
           </div>
         </div>
       </div>
@@ -816,45 +798,44 @@
 
   <!-- ═══ AI FILMS ═══ -->
   <section id="films">
-    <div class="container fade-in">
-      <div class="section-header">
-        <span class="section-tag tag-violet">03</span>
-        <div>
-          <h2 class="section-title">AI Director</h2>
-          <p class="section-desc">AI-generated short films and hyper-realistic ad workflows. Using ComfyUI, Google Omni Flash, and custom diffusion pipelines.</p>
-        </div>
-      </div>
+    <div class="container fade-up">
+      <div class="section-label">03 — Creative</div>
+      <h2 class="section-title">AI Director</h2>
+      <p class="section-desc">AI-generated films, hyper-realistic ads, and creative workflows with ComfyUI and diffusion pipelines.</p>
 
-      <div class="card-grid">
-        <a href="https://www.facebook.com/share/v/18yFJ47Rh9/" target="_blank" rel="noopener" class="film-card">
-          <div class="film-poster" style="background:linear-gradient(135deg, rgba(239,68,68,0.2), rgba(167,139,250,0.15));">
-            <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+      <div class="bento">
+        <a href="https://www.facebook.com/share/v/18yFJ47Rh9/" target="_blank" rel="noopener" class="film-card bento-third">
+          <div class="film-poster">
+            <div class="film-poster-bg poster-1"></div>
+            <div class="play-icon"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
           </div>
-          <div class="film-info">
+          <div class="film-body">
             <h3>Balen vs Super Villain</h3>
-            <p>2-part AI-generated action film. Full CGI characters, custom voice synthesis, and cinematic editing — all orchestrated through AI pipelines.</p>
+            <p>2-part AI action film with CGI characters and custom voice synthesis.</p>
           </div>
         </a>
 
-        <a href="#" class="film-card">
-          <div class="film-poster" style="background:linear-gradient(135deg, rgba(34,211,238,0.15), rgba(251,191,36,0.1));">
-            <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+        <div class="film-card bento-third">
+          <div class="film-poster">
+            <div class="film-poster-bg poster-2"></div>
+            <div class="play-icon"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
           </div>
-          <div class="film-info">
+          <div class="film-body">
             <h3>JCB Man vs Stone Man</h3>
-            <p>3-part CGI series pushing the limits of AI video generation. Custom character design with consistent identity across scenes.</p>
+            <p>3-part CGI series with consistent character identity across scenes.</p>
           </div>
-        </a>
+        </div>
 
-        <a href="#" class="film-card">
-          <div class="film-poster" style="background:linear-gradient(135deg, rgba(52,211,153,0.15), rgba(34,211,238,0.1));">
-            <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+        <div class="film-card bento-third">
+          <div class="film-poster">
+            <div class="film-poster-bg poster-3"></div>
+            <div class="play-icon"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
           </div>
-          <div class="film-info">
+          <div class="film-body">
             <h3>UGC Ads Formula</h3>
-            <p>Cracked the hyper-realistic AI ad workflow: Google Omni Flash + Claude Code + TikTok. Generates customer testimonial videos that convert.</p>
+            <p>Omni Flash + Claude Code + TikTok — hyper-realistic testimonial ads.</p>
           </div>
-        </a>
+        </div>
       </div>
     </div>
   </section>
@@ -863,168 +844,149 @@
 
   <!-- ═══ ESSAYS ═══ -->
   <section id="essays">
-    <div class="container fade-in">
-      <div class="section-header">
-        <span class="section-tag tag-amber">04</span>
-        <div>
-          <h2 class="section-title">Essays & Critiques</h2>
-          <p class="section-desc">Contrarian takes on AI hype, technical verification, and the future of software engineering.</p>
-        </div>
-      </div>
+    <div class="container fade-up">
+      <div class="section-label">04 — Writing</div>
+      <h2 class="section-title">Essays & Critiques</h2>
+      <p class="section-desc">Contrarian takes on AI, the future of software, and technical verification.</p>
 
-      <div class="card-grid">
-        <a href="https://ujjwal327667.substack.com/" target="_blank" rel="noopener" class="essay-card">
-          <div class="essay-platform">Substack · May 2025</div>
+      <div class="bento">
+        <a href="https://ujjwal327667.substack.com/" target="_blank" rel="noopener" class="essay-card bento-half">
+          <div class="essay-source">Substack · May 2025</div>
           <h3>AI Agents Are Not the Future</h3>
-          <p>"9 out of 10 people are building AI agents right now" — and most of them are solving problems that don't exist.</p>
+          <p>"9 out of 10 people are building AI agents right now" — and most are solving problems that don't exist.</p>
         </a>
 
-        <a href="https://ujjwal327667.substack.com/" target="_blank" rel="noopener" class="essay-card">
-          <div class="essay-platform">Substack · Mar 2025</div>
+        <a href="https://ujjwal327667.substack.com/" target="_blank" rel="noopener" class="essay-card bento-half">
+          <div class="essay-source">Substack · Mar 2025</div>
           <h3>AI Ate Software</h3>
-          <p>For 20 years, software was the safest bet. Now the moat is gone. A look at what comes next for developers.</p>
+          <p>For 20 years, software was the safest bet. Now the moat is gone. What comes next for developers.</p>
         </a>
 
-        <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="essay-card">
-          <div class="essay-platform">Medium</div>
+        <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="essay-card bento-half">
+          <div class="essay-source">Medium</div>
           <h3>RAG is Dead</h3>
-          <p>Why retrieval-augmented generation might be a transitional pattern, and what the long-context window revolution means for it.</p>
+          <p>Why retrieval-augmented generation might be transitional, and what long-context windows mean for it.</p>
         </a>
 
-        <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="essay-card">
-          <div class="essay-platform">Medium</div>
-          <h3>AI Verification Is Impossible: Removing Google SynthID</h3>
-          <p>A practical demonstration showing how AI watermarking schemes like SynthID can be bypassed — and what that means for trust.</p>
+        <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="essay-card bento-half">
+          <div class="essay-source">Medium</div>
+          <h3>Removing Google SynthID</h3>
+          <p>Demonstrating how AI watermarking schemes can be bypassed — and what that means for trust.</p>
         </a>
       </div>
     </div>
   </section>
 
-  <div class="divider"></div>
-
   <!-- ═══ CONNECT ═══ -->
-  <footer class="footer" id="connect">
+  <section class="connect-section" id="connect">
     <div class="container" style="text-align:center;">
-      <h2 class="section-title" style="margin-bottom:12px;">Let's Connect</h2>
-      <p class="section-desc" style="margin:0 auto 32px;">Find me on any of these platforms — or just shoot me an email.</p>
-      <div class="footer-grid">
-        <a href="https://github.com/ujjwal-basnet" target="_blank" rel="noopener" class="social-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+      <div class="section-label">Let's talk</div>
+      <h2 class="section-title">Connect</h2>
+      <p class="section-desc" style="margin:0 auto 40px;">Find me on any of these — or just send an email.</p>
+      <div class="social-grid" style="justify-content:center;">
+        <a href="https://github.com/ujjwal-basnet" target="_blank" rel="noopener" class="social-pill">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
           GitHub
         </a>
-        <a href="https://www.linkedin.com/in/ujjwal-basnet/" target="_blank" rel="noopener" class="social-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        <a href="https://www.linkedin.com/in/ujjwal-basnet/" target="_blank" rel="noopener" class="social-pill">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           LinkedIn
         </a>
-        <a href="https://x.com/ujjwal_ai" target="_blank" rel="noopener" class="social-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          Twitter/X
+        <a href="https://x.com/ujjwal_ai" target="_blank" rel="noopener" class="social-pill">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          Twitter
         </a>
-        <a href="https://www.instagram.com/ujjwal.aii/" target="_blank" rel="noopener" class="social-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        <a href="https://www.instagram.com/ujjwal.aii/" target="_blank" rel="noopener" class="social-pill">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
           Instagram
         </a>
-        <a href="https://www.facebook.com/ujjwal.aiii" target="_blank" rel="noopener" class="social-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        <a href="https://www.facebook.com/ujjwal.aiii" target="_blank" rel="noopener" class="social-pill">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
           Facebook
         </a>
-        <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="social-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+        <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" rel="noopener" class="social-pill">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
           Medium
         </a>
-        <a href="https://ujjwal327667.substack.com/" target="_blank" rel="noopener" class="social-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
+        <a href="https://ujjwal327667.substack.com/" target="_blank" rel="noopener" class="social-pill">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
           Substack
         </a>
-        <a href="mailto:ujjwalvictus15@gmail.com" class="social-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        <a href="mailto:ujjwalvictus15@gmail.com" class="social-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           Email
         </a>
       </div>
-      <div class="footer-bottom">
-        <p>© 2025 Ujjwal Basnet · Built with precision, not templates.</p>
-      </div>
     </div>
-  </footer>
+  </section>
+  <div class="footer-note">© 2025 Ujjwal Basnet · Built with code, not templates.</div>
 
   <script>
-    // ═══ INTERSECTION OBSERVER FOR FADE-INS ═══
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-    // ═══ ACTIVE NAV LINK ═══
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('nav a[href^="#"]');
-
+    // Nav scroll effect
+    const navWrap = document.getElementById('navWrap');
     window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 200;
-        if (scrollY >= sectionTop) current = section.getAttribute('id');
-      });
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+      navWrap.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Intersection Observer for fade-in
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+    // Active nav tracking
+    const secs = document.querySelectorAll('section[id]');
+    const links = document.querySelectorAll('.nav-links a[href^="#"]');
+    window.addEventListener('scroll', () => {
+      let cur = '';
+      secs.forEach(s => { if (scrollY >= s.offsetTop - 200) cur = s.id; });
+      links.forEach(l => {
+        l.classList.toggle('active', l.getAttribute('href') === '#' + cur);
       });
     });
 
-    // ═══ PROMPT TAB SWITCHING ═══
+    // Prompt tabs
     const prompts = [
       `<button class="copy-btn" onclick="copyPrompt()">Copy</button>
-<span class="comment">// Automated Telegram digest — runs at 6:30 AM NPT daily</span><br><br>
-<span class="keyword">system</span>: You are a Nepali financial analyst bot.<br>
-<span class="keyword">task</span>: Scan overnight <span class="string">NEPSE market data</span>,<br>
-&nbsp;&nbsp;political headlines from <span class="string">Ratopati</span> and <span class="string">OnlineKhabar</span>,<br>
-&nbsp;&nbsp;and any <span class="variable">NRB monetary policy</span> changes.<br><br>
-<span class="keyword">output</span>: Generate a 200-word business briefing<br>
-&nbsp;&nbsp;formatted for <span class="string">Telegram</span> with:<br>
-&nbsp;&nbsp;• Top 5 stock movers with % change<br>
-&nbsp;&nbsp;• Macro sentiment summary<br>
+<span class="cm">// Automated Telegram digest — 6:30 AM NPT</span><br><br>
+<span class="kw">system</span>: Nepali financial analyst bot.<br>
+<span class="kw">task</span>: Scan <span class="str">NEPSE data</span>,<br>
+&nbsp;&nbsp;headlines from <span class="str">Ratopati</span>, <span class="str">OnlineKhabar</span>,<br>
+&nbsp;&nbsp;<span class="var">NRB monetary policy</span> changes.<br><br>
+<span class="kw">output</span>: 200-word briefing for <span class="str">Telegram</span>:<br>
+&nbsp;&nbsp;• Top 5 movers with % change<br>
+&nbsp;&nbsp;• Macro sentiment<br>
 &nbsp;&nbsp;• One actionable insight<br><br>
-<span class="comment">// Delivered via n8n → Telegram Bot API</span>`,
-
+<span class="cm">// n8n → Telegram Bot API</span>`,
       `<button class="copy-btn" onclick="copyPrompt()">Copy</button>
-<span class="comment">// OCR-powered expense categorizer — triggers on receipt upload</span><br><br>
-<span class="keyword">system</span>: You are an NPR expense tracker.<br>
-<span class="keyword">input</span>: <span class="string">Receipt image</span> (JPG/PNG from Viber)<br><br>
-<span class="keyword">task</span>: Extract vendor, amount, date, and category.<br>
-&nbsp;&nbsp;Categories: <span class="variable">Office</span> | <span class="variable">Travel</span> | <span class="variable">Supplies</span> | <span class="variable">Food</span> | <span class="variable">Misc</span><br><br>
-<span class="keyword">output</span>: Append row to <span class="string">Google Sheets</span> with:<br>
-&nbsp;&nbsp;[Date, Vendor, Amount (NPR), Category, Confidence %]<br><br>
-<span class="comment">// Monthly auto-summary sent on 1st of each month</span>`,
-
+<span class="cm">// OCR expense categorizer — triggers on receipt</span><br><br>
+<span class="kw">input</span>: <span class="str">Receipt image</span> (JPG from Viber)<br>
+<span class="kw">task</span>: Extract vendor, amount, date, category.<br>
+&nbsp;&nbsp;Categories: <span class="var">Office</span> | <span class="var">Travel</span> | <span class="var">Supplies</span> | <span class="var">Food</span><br><br>
+<span class="kw">output</span>: Append to <span class="str">Google Sheets</span>:<br>
+&nbsp;&nbsp;[Date, Vendor, Amount NPR, Category, Confidence]<br><br>
+<span class="cm">// Monthly auto-summary on 1st</span>`,
       `<button class="copy-btn" onclick="copyPrompt()">Copy</button>
-<span class="comment">// IRD VAT & compliance change monitor</span><br><br>
-<span class="keyword">system</span>: You are a Nepali tax compliance bot.<br>
-<span class="keyword">task</span>: Monitor <span class="string">IRD Nepal website</span> and<br>
-&nbsp;&nbsp;<span class="string">Department of Commerce</span> for updates.<br><br>
-<span class="keyword">trigger</span>: Any changes to <span class="variable">VAT rates</span>,<br>
-&nbsp;&nbsp;<span class="variable">filing deadlines</span>, or <span class="variable">penalty structures</span>.<br><br>
-<span class="keyword">output</span>: Push notification via <span class="string">Viber</span> with:<br>
+<span class="cm">// IRD VAT compliance monitor</span><br><br>
+<span class="kw">task</span>: Monitor <span class="str">IRD Nepal</span> for:<br>
+&nbsp;&nbsp;<span class="var">VAT rate</span> changes,<br>
+&nbsp;&nbsp;<span class="var">Filing deadline</span> updates,<br>
+&nbsp;&nbsp;<span class="var">Penalty structure</span> modifications.<br><br>
+<span class="kw">output</span>: Push via <span class="str">Viber</span>:<br>
 &nbsp;&nbsp;• What changed (before → after)<br>
 &nbsp;&nbsp;• Effective date<br>
-&nbsp;&nbsp;• Required action items<br><br>
-<span class="comment">// Prevents missed compliance deadlines</span>`,
-
+&nbsp;&nbsp;• Required actions<br><br>
+<span class="cm">// Prevents missed compliance deadlines</span>`,
       `<button class="copy-btn" onclick="copyPrompt()">Copy</button>
-<span class="comment">// Voice-to-structured meeting notes</span><br><br>
-<span class="keyword">system</span>: You are a meeting summarizer.<br>
-<span class="keyword">input</span>: <span class="string">Audio recording</span> (Whisper transcription)<br><br>
-<span class="keyword">task</span>: Extract from the transcript:<br>
-&nbsp;&nbsp;1. <span class="variable">Key decisions</span> made<br>
-&nbsp;&nbsp;2. <span class="variable">Action items</span> with owners<br>
-&nbsp;&nbsp;3. <span class="variable">Follow-ups</span> with deadlines<br>
-&nbsp;&nbsp;4. Any unresolved questions<br><br>
-<span class="keyword">output</span>: Formatted summary pushed to<br>
-&nbsp;&nbsp;<span class="string">Google Docs</span> + pinned in <span class="string">Telegram group</span><br><br>
-<span class="comment">// Nepali + English bilingual support</span>`
+<span class="cm">// Voice → structured meeting notes</span><br><br>
+<span class="kw">input</span>: <span class="str">Audio</span> (Whisper transcription)<br>
+<span class="kw">extract</span>:<br>
+&nbsp;&nbsp;1. <span class="var">Key decisions</span><br>
+&nbsp;&nbsp;2. <span class="var">Action items</span> + owners<br>
+&nbsp;&nbsp;3. <span class="var">Follow-ups</span> + deadlines<br>
+&nbsp;&nbsp;4. Unresolved questions<br><br>
+<span class="kw">output</span>: <span class="str">Google Docs</span> + pinned in <span class="str">Telegram</span><br><br>
+<span class="cm">// Nepali + English bilingual</span>`
     ];
 
     document.querySelectorAll('.prompt-tab').forEach(tab => {
@@ -1036,11 +998,11 @@
     });
 
     function copyPrompt() {
-      const text = document.getElementById('prompt-content').innerText.replace('Copy', '').trim();
-      navigator.clipboard.writeText(text).then(() => {
-        const btn = document.querySelector('.copy-btn');
-        btn.textContent = 'Copied!';
-        setTimeout(() => btn.textContent = 'Copy', 2000);
+      const txt = document.getElementById('prompt-content').innerText.replace('Copy','').trim();
+      navigator.clipboard.writeText(txt).then(() => {
+        const b = document.querySelector('.copy-btn');
+        b.textContent = 'Copied!';
+        setTimeout(() => b.textContent = 'Copy', 1500);
       });
     }
   </script>
