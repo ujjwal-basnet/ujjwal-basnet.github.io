@@ -3,314 +3,438 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Ujjwal Basnet | AI Engineer &amp; Creative Technologist</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<title>Ujjwal Basnet - Portfolio</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
         tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "on-secondary-container": "#dcb7ff",
-                      "primary-fixed": "#6ff6ff",
-                      "on-primary-fixed": "#002022",
-                      "inverse-on-surface": "#233143",
-                      "on-primary": "#00373a",
-                      "on-background": "#d4e4fa",
-                      "secondary-fixed": "#efdbff",
-                      "surface": "#051424",
-                      "tertiary-container": "#fed83a",
-                      "background": "#051424",
-                      "on-secondary-fixed-variant": "#6700b5",
-                      "on-surface-variant": "#b9cacb",
-                      "inverse-surface": "#d4e4fa",
-                      "on-tertiary-container": "#725e00",
-                      "on-tertiary-fixed": "#221b00",
-                      "on-primary-fixed-variant": "#004f53",
-                      "outline": "#849495",
-                      "secondary-container": "#7701d0",
-                      "error-container": "#93000a",
-                      "on-tertiary": "#3b2f00",
-                      "surface-container-lowest": "#010f1f",
-                      "tertiary": "#fff6e4",
-                      "surface-tint": "#00dce6",
-                      "inverse-primary": "#00696f",
-                      "secondary": "#dcb8ff",
-                      "surface-container": "#122131",
-                      "on-secondary": "#480081",
-                      "outline-variant": "#3a494b",
-                      "on-error-container": "#ffdad6",
-                      "on-surface": "#d4e4fa",
-                      "primary-fixed-dim": "#00dce6",
-                      "surface-container-high": "#1c2b3c",
-                      "secondary-fixed-dim": "#dcb8ff",
-                      "on-secondary-fixed": "#2c0051",
-                      "surface-dim": "#051424",
-                      "surface-bright": "#2c3a4c",
-                      "tertiary-fixed": "#ffe173",
-                      "on-primary-container": "#006a70",
-                      "surface-container-low": "#0d1c2d",
-                      "primary": "#e0fdff",
-                      "surface-container-highest": "#273647",
-                      "on-error": "#690005",
-                      "surface-variant": "#273647",
-                      "primary-container": "#00f2fe",
-                      "error": "#ffb4ab",
-                      "tertiary-fixed-dim": "#e8c423",
-                      "on-tertiary-fixed-variant": "#554500"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.25rem",
-                      "lg": "0.5rem",
-                      "xl": "0.75rem",
-                      "full": "9999px"
-              },
-              "spacing": {
-                      "bento-gap": "16px",
-                      "margin-mobile": "20px",
-                      "container-max": "1200px",
-                      "section-padding": "120px",
-                      "gutter": "24px"
-              },
-              "fontFamily": {
-                      "headline-lg": [
-                              "Plus Jakarta Sans"
-                      ],
-                      "code-sm": [
-                              "JetBrains Mono"
-                      ],
-                      "headline-md": [
-                              "Plus Jakarta Sans"
-                      ],
-                      "body-md": [
-                              "Plus Jakarta Sans"
-                      ],
-                      "headline-xl": [
-                              "Plus Jakarta Sans"
-                      ],
-                      "headline-lg-mobile": [
-                              "Plus Jakarta Sans"
-                      ],
-                      "body-lg": [
-                              "Plus Jakarta Sans"
-                      ],
-                      "label-caps": [
-                              "JetBrains Mono"
-                      ]
-              },
-              "fontSize": {
-                      "headline-lg": [
-                              "40px",
-                              {
-                                      "lineHeight": "1.2",
-                                      "letterSpacing": "-0.02em",
-                                      "fontWeight": "700"
-                              }
-                      ],
-                      "code-sm": [
-                              "14px",
-                              {
-                                      "lineHeight": "1.5",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "headline-md": [
-                              "24px",
-                              {
-                                      "lineHeight": "1.4",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "body-md": [
-                              "16px",
-                              {
-                                      "lineHeight": "1.6",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "headline-xl": [
-                              "64px",
-                              {
-                                      "lineHeight": "1.1",
-                                      "letterSpacing": "-0.04em",
-                                      "fontWeight": "800"
-                              }
-                      ],
-                      "headline-lg-mobile": [
-                              "32px",
-                              {
-                                      "lineHeight": "1.2",
-                                      "fontWeight": "700"
-                              }
-                      ],
-                      "body-lg": [
-                              "18px",
-                              {
-                                      "lineHeight": "1.6",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "label-caps": [
-                              "12px",
-                              {
-                                      "lineHeight": "1.0",
-                                      "letterSpacing": "0.1em",
-                                      "fontWeight": "700"
-                              }
-                      ]
-              }
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#b9cacb",
+                        "secondary-fixed-dim": "#ddb7ff",
+                        "surface-bright": "#333b3b",
+                        "on-tertiary-container": "#725e00",
+                        "outline-variant": "#3a494b",
+                        "primary-fixed-dim": "#00dce6",
+                        "error": "#ffb4ab",
+                        "tertiary": "#fff6e4",
+                        "surface-container-lowest": "#081010",
+                        "on-tertiary-fixed-variant": "#554500",
+                        "surface-container-high": "#232b2c",
+                        "on-secondary-fixed": "#2c0051",
+                        "surface-container-highest": "#2e3637",
+                        "on-primary": "#00373a",
+                        "on-secondary-container": "#d6a9ff",
+                        "inverse-primary": "#00696f",
+                        "on-background": "#dce4e4",
+                        "on-primary-fixed-variant": "#004f53",
+                        "on-secondary-fixed-variant": "#6900b3",
+                        "primary-fixed": "#6ff6ff",
+                        "on-surface": "#dce4e4",
+                        "tertiary-container": "#fed83a",
+                        "inverse-on-surface": "#2a3232",
+                        "primary-container": "#00f2fe",
+                        "on-secondary": "#490080",
+                        "tertiary-fixed": "#ffe173",
+                        "on-tertiary-fixed": "#221b00",
+                        "inverse-surface": "#dce4e4",
+                        "on-error": "#690005",
+                        "on-primary-fixed": "#002022",
+                        "surface-tint": "#00dce6",
+                        "secondary-fixed": "#f0dbff",
+                        "secondary": "#ddb7ff",
+                        "error-container": "#93000a",
+                        "surface": "#0d1515",
+                        "on-tertiary": "#3b2f00",
+                        "surface-container-low": "#151d1e",
+                        "surface-dim": "#0d1515",
+                        "primary": "#e0fdff",
+                        "outline": "#849495",
+                        "surface-container": "#192122",
+                        "on-error-container": "#ffdad6",
+                        "secondary-container": "#6f00be",
+                        "tertiary-fixed-dim": "#e8c423",
+                        "on-primary-container": "#006a70",
+                        "background": "#0d1515",
+                        "surface-variant": "#2e3637"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "32px",
+                        "container-max": "1200px",
+                        "section-padding": "120px",
+                        "stack-md": "16px",
+                        "gutter": "24px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display": ["Plus Jakarta Sans"],
+                        "code-sm": ["JetBrains Mono"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "label-caps": ["JetBrains Mono"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "code-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+                    }
+                }
             }
-          }
         }
     </script>
 <style>
-        body { background-color: #060709; color: #d4e4fa; }
-        .bento-card {
-            background-color: #0F1115;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        body {
+            background-color: #07080a;
+            color: #dce4e4;
+        }
+        .card-surface {
+            background-color: #0d0e11;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+        }
+        .bento-hover:hover {
+            border-color: rgba(0, 220, 230, 0.5); /* Cyan glow */
+            box-shadow: 0 0 15px rgba(0, 220, 230, 0.1);
             transition: all 0.3s ease;
         }
-        .bento-card:hover {
-            backdrop-filter: blur(12px);
-            border-color: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 0 20px rgba(0, 242, 254, 0.1);
+        .violet-hover:hover {
+            border-color: rgba(221, 183, 255, 0.5); /* Violet glow */
+            box-shadow: 0 0 15px rgba(221, 183, 255, 0.1);
+            transition: all 0.3s ease;
         }
-        .glass-pill {
-            backdrop-filter: blur(20px);
-            background-color: rgba(6, 7, 9, 0.6);
+        
+        /* Custom Scrollbar for Terminal */
+        .terminal-scroll::-webkit-scrollbar {
+            width: 6px;
         }
-        .timeline-line {
-            background: linear-gradient(to bottom, #00F2FE, #7701d0);
-            width: 1px;
+        .terminal-scroll::-webkit-scrollbar-track {
+            background: #081010;
+        }
+        .terminal-scroll::-webkit-scrollbar-thumb {
+            background: #3a494b;
+            border-radius: 4px;
         }
     </style>
 </head>
-<body class="antialiased font-body-md text-body-md overflow-x-hidden selection:bg-primary-container selection:text-on-primary-fixed">
-<!-- TopNavBar -->
-<nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-container-max rounded-full border border-white/10 z-50 bg-surface/60 dark:bg-surface/60 backdrop-blur-xl shadow-sm hover:shadow-primary/10 transition-shadow duration-500 backdrop-blur-md">
-<div class="flex justify-between items-center px-8 py-3 z-50">
-<div class="font-headline-md text-headline-md text-on-surface flex items-center gap-2 after:content-[''] after:w-2 after:h-2 after:bg-primary-container after:rounded-full">UB</div>
-<ul class="hidden md:flex items-center gap-8 font-label-caps text-label-caps">
-<li><a class="text-primary relative after:content-[''] after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-0.5 after:h-0.5 after:bg-primary-container after:rounded-full" href="#about">About</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-white/5 transition-all duration-300 px-3 py-1 rounded" href="#code">Code</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-white/5 transition-all duration-300 px-3 py-1 rounded" href="#films">Films</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-white/5 transition-all duration-300 px-3 py-1 rounded" href="#essays">Essays</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-white/5 transition-all duration-300 px-3 py-1 rounded" href="#contact">Contact</a></li>
-</ul>
-<button class="font-label-caps text-label-caps bg-primary-container text-on-primary-fixed px-6 py-2 rounded-full hover:opacity-90 transition-opacity scale-95 active:scale-90 transition-transform">Email Me</button>
-</div>
+<body class="antialiased min-h-screen flex flex-col relative overflow-x-hidden selection:bg-primary-fixed-dim selection:text-background">
+<!-- Navigation Shell -->
+<header class="fixed top-0 left-0 right-0 z-50 flex justify-center w-full mt-stack-md pointer-events-none">
+<div class="pointer-events-auto bg-surface/80 dark:bg-surface/80 backdrop-blur-xl rounded-full mx-auto max-w-fit px-stack-md py-3 border border-outline-variant/30 flex items-center gap-8">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">UB.</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="font-body-md text-body-md text-primary-fixed-dim relative after:content-[''] after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-primary-fixed-dim after:rounded-full hover:text-primary-fixed-dim transition-transform duration-200 hover:scale-95" href="#about">About</a>
+<a class="font-body-md text-body-md text-on-surface-variant transition-colors duration-300 hover:text-primary-fixed-dim hover:scale-95" href="#engineering">Engineering</a>
+<a class="font-body-md text-body-md text-on-surface-variant transition-colors duration-300 hover:text-primary-fixed-dim hover:scale-95" href="#automation">Automation</a>
+<a class="font-body-md text-body-md text-on-surface-variant transition-colors duration-300 hover:text-primary-fixed-dim hover:scale-95" href="#films">Films</a>
+<a class="font-body-md text-body-md text-on-surface-variant transition-colors duration-300 hover:text-primary-fixed-dim hover:scale-95" href="#essays">Essays</a>
+<a class="font-body-md text-body-md text-on-surface-variant transition-colors duration-300 hover:text-primary-fixed-dim hover:scale-95" href="#contact">Contact</a>
 </nav>
-<main class="max-w-container-max mx-auto px-margin-mobile md:px-0 pt-32 pb-section-padding">
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center w-full">
 <!-- Hero Section -->
-<section class="py-section-padding flex flex-col items-start gap-6" id="about">
-<h1 class="font-headline-xl text-headline-xl text-on-surface md:w-3/4">Ujjwal Basnet</h1>
-<h2 class="font-headline-md text-headline-md text-primary-container">AI Engineer / AI Film Director / Technical Writer</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
-                I build intelligent systems that automate complex workflows, direct cinematic narratives using bleeding-edge generative AI, and write deep-dive technical essays on the realities of machine learning. Bridging the gap between deterministic code and creative synthesis.
-            </p>
+<section class="w-full max-w-container-max mx-auto px-gutter min-h-screen flex flex-col justify-center pt-32 pb-section-padding" id="about">
+<div class="grid grid-cols-12 gap-6 items-center">
+<div class="col-span-12 md:col-span-9">
+<h1 class="font-display text-display md:text-display text-on-surface mb-stack-md leading-tight">
+                        Ujjwal Basnet
+                    </h1>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface-variant mb-stack-lg">
+                        AI Engineer / AI Film Director / Technical Writer
+                    </h2>
+<div class="flex flex-col md:flex-row gap-4 font-code-sm text-code-sm text-on-surface-variant">
+<div class="flex items-center gap-2 bg-surface-container py-2 px-4 rounded-full border border-outline-variant/30 w-fit">
+<span class="w-2 h-2 rounded-full bg-primary-fixed-dim shadow-[0_0_8px_rgba(0,220,230,0.8)]"></span>
+                            6-12h Daily AI Grind
+                        </div>
+<div class="flex items-center gap-2 bg-surface-container py-2 px-4 rounded-full border border-outline-variant/30 w-fit">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed-dim">terminal</span>
+                            Inspecting latent tensors, building multi-agent orchestrations, and writing critiques
+                        </div>
+</div>
+</div>
+</div>
 </section>
-<!-- Technical Pillars Bento -->
-<section class="py-section-padding" id="code">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-bento-gap">
-<!-- AI Automation -->
-<div class="bento-card md:col-span-4 rounded-xl p-8 flex flex-col gap-6 relative overflow-hidden group">
-<div class="absolute inset-0 bg-gradient-to-br from-primary-container/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-<div class="flex justify-between items-start z-10">
-<span class="material-symbols-outlined text-primary-container text-3xl">smart_toy</span>
-<div class="bg-primary-container/10 px-3 py-1 rounded-full border border-primary-container/20">
-<span class="font-label-caps text-label-caps text-primary-container">AUTOMATION</span>
+<!-- AI Engineering Section -->
+<section class="w-full max-w-container-max mx-auto px-gutter py-section-padding" id="engineering">
+<div class="mb-stack-lg">
+<h3 class="font-label-caps text-label-caps text-primary-fixed-dim uppercase tracking-widest mb-2">01.</h3>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">AI Engineering</h2>
+</div>
+<div class="grid grid-cols-12 gap-6">
+<!-- Left: Bento Grid (Projects) -->
+<div class="col-span-12 md:col-span-7 grid grid-cols-2 gap-4">
+<div class="card-surface p-6 bento-hover flex flex-col justify-between h-48 col-span-2 md:col-span-1">
+<div>
+<span class="material-symbols-outlined text-primary-fixed-dim mb-4 block">database</span>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2">csv-Ai</h4>
+</div>
+<p class="font-code-sm text-code-sm text-on-surface-variant">Multi-agent data orchestrator</p>
+</div>
+<div class="card-surface p-6 bento-hover flex flex-col justify-between h-48 col-span-2 md:col-span-1">
+<div>
+<span class="material-symbols-outlined text-primary-fixed-dim mb-4 block">account_tree</span>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2">battle_tested_agent_codes</h4>
+</div>
+<p class="font-code-sm text-code-sm text-on-surface-variant">LangGraph workflows</p>
+</div>
+<div class="card-surface p-6 bento-hover flex flex-col justify-between h-48 col-span-2 md:col-span-1">
+<div>
+<span class="material-symbols-outlined text-primary-fixed-dim mb-4 block">webhook</span>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2">Enterprise_Rag</h4>
+</div>
+<p class="font-code-sm text-code-sm text-on-surface-variant">Sync dev retro hooks</p>
+</div>
+<div class="card-surface p-6 bento-hover flex flex-col justify-between h-48 col-span-2 md:col-span-1">
+<div>
+<span class="material-symbols-outlined text-primary-fixed-dim mb-4 block">analytics</span>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2">mlops-mini-project</h4>
+</div>
+<p class="font-code-sm text-code-sm text-on-surface-variant">DagsHub/MLflow integration</p>
 </div>
 </div>
-<div class="z-10 flex-1">
-<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Workflow AI</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-6">Autonomous agents handling robust data pipelines and financial reporting.</p>
-<div class="flex flex-col gap-3 font-code-sm text-code-sm text-on-surface-variant">
-<div class="flex items-center gap-2 bg-surface p-2 rounded border border-white/5">
-<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
-<span>NEPSE Morning Digest</span>
-</div>
-<div class="flex items-center gap-2 bg-surface p-2 rounded border border-white/5">
-<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
-<span>Supplier Payment Logs</span>
-</div>
-<div class="flex items-center gap-2 bg-surface p-2 rounded border border-white/5">
-<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
-<span>IRD VAT Trackers</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Deep Learning -->
-<div class="bento-card md:col-span-4 rounded-xl p-8 flex flex-col gap-6 relative overflow-hidden group">
-<div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjMGYxMTE1Ij48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMzYTRkNGIiPjwvcmVjdD4KPC9zdmc+')] opacity-20"></div>
-<div class="flex justify-between items-start z-10">
-<span class="material-symbols-outlined text-primary-container text-3xl">memory</span>
-<div class="bg-primary-container/10 px-3 py-1 rounded-full border border-primary-container/20">
-<span class="font-label-caps text-label-caps text-primary-container">RESEARCH</span>
+<!-- Right: Medium Tutorials List -->
+<div class="col-span-12 md:col-span-5 flex flex-col gap-4">
+<div class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-2">Medium Tutorials</div>
+<a class="group card-surface p-4 flex items-center justify-between hover:bg-surface-container transition-colors border-l-4 border-l-transparent hover:border-l-primary-fixed-dim" href="#">
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary-fixed-dim transition-colors">DBSCAN: Beyond K-means</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-fixed-dim">arrow_forward</span>
+</a>
+<a class="group card-surface p-4 flex items-center justify-between hover:bg-surface-container transition-colors border-l-4 border-l-transparent hover:border-l-primary-fixed-dim" href="#">
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary-fixed-dim transition-colors">Activation Functions</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-fixed-dim">arrow_forward</span>
+</a>
+<a class="group card-surface p-4 flex items-center justify-between hover:bg-surface-container transition-colors border-l-4 border-l-transparent hover:border-l-primary-fixed-dim" href="#">
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary-fixed-dim transition-colors">Normal Equation</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-fixed-dim">arrow_forward</span>
+</a>
+<a class="group card-surface p-4 flex items-center justify-between hover:bg-surface-container transition-colors border-l-4 border-l-transparent hover:border-l-primary-fixed-dim" href="#">
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary-fixed-dim transition-colors">Polynomial Regression</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-fixed-dim">arrow_forward</span>
+</a>
+<a class="group card-surface p-4 flex items-center justify-between hover:bg-surface-container transition-colors border-l-4 border-l-transparent hover:border-l-primary-fixed-dim" href="#">
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary-fixed-dim transition-colors">That Bias Thing in Neural Nets</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-fixed-dim">arrow_forward</span>
+</a>
 </div>
 </div>
-<div class="z-10 flex-1">
-<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Deep Learning</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-6">Architectural exploration in sequential data and generative latent spaces.</p>
-<div class="flex flex-col gap-4 font-code-sm text-code-sm">
-<div class="bg-[#051424] p-4 rounded border border-white/10 relative overflow-hidden">
-<div class="absolute top-0 left-0 w-1 h-full bg-secondary-container"></div>
-<span class="text-on-secondary-container block mb-1">Custom PyTorch Encoders</span>
-<span class="text-on-surface-variant text-xs opacity-70">LSTM / Transformer Hybrids</span>
+</section>
+<!-- AI Automation Section -->
+<section class="w-full max-w-container-max mx-auto px-gutter py-section-padding" id="automation">
+<div class="mb-stack-lg">
+<h3 class="font-label-caps text-label-caps text-primary-fixed-dim uppercase tracking-widest mb-2">02.</h3>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">AI Automation</h2>
 </div>
-<div class="bg-[#051424] p-4 rounded border border-white/10 relative overflow-hidden">
-<div class="absolute top-0 left-0 w-1 h-full bg-primary-container"></div>
-<span class="text-primary-container block mb-1">SD-Turbo Denoising</span>
-<span class="text-on-surface-variant text-xs opacity-70">Latent Tensor Viz</span>
-</div>
-</div>
-</div>
-</div>
-<!-- MLOps -->
-<div class="bento-card md:col-span-4 rounded-xl p-8 flex flex-col gap-6 relative overflow-hidden group">
-<div class="absolute inset-0 bg-gradient-to-tl from-secondary-container/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-<div class="flex justify-between items-start z-10">
-<span class="material-symbols-outlined text-secondary text-3xl">account_tree</span>
-<div class="bg-secondary/10 px-3 py-1 rounded-full border border-secondary/20">
-<span class="font-label-caps text-label-caps text-secondary">MLOPS</span>
-</div>
-</div>
-<div class="z-10 flex-1">
-<h3 class="font-headline-md text-headline-md text-on-surface mb-2">System Orchestration</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-6">Multi-agent data science environments and production model staging.</p>
-<div class="bg-surface rounded border border-white/5 p-4 font-code-sm text-code-sm">
-<div class="text-on-surface mb-2 border-b border-white/10 pb-2">csv-Ai Architecture</div>
-<ul class="text-on-surface-variant space-y-2">
-<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> Coordinator Role</li>
-<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> Context Engineer</li>
-<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> EDA Agents</li>
-</ul>
-<div class="mt-4 text-xs text-secondary opacity-80 border-t border-white/10 pt-2">Powered by MLflow Staging</div>
+<div class="card-surface overflow-hidden">
+<!-- Terminal Header (Tabs) -->
+<div class="bg-surface-container-lowest border-b border-outline-variant/30 flex flex-wrap items-center px-4 py-2 gap-2">
+<button class="px-4 py-2 bg-surface-container rounded-t-md border-t border-l border-r border-outline-variant/50 font-code-sm text-code-sm text-primary-fixed-dim flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">description</span>
+                        Morning_NEPSE.sh
+                    </button>
+<button class="px-4 py-2 hover:bg-surface-container/50 rounded-t-md font-code-sm text-code-sm text-on-surface-variant flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-[16px]">attach_money</span>
+                        Expense_Tracker.py
+                    </button>
+<button class="px-4 py-2 hover:bg-surface-container/50 rounded-t-md font-code-sm text-code-sm text-on-surface-variant flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-[16px]">gavel</span>
+                        Compliance.yml
+                    </button>
+<button class="px-4 py-2 hover:bg-surface-container/50 rounded-t-md font-code-sm text-code-sm text-on-surface-variant flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-[16px]">notes</span>
+                        Meeting_Notes.txt
+                    </button>
+<div class="ml-auto flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-error/50"></span>
+<span class="w-3 h-3 rounded-full bg-tertiary-container/50"></span>
+<span class="w-3 h-3 rounded-full bg-primary-fixed-dim/50"></span>
 </div>
 </div>
+<!-- Terminal Body -->
+<div class="p-6 bg-[#0a0c0f] min-h-[300px] relative group">
+<button class="absolute top-4 right-4 bg-surface-container hover:bg-surface-bright text-on-surface font-code-sm text-code-sm py-1.5 px-3 rounded-md border border-outline-variant/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2 z-10">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+                        Copy Prompt
+                    </button>
+<pre class="font-code-sm text-code-sm text-on-surface-variant whitespace-pre-wrap terminal-scroll h-full overflow-y-auto"><span class="text-secondary-fixed-dim">#!/bin/bash</span>
+
+<span class="text-primary-fixed-dim"># Daily NEPSE (Nepal Stock Exchange) Digest Orchestrator</span>
+<span class="text-outline-variant"># Runs at 06:00 AM daily via cron</span>
+
+<span class="text-tertiary-container">function</span> fetch_market_data() {
+    <span class="text-primary-fixed-dim">echo</span> "Initiating API call to primary data broker..."
+    curl -s -H "Authorization: Bearer $NEPSE_API_TOKEN" \
+         "https://api.nepse-broker.local/v1/market/summary" &gt; raw_data.json
+}
+
+<span class="text-tertiary-container">function</span> generate_llm_summary() {
+    <span class="text-primary-fixed-dim">echo</span> "Passing context to LLM for digest generation..."
+    cat raw_data.json | jq '.data' | python3 process_digest.py \
+        --model "claude-3-opus" \
+        --temperature 0.2 \
+        --output digest_final.md
+}
+
+fetch_market_data
+generate_llm_summary
+<span class="text-primary-fixed-dim">echo</span> "Digest dispatched to Telegram channel."
+<span class="animate-pulse">_</span></pre>
 </div>
+</div>
+</section>
+<!-- AI Director Section -->
+<section class="w-full max-w-container-max mx-auto px-gutter py-section-padding" id="films">
+<div class="mb-stack-lg">
+<h3 class="font-label-caps text-label-caps text-secondary-fixed-dim uppercase tracking-widest mb-2">03.</h3>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">AI Director</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Film Card 1 -->
+<div class="card-surface overflow-hidden group relative violet-hover cursor-pointer">
+<div class="h-48 bg-surface-container relative">
+<div class="w-full h-full bg-cover bg-center opacity-60 group-hover:opacity-100 transition-opacity duration-500" data-alt="A cinematic, high-contrast digital illustration of two abstract, powerful figures clashing in a surreal, neo-noir cityscape. The lighting is dramatic, with deep shadows and striking electric violet and cyan rim lights cutting through the darkness. The mood is intense and action-packed, styled like a highly polished storyboard for a sci-fi epic, utilizing the system's ultra-premium minimalist aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDiR9k6mNHBrK12e7RBp67Z_4LkaFPXMfxtRUq0dwa9wE4ASpCNEv1FWgkPGBhx122KCavVYgtBCxiIhus3VKoTEb9YlQKzMWfZ3USpOKcnXHyf3lAVQR-N8dsosbg0rvUz141v7CPSgfwsIT8Lv0-BNC5WEjNPiVagleY6ae57cCYAwQiF6kj0jhob8MILO1pZDyPvCyBJmpN3jv3DWK0fwjnnCRiLaqpkC71SW0mFl1u4m4Lte0nhKk91GmtXjZcjsTRyRjUqdELZ')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0d0e11] to-transparent"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-12 h-12 rounded-full bg-surface/80 backdrop-blur-sm border border-outline-variant/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-secondary-fixed-dim group-hover:text-background transition-all duration-300">
+<span class="material-symbols-outlined text-[24px]">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="p-6">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2">Balen vs Super Villain</h4>
+<p class="font-code-sm text-code-sm text-on-surface-variant mb-4">Part 1 &amp; 2</p>
+<div class="flex gap-2">
+<span class="font-label-caps text-[10px] bg-surface-container-high px-2 py-1 rounded text-secondary-fixed-dim">Midjourney</span>
+<span class="font-label-caps text-[10px] bg-surface-container-high px-2 py-1 rounded text-secondary-fixed-dim">Runway Gen-2</span>
+</div>
+</div>
+</div>
+<!-- Film Card 2 -->
+<div class="card-surface overflow-hidden group relative violet-hover cursor-pointer">
+<div class="h-48 bg-surface-container relative">
+<div class="w-full h-full bg-cover bg-center opacity-60 group-hover:opacity-100 transition-opacity duration-500" data-alt="A gritty, hyper-realistic render of a heavily modified industrial excavator confronting a towering, monolithic stone golem in a desolate, foggy quarry. The color palette is muted, relying on the deep blacks and grays of the UI's background, punctuated by harsh, directional work lights creating long shadows. The aesthetic is raw and technical, showcasing advanced VFX compositing." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAxsHp6nsg3Cv9nE3PJkQf81u6nMPPZ5014yQZB3ouiU2qxaAo0-aBPCVk3C_EYXmUq16RlBTm2eGIACL2V0J7AtsVU-oSzZPAjuocYJ0nauLEZUpH9ewMzP7cCRjgVBb6Mczz2oBcIhUjoy77I15ozqujZ_NkIfSTYWGcEgd-kR6EZLzkwCUSPa07ae0IrWeSXOhTqw02JSDt37s_l46U73VsNcpRuzEIBqR2UX4kYGCsHKmresDJEES1yCcmv5K2Trz4NcFFz7wz8')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0d0e11] to-transparent"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-12 h-12 rounded-full bg-surface/80 backdrop-blur-sm border border-outline-variant/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-secondary-fixed-dim group-hover:text-background transition-all duration-300">
+<span class="material-symbols-outlined text-[24px]">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="p-6">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2">JCB Man vs Stone Man</h4>
+<p class="font-code-sm text-code-sm text-on-surface-variant mb-4">3-Part FX Series</p>
+<div class="flex gap-2">
+<span class="font-label-caps text-[10px] bg-surface-container-high px-2 py-1 rounded text-secondary-fixed-dim">VFX Compositing</span>
+<span class="font-label-caps text-[10px] bg-surface-container-high px-2 py-1 rounded text-secondary-fixed-dim">Blender</span>
+</div>
+</div>
+</div>
+<!-- Film Card 3 -->
+<div class="card-surface overflow-hidden group relative violet-hover cursor-pointer">
+<div class="h-48 bg-surface-container relative">
+<div class="w-full h-full bg-cover bg-center opacity-60 group-hover:opacity-100 transition-opacity duration-500" data-alt="A sleek, modern visualization of a digital workflow pipeline. Abstract nodes and glowing data streams flow across a dark, minimalist canvas. The scene is illuminated by soft, ambient neon accents in cyan and violet against a deep obsidian background. It represents high-speed ad generation, exuding an ultra-premium, technical, and organized aesthetic fitting a Swiss-inspired layout." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD8u7en0epENJbFqpxgInnAMDgkPon7pWbrj30I2U0MAFNnkQqe8xp5QbuEZuPk57OS2gfF6PTcBO-7jZcZI91iCo3ERyjsG2uRoNvEdVOHoeKV2E_1rJ70EvpEVK-Q0JFo9rilj78xgjfNwpkfCuk1GiChFvEE5sPM_rDT6roOIBBmWqGTT4xAfUNbZ7trgcH26xhCJ0FevdoiUpI-wJUSn2mcO7-UiSuyO44DEATieOLiJNnnTR1jYu8txlHmY4EqblKsH43Gr4pA')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0d0e11] to-transparent"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-12 h-12 rounded-full bg-surface/80 backdrop-blur-sm border border-outline-variant/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-secondary-fixed-dim group-hover:text-background transition-all duration-300">
+<span class="material-symbols-outlined text-[24px]">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="p-6">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2">4-Min Video Ads Formula</h4>
+<p class="font-code-sm text-code-sm text-on-surface-variant mb-4">UGC workflow (Omni Flash + Claude Code + TikTok)</p>
+<div class="flex gap-2">
+<span class="font-label-caps text-[10px] bg-surface-container-high px-2 py-1 rounded text-secondary-fixed-dim">Automation</span>
+<span class="font-label-caps text-[10px] bg-surface-container-high px-2 py-1 rounded text-secondary-fixed-dim">Claude</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Essays & Critiques Section -->
+<section class="w-full max-w-container-max mx-auto px-gutter py-section-padding" id="essays">
+<div class="mb-stack-lg">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-2">04.</h3>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Essays &amp; Critiques</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<a class="card-surface p-8 group hover:bg-surface-container transition-colors" href="#">
+<div class="flex justify-between items-start mb-4">
+<h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary-fixed-dim transition-colors">RAG is Dead</h4>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-fixed-dim opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0">arrow_forward</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Exploring the shift from traditional Retrieval-Augmented Generation to more active, agentic memory structures.</p>
+</a>
+<a class="card-surface p-8 group hover:bg-surface-container transition-colors" href="#">
+<div class="flex justify-between items-start mb-4">
+<h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary-fixed-dim transition-colors">AI Agents are not the future</h4>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-fixed-dim opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0">arrow_forward</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">A contrarian view on the current obsession with autonomous agents and why orchestration layers matter more.</p>
+</a>
+<a class="card-surface p-8 group hover:bg-surface-container transition-colors" href="#">
+<div class="flex justify-between items-start mb-4">
+<h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary-fixed-dim transition-colors">AI verification is impossible</h4>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-fixed-dim opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0">arrow_forward</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">The fundamental limitations of mathematically proving the safety and alignment of large parameter models.</p>
+</a>
+<a class="card-surface p-8 group hover:bg-surface-container transition-colors" href="#">
+<div class="flex justify-between items-start mb-4">
+<h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary-fixed-dim transition-colors">Robots Existential Risks</h4>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-fixed-dim opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0">arrow_forward</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Beyond software alignment: the physical implications of embodied AI and the real-world security gaps.</p>
+</a>
 </div>
 </section>
 </main>
-<!-- Footer -->
-<footer class="w-full border-t border-outline-variant/20 bg-surface dark:bg-surface pt-section-padding pb-margin-mobile">
-<div class="max-w-container-max mx-auto px-margin-mobile flex flex-col md:flex-row justify-between items-center gap-gutter">
-<div class="font-headline-md text-headline-md text-on-surface text-primary dark:text-primary">UB</div>
-<div class="flex gap-6 font-code-sm text-code-sm text-on-surface-variant">
-<span class="material-symbols-outlined hover:text-secondary-fixed transition-colors cursor-pointer hover:opacity-80 transition-opacity">terminal</span>
-<span class="material-symbols-outlined hover:text-secondary-fixed transition-colors cursor-pointer hover:opacity-80 transition-opacity">code</span>
-<span class="material-symbols-outlined hover:text-secondary-fixed transition-colors cursor-pointer hover:opacity-80 transition-opacity">movie</span>
-<span class="material-symbols-outlined hover:text-secondary-fixed transition-colors cursor-pointer hover:opacity-80 transition-opacity">description</span>
-<span class="material-symbols-outlined hover:text-secondary-fixed transition-colors cursor-pointer hover:opacity-80 transition-opacity">mail</span>
-</div>
+<!-- Footer Shell -->
+<footer class="w-full border-t border-outline-variant/20 bg-background dark:bg-background mt-auto" id="contact">
+<div class="w-full max-w-container-max mx-auto px-gutter py-stack-lg flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0">
+<div class="font-headline-md text-headline-md text-on-surface">UB.</div>
 <div class="font-code-sm text-code-sm text-on-surface-variant">
-                © 2024 Ujjwal Basnet. Built with precision.
+                © 2024 Ujjwal Basnet. Built for the future.
             </div>
+<div class="flex gap-4">
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="code" data-weight="regular">code</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="share" data-weight="regular">share</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="movie" data-weight="regular">movie</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="article" data-weight="regular">article</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="mail" data-weight="regular">mail</span>
+</a>
+</div>
 </div>
 </footer>
 </body></html>
