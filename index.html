@@ -1,359 +1,316 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ujjwal Basnet | AI Engineer & Creative Director</title>
-    <meta name="description" content="Portfolio of Ujjwal Basnet - AI Engineer, Creative Film/Ads Director, and Technical Writer. Hacking latent tensors, building multi-agent systems, and writing critiques on modern AI.">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Style Sheet -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ujjwal Basnet | AI Engineer &amp; Creative Technologist</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-container": "#dcb7ff",
+                      "primary-fixed": "#6ff6ff",
+                      "on-primary-fixed": "#002022",
+                      "inverse-on-surface": "#233143",
+                      "on-primary": "#00373a",
+                      "on-background": "#d4e4fa",
+                      "secondary-fixed": "#efdbff",
+                      "surface": "#051424",
+                      "tertiary-container": "#fed83a",
+                      "background": "#051424",
+                      "on-secondary-fixed-variant": "#6700b5",
+                      "on-surface-variant": "#b9cacb",
+                      "inverse-surface": "#d4e4fa",
+                      "on-tertiary-container": "#725e00",
+                      "on-tertiary-fixed": "#221b00",
+                      "on-primary-fixed-variant": "#004f53",
+                      "outline": "#849495",
+                      "secondary-container": "#7701d0",
+                      "error-container": "#93000a",
+                      "on-tertiary": "#3b2f00",
+                      "surface-container-lowest": "#010f1f",
+                      "tertiary": "#fff6e4",
+                      "surface-tint": "#00dce6",
+                      "inverse-primary": "#00696f",
+                      "secondary": "#dcb8ff",
+                      "surface-container": "#122131",
+                      "on-secondary": "#480081",
+                      "outline-variant": "#3a494b",
+                      "on-error-container": "#ffdad6",
+                      "on-surface": "#d4e4fa",
+                      "primary-fixed-dim": "#00dce6",
+                      "surface-container-high": "#1c2b3c",
+                      "secondary-fixed-dim": "#dcb8ff",
+                      "on-secondary-fixed": "#2c0051",
+                      "surface-dim": "#051424",
+                      "surface-bright": "#2c3a4c",
+                      "tertiary-fixed": "#ffe173",
+                      "on-primary-container": "#006a70",
+                      "surface-container-low": "#0d1c2d",
+                      "primary": "#e0fdff",
+                      "surface-container-highest": "#273647",
+                      "on-error": "#690005",
+                      "surface-variant": "#273647",
+                      "primary-container": "#00f2fe",
+                      "error": "#ffb4ab",
+                      "tertiary-fixed-dim": "#e8c423",
+                      "on-tertiary-fixed-variant": "#554500"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "bento-gap": "16px",
+                      "margin-mobile": "20px",
+                      "container-max": "1200px",
+                      "section-padding": "120px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "code-sm": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-xl": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-lg-mobile": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-caps": [
+                              "JetBrains Mono"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "code-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-xl": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body { background-color: #060709; color: #d4e4fa; }
+        .bento-card {
+            background-color: #0F1115;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .bento-card:hover {
+            backdrop-filter: blur(12px);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.1);
+        }
+        .glass-pill {
+            backdrop-filter: blur(20px);
+            background-color: rgba(6, 7, 9, 0.6);
+        }
+        .timeline-line {
+            background: linear-gradient(to bottom, #00F2FE, #7701d0);
+            width: 1px;
+        }
+    </style>
 </head>
-<body class="dark-mode">
-    
-    <!-- Navigation -->
-    <header class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">UB<span class="dot">.</span></a>
-            <nav class="nav-links">
-                <a href="#about" class="nav-item">About</a>
-                <a href="#engineering" class="nav-item">Engineering</a>
-                <a href="#creative" class="nav-item">Creative</a>
-                <a href="#writing" class="nav-item">Essays</a>
-                <a href="#prompts" class="nav-item">Automations</a>
-                <a href="#contact" class="btn btn-nav">Contact</a>
-            </nav>
-        </div>
-    </header>
-
-    <main class="container">
-        
-        <!-- Hero Section -->
-        <section id="about" class="hero-section">
-            <div class="badge hero-badge">
-                <i data-lucide="cpu" class="badge-icon"></i> 6-12h Daily AI Grind
-            </div>
-            <h1 class="hero-title">Ujjwal Basnet</h1>
-            <p class="hero-subtitle">
-                AI Engineer <span class="divider">/</span> AI Film & Ads Director <span class="divider">/</span> Technical Writer
+<body class="antialiased font-body-md text-body-md overflow-x-hidden selection:bg-primary-container selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-container-max rounded-full border border-white/10 z-50 bg-surface/60 dark:bg-surface/60 backdrop-blur-xl shadow-sm hover:shadow-primary/10 transition-shadow duration-500 backdrop-blur-md">
+<div class="flex justify-between items-center px-8 py-3 z-50">
+<div class="font-headline-md text-headline-md text-on-surface flex items-center gap-2 after:content-[''] after:w-2 after:h-2 after:bg-primary-container after:rounded-full">UB</div>
+<ul class="hidden md:flex items-center gap-8 font-label-caps text-label-caps">
+<li><a class="text-primary relative after:content-[''] after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-0.5 after:h-0.5 after:bg-primary-container after:rounded-full" href="#about">About</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-white/5 transition-all duration-300 px-3 py-1 rounded" href="#code">Code</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-white/5 transition-all duration-300 px-3 py-1 rounded" href="#films">Films</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-white/5 transition-all duration-300 px-3 py-1 rounded" href="#essays">Essays</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-white/5 transition-all duration-300 px-3 py-1 rounded" href="#contact">Contact</a></li>
+</ul>
+<button class="font-label-caps text-label-caps bg-primary-container text-on-primary-fixed px-6 py-2 rounded-full hover:opacity-90 transition-opacity scale-95 active:scale-90 transition-transform">Email Me</button>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-0 pt-32 pb-section-padding">
+<!-- Hero Section -->
+<section class="py-section-padding flex flex-col items-start gap-6" id="about">
+<h1 class="font-headline-xl text-headline-xl text-on-surface md:w-3/4">Ujjwal Basnet</h1>
+<h2 class="font-headline-md text-headline-md text-primary-container">AI Engineer / AI Film Director / Technical Writer</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+                I build intelligent systems that automate complex workflows, direct cinematic narratives using bleeding-edge generative AI, and write deep-dive technical essays on the realities of machine learning. Bridging the gap between deterministic code and creative synthesis.
             </p>
-            <p class="hero-description">
-                Bridging the gap between raw latent tensors, multi-agent orchestrations, and cinematic storytelling. Architect of modular AI agents and open-source generative video pipelines.
-            </p>
-            <div class="hero-ctas">
-                <a href="#engineering" class="btn btn-primary">Explore Code</a>
-                <a href="#creative" class="btn btn-secondary">Watch AI Films</a>
+</section>
+<!-- Technical Pillars Bento -->
+<section class="py-section-padding" id="code">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-bento-gap">
+<!-- AI Automation -->
+<div class="bento-card md:col-span-4 rounded-xl p-8 flex flex-col gap-6 relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-primary-container/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="flex justify-between items-start z-10">
+<span class="material-symbols-outlined text-primary-container text-3xl">smart_toy</span>
+<div class="bg-primary-container/10 px-3 py-1 rounded-full border border-primary-container/20">
+<span class="font-label-caps text-label-caps text-primary-container">AUTOMATION</span>
+</div>
+</div>
+<div class="z-10 flex-1">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Workflow AI</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Autonomous agents handling robust data pipelines and financial reporting.</p>
+<div class="flex flex-col gap-3 font-code-sm text-code-sm text-on-surface-variant">
+<div class="flex items-center gap-2 bg-surface p-2 rounded border border-white/5">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>NEPSE Morning Digest</span>
+</div>
+<div class="flex items-center gap-2 bg-surface p-2 rounded border border-white/5">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>Supplier Payment Logs</span>
+</div>
+<div class="flex items-center gap-2 bg-surface p-2 rounded border border-white/5">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>IRD VAT Trackers</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Deep Learning -->
+<div class="bento-card md:col-span-4 rounded-xl p-8 flex flex-col gap-6 relative overflow-hidden group">
+<div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjMGYxMTE1Ij48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMzYTRkNGIiPjwvcmVjdD4KPC9zdmc+')] opacity-20"></div>
+<div class="flex justify-between items-start z-10">
+<span class="material-symbols-outlined text-primary-container text-3xl">memory</span>
+<div class="bg-primary-container/10 px-3 py-1 rounded-full border border-primary-container/20">
+<span class="font-label-caps text-label-caps text-primary-container">RESEARCH</span>
+</div>
+</div>
+<div class="z-10 flex-1">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Deep Learning</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Architectural exploration in sequential data and generative latent spaces.</p>
+<div class="flex flex-col gap-4 font-code-sm text-code-sm">
+<div class="bg-[#051424] p-4 rounded border border-white/10 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-secondary-container"></div>
+<span class="text-on-secondary-container block mb-1">Custom PyTorch Encoders</span>
+<span class="text-on-surface-variant text-xs opacity-70">LSTM / Transformer Hybrids</span>
+</div>
+<div class="bg-[#051424] p-4 rounded border border-white/10 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary-container"></div>
+<span class="text-primary-container block mb-1">SD-Turbo Denoising</span>
+<span class="text-on-surface-variant text-xs opacity-70">Latent Tensor Viz</span>
+</div>
+</div>
+</div>
+</div>
+<!-- MLOps -->
+<div class="bento-card md:col-span-4 rounded-xl p-8 flex flex-col gap-6 relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-tl from-secondary-container/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="flex justify-between items-start z-10">
+<span class="material-symbols-outlined text-secondary text-3xl">account_tree</span>
+<div class="bg-secondary/10 px-3 py-1 rounded-full border border-secondary/20">
+<span class="font-label-caps text-label-caps text-secondary">MLOPS</span>
+</div>
+</div>
+<div class="z-10 flex-1">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">System Orchestration</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Multi-agent data science environments and production model staging.</p>
+<div class="bg-surface rounded border border-white/5 p-4 font-code-sm text-code-sm">
+<div class="text-on-surface mb-2 border-b border-white/10 pb-2">csv-Ai Architecture</div>
+<ul class="text-on-surface-variant space-y-2">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> Coordinator Role</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> Context Engineer</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> EDA Agents</li>
+</ul>
+<div class="mt-4 text-xs text-secondary opacity-80 border-t border-white/10 pt-2">Powered by MLflow Staging</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-outline-variant/20 bg-surface dark:bg-surface pt-section-padding pb-margin-mobile">
+<div class="max-w-container-max mx-auto px-margin-mobile flex flex-col md:flex-row justify-between items-center gap-gutter">
+<div class="font-headline-md text-headline-md text-on-surface text-primary dark:text-primary">UB</div>
+<div class="flex gap-6 font-code-sm text-code-sm text-on-surface-variant">
+<span class="material-symbols-outlined hover:text-secondary-fixed transition-colors cursor-pointer hover:opacity-80 transition-opacity">terminal</span>
+<span class="material-symbols-outlined hover:text-secondary-fixed transition-colors cursor-pointer hover:opacity-80 transition-opacity">code</span>
+<span class="material-symbols-outlined hover:text-secondary-fixed transition-colors cursor-pointer hover:opacity-80 transition-opacity">movie</span>
+<span class="material-symbols-outlined hover:text-secondary-fixed transition-colors cursor-pointer hover:opacity-80 transition-opacity">description</span>
+<span class="material-symbols-outlined hover:text-secondary-fixed transition-colors cursor-pointer hover:opacity-80 transition-opacity">mail</span>
+</div>
+<div class="font-code-sm text-code-sm text-on-surface-variant">
+                © 2024 Ujjwal Basnet. Built with precision.
             </div>
-        </section>
-
-        <!-- Bento Grid Section -->
-        <section class="bento-grid">
-            
-            <!-- Bento Card 1: Core Narrative -->
-            <div class="bento-card col-2 card-grind">
-                <div class="card-header">
-                    <i data-lucide="zap" class="card-icon text-accent"></i>
-                    <h3>The Grind Ethos</h3>
-                </div>
-                <p>Maintaining a dedicated dev diary logging <strong>6 to 12+ hours daily</strong> of machine learning implementation, technical reading, and architectural design.</p>
-                <div class="reading-progress">
-                    <div class="reading-title">Current Stack & Reading:</div>
-                    <div class="progress-bar-group">
-                        <span class="progress-label">Context Engineering (75%)</span>
-                        <div class="progress-track"><div class="progress-fill" style="width: 75%;"></div></div>
-                    </div>
-                    <div class="progress-bar-group">
-                        <span class="progress-label">Fine-Tuning LLMs (100%)</span>
-                        <div class="progress-track"><div class="progress-fill bg-success" style="width: 100%;"></div></div>
-                    </div>
-                    <div class="progress-bar-group">
-                        <span class="progress-label">Building APIs for Data Science (60%)</span>
-                        <div class="progress-track"><div class="progress-fill" style="width: 60%;"></div></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bento Card 2: Latent Tensor Denoising -->
-            <div class="bento-card card-tensor">
-                <div class="card-header">
-                    <i data-lucide="binary" class="card-icon text-purple"></i>
-                    <h3>Latent Hacking</h3>
-                </div>
-                <p>Modified inference scripts for <code>sd-turbo</code> to capture and inspect multi-dimensional latent tensors after every denoising step.</p>
-                <div class="code-box">
-                    <span class="code-comment"># 4-step distilled DDIM tensor</span>
-                    <span class="code-line">latent = model.denoise(step)</span>
-                    <span class="code-line">visualize_tensor_plane(latent)</span>
-                </div>
-            </div>
-
-            <!-- Bento Card 3: ComfyUI Local lip-sync -->
-            <div class="bento-card card-workflow">
-                <div class="card-header">
-                    <i data-lucide="git-branch" class="card-icon text-cyan"></i>
-                    <h3>$0 Local Workflow</h3>
-                </div>
-                <p>Designed a zero-cost open-source ComfyUI workflow pairing custom diffusion generation with high-fidelity audio-to-lip synchronization nodes.</p>
-                <a href="https://www.facebook.com/share/v/18eeDtLYDX/" target="_blank" class="card-link">View Workflow <i data-lucide="arrow-up-right"></i></a>
-            </div>
-
-            <!-- Bento Card 4: Automated Video Engine -->
-            <div class="bento-card col-2 card-automation">
-                <div class="card-header">
-                    <i data-lucide="play-circle" class="card-icon text-red"></i>
-                    <h3>100% Automated Cinema</h3>
-                </div>
-                <p>Built a content pipeline generating movies from a single prompt (friendship, love, and betrayal). Orchestrated via DeepSeek, storyboarded through ChatGPT Image, and synthesized with Google Omni Flash API for under 1,000 NPR.</p>
-                <div class="engine-pills">
-                    <span class="pill">DeepSeek API</span>
-                    <span class="pill">Omni Flash API</span>
-                    <span class="pill">ComfyUI</span>
-                </div>
-            </div>
-
-        </section>
-
-        <!-- Engineering Section -->
-        <section id="engineering" class="section">
-            <h2 class="section-title">Core Engineering Projects</h2>
-            <div class="projects-grid">
-                
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <i data-lucide="folder-git-2" class="project-icon"></i>
-                        <div class="project-meta">
-                            <h4>csv-Ai</h4>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">LLMs</span>
-                        </div>
-                    </div>
-                    <p class="project-desc">A modular multi-agent system automating data science tasks. Features a Coordinator agent routing requests to specialised sub-agents (EDA, ML, Context Engineering, and a self-correcting error solver).</p>
-                    <div class="project-footer">
-                        <a href="https://github.com/ujjwal-basnet/csv-Ai" class="project-link" target="_blank">GitHub <i data-lucide="github"></i></a>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <i data-lucide="folder-git-2" class="project-icon"></i>
-                        <div class="project-meta">
-                            <h4>battle_tested_agent_codes</h4>
-                            <span class="tech-tag">LangGraph</span>
-                            <span class="tech-tag">API</span>
-                        </div>
-                    </div>
-                    <p class="project-desc">Production-grade, fault-tolerant agent graphs built with LangGraph. Integrates recursion limits, agent-state message logs, and Tavily Client custom search tool nodes.</p>
-                    <div class="project-footer">
-                        <a href="https://github.com/ujjwal-basnet/battle_tested_agent_codes" class="project-link" target="_blank">GitHub <i data-lucide="github"></i></a>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <i data-lucide="folder-git-2" class="project-icon"></i>
-                        <div class="project-meta">
-                            <h4>Enterprise_Rag</h4>
-                            <span class="tech-tag">RAG</span>
-                            <span class="tech-tag">IDE Hooks</span>
-                        </div>
-                    </div>
-                    <p class="project-desc">RAG pipeline with custom hooks routing IDE events from Claude and Codex to a shared retro database to maintain synchronized workspace progress trails.</p>
-                    <div class="project-footer">
-                        <a href="https://github.com/ujjwal-basnet/Enterprise_Rag" class="project-link" target="_blank">GitHub <i data-lucide="github"></i></a>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <i data-lucide="folder-git-2" class="project-icon"></i>
-                        <div class="project-meta">
-                            <h4>mlops-mini-project</h4>
-                            <span class="tech-tag">MLflow</span>
-                            <span class="tech-tag">DVC</span>
-                        </div>
-                    </div>
-                    <p class="project-desc">ML pipeline tracking experiments on DagsHub. Automates metrics tracking, artifact logging, model versioning, and environment promotion (Staging/Production).</p>
-                    <div class="project-footer">
-                        <a href="https://github.com/ujjwal-basnet/mlops-mini-project" class="project-link" target="_blank">GitHub <i data-lucide="github"></i></a>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Creative Section -->
-        <section id="creative" class="section bg-light-section">
-            <h2 class="section-title">Creative AI Films & Ads</h2>
-            <p class="section-subtitle">Visual storytelling reels, B-rolls, and commercial workflows.</p>
-            
-            <div class="creative-grid">
-                
-                <!-- Film Card 1 -->
-                <div class="creative-card">
-                    <div class="creative-preview">
-                        <div class="creative-overlay">
-                            <span class="creative-category">AI Action Film</span>
-                            <h4>Balen vs Super Villain</h4>
-                            <div class="creative-play-links">
-                                <a href="https://www.facebook.com/share/v/18yFJ47Rh9/" target="_blank" class="btn btn-sm btn-accent"><i data-lucide="play"></i> Part 1</a>
-                                <a href="https://www.facebook.com/share/r/1D6iY47zX8/" target="_blank" class="btn btn-sm btn-accent"><i data-lucide="play"></i> Part 2</a>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="creative-desc">A cinematic narrative blending physical simulations and CGI animations, visualizing Kathmandu's mayor fighting a futuristic supervillain.</p>
-                </div>
-
-                <!-- Film Card 2 -->
-                <div class="creative-card">
-                    <div class="creative-preview">
-                        <div class="creative-overlay">
-                            <span class="creative-category">AI CGI Series</span>
-                            <h4>JCB Man vs Stone Man</h4>
-                            <div class="creative-play-links">
-                                <span class="creative-badge">3-Part Series</span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="creative-desc">A detailed visual effects story showcasing complex interactions between heavy machinery assets and animated organic stone creatures.</p>
-                </div>
-
-                <!-- Film Card 3 -->
-                <div class="creative-card">
-                    <div class="creative-preview">
-                        <div class="creative-overlay">
-                            <span class="creative-category">UGC Ad Workflow</span>
-                            <h4>4-Min Video Ads Formula</h4>
-                            <div class="creative-play-links">
-                                <a href="https://www.facebook.com/share/v/199cdQP7Dw/" target="_blank" class="btn btn-sm btn-accent"><i data-lucide="eye"></i> Watch Ad</a>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="creative-desc">My workflow combining <strong>Google Omni Flash + Claude Code + TikTok</strong> to render highly realistic customer testimonials without using physical cameras.</p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Technical Writing & Essays Section -->
-        <section id="writing" class="section">
-            <h2 class="section-title">Technical Writing & Essays</h2>
-            <p class="section-subtitle">Critiquing industry trends and breaking down machine learning math.</p>
-            
-            <div class="essays-container">
-                
-                <!-- Essay 1 -->
-                <div class="essay-item">
-                    <div class="essay-meta">
-                        <span class="essay-date">Feb 2026</span>
-                        <span class="essay-source text-green">Medium</span>
-                    </div>
-                    <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" class="essay-title">
-                        RAG is Dead <i data-lucide="arrow-up-right"></i>
-                    </a>
-                    <p class="essay-excerpt">A critical dissection of basic Retrieval-Augmented Generation wrappers in standard AI architectures.</p>
-                </div>
-
-                <!-- Essay 2 -->
-                <div class="essay-item">
-                    <div class="essay-meta">
-                        <span class="essay-date">Feb 2026</span>
-                        <span class="essay-source text-green">Medium</span>
-                    </div>
-                    <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" class="essay-title">
-                        AI verification is impossible: removing Google SynthID from an AI image <i data-lucide="arrow-up-right"></i>
-                    </a>
-                    <p class="essay-excerpt">Demonstrating how AI image watermarking methods can be programmatically bypassed or removed at the tensor level.</p>
-                </div>
-
-                <!-- Essay 3 -->
-                <div class="essay-item">
-                    <div class="essay-meta">
-                        <span class="essay-date">May 2026</span>
-                        <span class="essay-source text-orange">Substack</span>
-                    </div>
-                    <a href="https://ujjwal327667.substack.com/profile/posts" target="_blank" class="essay-title">
-                        AI Agents are not the future <i data-lucide="arrow-up-right"></i>
-                    </a>
-                    <p class="essay-excerpt">An analysis of simple prompt-wrapper saturation and why coordination logic is key to building agents that endure.</p>
-                </div>
-
-                <!-- Essay 4 -->
-                <div class="essay-item">
-                    <div class="essay-meta">
-                        <span class="essay-date">Feb 2024</span>
-                        <span class="essay-source text-green">Medium</span>
-                    </div>
-                    <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" class="essay-title">
-                        DBSCAN: Clustering Beyond K-means <i data-lucide="arrow-up-right"></i>
-                    </a>
-                    <p class="essay-excerpt">A mathematically clear breakdown of density-based clustering models and noise detection.</p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Business Prompts Section -->
-        <section id="prompts" class="section bg-light-section">
-            <div class="prompts-wrapper">
-                <div class="prompts-intro">
-                    <h2 class="section-title text-left">Business Automation Hub</h2>
-                    <p class="section-subtitle text-left">Production prompts engineered for local business integration. These workflows automate accounting, digests, compliance, and notes daily.</p>
-                    <div class="prompt-tabs">
-                        <button class="prompt-tab active" onclick="showPrompt('digest')">Business Digest</button>
-                        <button class="prompt-tab" onclick="showPrompt('expenses')">NPR Expense Logger</button>
-                        <button class="prompt-tab" onclick="showPrompt('compliance')">Compliance Tracker</button>
-                        <button class="prompt-tab" onclick="showPrompt('meetings')">Meeting Notes</button>
-                    </div>
-                </div>
-                
-                <div class="prompt-content-card">
-                    <div class="card-header border-bottom">
-                        <span class="prompt-title-display" id="prompt-title">Morning Business Digest</span>
-                        <button class="btn btn-sm btn-accent" onclick="copyActivePrompt()"><i data-lucide="copy" class="btn-icon"></i> Copy Prompt</button>
-                    </div>
-                    <div class="prompt-code-body">
-                        <pre><code id="prompt-code-box">Set up a recurring cron job: every morning at 8am, pull the latest updates on NEPSE indices, key regulatory changes from Nepal Rastra Bank, and top business headlines from local news portals. Summarize the 5 most critical items in bullet points. Deliver to telegram. Keep it concise for a quick morning read. Note: Please use OpenClaw or Hermes for this task.</code></pre>
-                    </div>
-                    <div class="prompt-status-msg" id="copy-status">Copied to clipboard!</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section">
-            <h2 class="section-title">Let's Connect</h2>
-            <p class="section-subtitle">Have a workflow to automate, a model to fine-tune, or a film project to shoot?</p>
-            <a href="mailto:ujjwalvictus15@gmail.com" class="btn btn-primary btn-large">ujjwalvictus15@gmail.com</a>
-            
-            <div class="social-links">
-                <a href="https://github.com/ujjwal-basnet" target="_blank" class="social-icon" aria-label="GitHub"><i data-lucide="github"></i></a>
-                <a href="https://www.linkedin.com/in/ujjwal-basnet/" target="_blank" class="social-icon" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
-                <a href="https://www.facebook.com/ujjwal.aiii" target="_blank" class="social-icon" aria-label="Facebook"><i data-lucide="facebook"></i></a>
-                <a href="https://www.instagram.com/ujjwal.aii/" target="_blank" class="social-icon" aria-label="Instagram"><i data-lucide="instagram"></i></a>
-                <a href="https://x.com/ujjwal_ai" target="_blank" class="social-icon" aria-label="Twitter"><i data-lucide="twitter"></i></a>
-                <a href="https://medium.com/@ujjwal-basnet-ml" target="_blank" class="social-icon" aria-label="Medium">M</a>
-                <a href="https://ujjwal327667.substack.com/profile/posts" target="_blank" class="social-icon" aria-label="Substack"><i data-lucide="bookmark"></i></a>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="footer">
-        <div class="footer-container">
-            <p>&copy; 2026 Ujjwal Basnet. Built 100% locally with open-source tools.</p>
-        </div>
-    </footer>
-
-    <!-- Script file -->
-    <script src="script.js"></script>
-</body>
-</html>
+</div>
+</footer>
+</body></html>
