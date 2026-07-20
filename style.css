@@ -201,6 +201,8 @@ ol {
 
 .brand {
   display: grid;
+  min-height: 2.75rem;
+  align-content: center;
   gap: 0;
   min-width: 5.75rem;
   font-size: 0.95rem;
@@ -655,6 +657,10 @@ ol {
 
 .section-label-orange {
   color: var(--orange);
+}
+
+.lab-section .section-label-orange {
+  color: var(--orange-dark);
 }
 
 .section-heading h2 {
