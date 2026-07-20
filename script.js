@@ -1,65 +1,83 @@
-// Initialize Lucide Icons on load
-document.addEventListener("DOMContentLoaded", () => {
-    lucide.createIcons();
+const header = document.querySelector("[data-header]");
+const menuToggle = document.querySelector("[data-menu-toggle]");
+const navPanel = document.querySelector("[data-nav-panel]");
+const navLinks = [...document.querySelectorAll(".site-nav a[href^='#']")];
+
+function setMenu(open) {
+  if (!menuToggle || !navPanel) return;
+  menuToggle.setAttribute("aria-expanded", String(open));
+  navPanel.dataset.open = String(open);
+  document.body.classList.toggle("menu-open", open);
+}
+
+menuToggle?.addEventListener("click", () => {
+  const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+  setMenu(!isOpen);
 });
 
-// Prompts Data Store
-const promptsData = {
-    digest: {
-        title: "Morning Business Digest",
-        code: `Set up a recurring cron job: every morning at 8am, pull the latest updates on NEPSE indices, key regulatory changes from Nepal Rastra Bank, and top business headlines from local news portals. Summarize the 5 most critical items in bullet points. Deliver to telegram. Keep it concise for a quick morning read. Note: Please use OpenClaw or Hermes for this task.`
-    },
-    expenses: {
-        title: "NPR Expense Tracker",
-        code: `When I mention a business expense, log it in NPR to ~/expenses/YYYY-MM.csv with columns: date, amount (NPR), category, and payment method (Cash/Fonepay/Bank). Categorize them into Inventory, Operations, or Marketing. Generate a total summary at the end of every month. Note: Please use OpenClaw or Hermes for this task.`
-    },
-    compliance: {
-        title: "Compliance & Regulatory Tracker",
-        code: `When I upload a regulatory notice or document, identify key deadlines, required actions, and the department involved (e.g., IRD, OCR). Log these into a ~/compliance-tracker.md file and send me a reminder 3 days before any deadline via Viber. Note: Please use OpenClaw or Hermes for this task.`
-    },
-    meetings: {
-        title: "Meeting Notes Summarizer",
-        code: `When I provide meeting notes, create a summary with: Key Decisions, Formal Action Items, and a separate "Viber/WhatsApp Follow-ups" section for informal tasks. Save this to ~/meetings/YYYY-MM-DD.md and draft the follow-up messages I need to send. Note: Please use OpenClaw or Hermes for this task.`
-    }
-};
+navPanel?.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => setMenu(false));
+});
 
-let activePromptKey = "digest";
+document.addEventListener("keydown", (event) => {
+  const menuIsOpen = menuToggle?.getAttribute("aria-expanded") === "true";
 
-// Switch Business Prompt inside widget
-function showPrompt(key) {
-    if (!promptsData[key]) return;
-    
-    activePromptKey = key;
-    
-    // Update active tab styling
-    const tabs = document.querySelectorAll(".prompt-tab");
-    tabs.forEach(tab => {
-        tab.classList.remove("active");
-        // Simple string matching based on onclick attribute parameters
-        if (tab.getAttribute("onclick").includes(key)) {
-            tab.classList.add("active");
+  if (event.key === "Escape" && menuIsOpen) {
+    setMenu(false);
+    menuToggle?.focus();
+  }
+});
+
+document.addEventListener("click", (event) => {
+  if (
+    menuToggle?.getAttribute("aria-expanded") === "true" &&
+    header &&
+    !header.contains(event.target)
+  ) {
+    setMenu(false);
+  }
+});
+
+const desktopQuery = window.matchMedia("(min-width: 64rem)");
+desktopQuery.addEventListener("change", (event) => {
+  if (event.matches) setMenu(false);
+});
+
+function updateHeader() {
+  header?.classList.toggle("is-scrolled", window.scrollY > 16);
+}
+
+updateHeader();
+window.addEventListener("scroll", updateHeader, { passive: true });
+
+const observedSections = [...document.querySelectorAll("#work, #systems, #films, #notes")];
+
+if ("IntersectionObserver" in window) {
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (!visible) return;
+
+      navLinks.forEach((link) => {
+        const active = link.getAttribute("href") === "#" + visible.target.id;
+        if (active) {
+          link.setAttribute("aria-current", "true");
+        } else {
+          link.removeAttribute("aria-current");
         }
-    });
-    
-    // Update displayed title and code contents
-    document.getElementById("prompt-title").innerText = promptsData[key].title;
-    document.getElementById("prompt-code-box").innerText = promptsData[key].code;
+      });
+    },
+    {
+      rootMargin: "-22% 0px -62% 0px",
+      threshold: [0, 0.1, 0.35],
+    },
+  );
+
+  observedSections.forEach((section) => sectionObserver.observe(section));
 }
 
-// Copy prompt code to clipboard
-function copyActivePrompt() {
-    const codeText = promptsData[activePromptKey].code;
-    
-    navigator.clipboard.writeText(codeText)
-        .then(() => {
-            const statusMsg = document.getElementById("copy-status");
-            statusMsg.classList.add("show");
-            
-            setTimeout(() => {
-                statusMsg.classList.remove("show");
-            }, 2000);
-        })
-        .catch(err => {
-            console.error("Failed to copy prompt: ", err);
-        });
-}
+const year = document.querySelector("[data-year]");
+if (year) year.textContent = String(new Date().getFullYear());
